@@ -103,9 +103,15 @@ YouTube embeds are click-to-load facades (`VideoEmbed.svelte`) that only reach
 youtube-nocookie.com once someone presses play. There is no analytics and there
 are no cookies, so no consent banner is needed.
 
-> **Still to do:** `privacy.json` was carried over from the Webflow site and
-> still describes that stack (Webflow hosting, Google reCAPTCHA, Font Awesome).
-> It needs a pass to match what this site actually does before going live.
+`privacy.json` describes exactly this: no cookies, local fonts, click-to-load
+video, and a contact form that hands the message to the visitor's own mail
+client. Keep it in step if any of that changes.
+
+> **Before going live:** the hosting section carries the placeholder
+> `[Name und Anschrift des Hosting-Anbieters eintragen]`. Fill in the provider
+> and make sure a Vertrag über Auftragsverarbeitung (AVV) is in place with them.
+> The text is written to match what the code does, but it is not legal advice —
+> have it reviewed.
 
 ## Deploying
 

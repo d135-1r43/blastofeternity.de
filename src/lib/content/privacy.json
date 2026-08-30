@@ -12,113 +12,128 @@
 		{
 			"id": "sec-2",
 			"level": 3,
-			"heading": "Allgemeine hinweise",
+			"heading": "Allgemeine Hinweise",
 			"body": [
-				"Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung."
+				"Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen entnehmen Sie der unter diesem Text aufgeführten Datenschutzerklärung."
 			]
 		},
 		{
 			"id": "sec-3",
 			"level": 3,
-			"heading": "Datenerfassung auf dieser Website",
-			"body": []
+			"heading": "Keine Cookies, kein Tracking, keine Analyse",
+			"body": [
+				"Diese Website setzt keine Cookies, verwendet keine Analyse- oder Tracking-Werkzeuge und bindet keine Werbenetzwerke ein. Es gibt daher auch kein Cookie-Banner und nichts, dem Sie zustimmen oder widersprechen müssten.",
+				"Beim bloßen Aufruf der Website werden keine Daten an Dritte übertragen. Alle Schriftarten und Bilder werden von unserem eigenen Server ausgeliefert. Eine Verbindung zu externen Anbietern entsteht nur, wenn Sie selbst aktiv ein Video starten oder einem Link nach außen folgen."
+			]
 		},
 		{
 			"id": "sec-4",
 			"level": 3,
-			"heading": "Wer ist Verantwortlich für die datenerfassung auf dieser website?",
+			"heading": "Wie erfassen wir Ihre Daten?",
 			"body": [
-				"Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle“ in dieser Datenschutzerklärung entnehmen."
+				"Ein Teil der Daten wird dadurch erhoben, dass Sie uns diese mitteilen — etwa wenn Sie uns eine E-Mail schreiben. Andere Daten werden beim Besuch der Website automatisch durch unsere IT-Systeme erfasst. Das sind technische Daten wie Browser, Betriebssystem oder Uhrzeit des Seitenaufrufs, die in den Server-Logfiles gespeichert werden."
 			]
 		},
 		{
 			"id": "sec-5",
 			"level": 3,
-			"heading": "Wie erfassen wir Ihre Daten?",
+			"heading": "Wofür nutzen wir Ihre Daten?",
 			"body": [
-				"Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.",
-				"Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT- Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten."
+				"Die automatisch erfassten Daten dienen ausschließlich dazu, eine fehlerfreie Bereitstellung der Website zu gewährleisten und deren Sicherheit zu prüfen. Eine Auswertung Ihres Nutzungsverhaltens findet nicht statt."
 			]
 		},
 		{
 			"id": "sec-6",
 			"level": 3,
-			"heading": "Wofür nutzen wir Ihre Daten?",
-			"body": [
-				"Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden."
-			]
-		},
-		{
-			"id": "sec-7",
-			"level": 3,
 			"heading": "Welche Rechte haben Sie bezüglich Ihrer Daten?",
 			"body": [
-				"Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen.",
-				"Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.",
+				"Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.",
 				"Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden."
 			]
 		},
 		{
+			"id": "sec-7",
+			"level": 2,
+			"heading": "2. Hosting",
+			"body": []
+		},
+		{
 			"id": "sec-8",
 			"level": 3,
-			"heading": "Analyse-Tools und Tools von Drittanbietern",
+			"heading": "Externes Hosting",
 			"body": [
-				"Beim Besuch dieser Website kann Ihr Surf-Verhalten statistisch ausgewertet werden. Das geschieht vor allem mit sogenannten Analyseprogrammen. Detaillierte Informationen zu diesen Analyseprogrammen finden Sie in der folgenden Datenschutzerklärung."
+				"Diese Website wird bei einem externen Dienstleister gehostet (Hoster). Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei handelt es sich vor allem um die in den Server-Logfiles erfassten Zugriffsdaten.",
+				"Der Einsatz des Hosters erfolgt im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).",
+				"Unser Hoster verarbeitet Ihre Daten nur insoweit, wie dies zur Erfüllung seiner Leistungspflichten erforderlich ist, und folgt unseren Weisungen in Bezug auf diese Daten. Wir haben mit dem Anbieter einen Vertrag über Auftragsverarbeitung (AVV) geschlossen.",
+				"Hoster: [Name und Anschrift des Hosting-Anbieters eintragen]"
 			]
 		},
 		{
 			"id": "sec-9",
-			"level": 2,
-			"heading": "2. Allgemeine Hinweise und Pflichtinformationen",
-			"body": []
+			"level": 3,
+			"heading": "Server-Logfiles",
+			"body": [
+				"Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Logfiles, die Ihr Browser automatisch übermittelt. Dies sind: Browsertyp und Browserversion, verwendetes Betriebssystem, Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage und IP-Adresse.",
+				"Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Sicherheit seiner Website — hierfür müssen Server-Logfiles erfasst werden.",
+				"Die Logfiles werden nach kurzer Zeit automatisch gelöscht. Für das Ausliefern von Bildern, Schriftarten und Programmdateien ist die Protokollierung auf unserem Server abgeschaltet."
+			]
 		},
 		{
 			"id": "sec-10",
-			"level": 3,
-			"heading": "Datenschutz",
-			"body": [
-				"Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung. Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben. Personenbezogene Daten sind Daten, mit denen Sie persönlich identifiziert werden können. Die vorliegende Datenschutzerklärung erläutert, welche Daten wir erheben und wofür wir sie nutzen. Sie erläutert auch, wie und zu welchem Zweck das geschieht. Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich."
-			]
+			"level": 2,
+			"heading": "3. Allgemeine Hinweise und Pflichtinformationen",
+			"body": []
 		},
 		{
 			"id": "sec-11",
 			"level": 3,
-			"heading": "Hinweis zur verantwortlichen stelle",
+			"heading": "Datenschutz",
 			"body": [
-				"Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:",
-				"CVJM Jugendkultur & Musik e.V.",
-				"Herdstr. 16",
-				"74252 Massenbachhausen",
-				"info@blastofeternity.de",
-				"Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten (z. B. Namen, E-Mail-Adressen o. Ä.) entscheidet."
+				"Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.",
+				"Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich."
 			]
 		},
 		{
 			"id": "sec-12",
 			"level": 3,
-			"heading": "Speicherdauer",
+			"heading": "Hinweis zur verantwortlichen Stelle",
 			"body": [
-				"Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z. B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die Löschung nach Fortfall dieser Gründe."
+				"Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:",
+				"CVJM Jugendkultur & Musik e. V.",
+				"Herdstr. 16",
+				"74252 Massenbachhausen",
+				"Telefon: 0151 50663634",
+				"E-Mail: info@blastofeternity.de",
+				"Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet."
 			]
 		},
 		{
 			"id": "sec-13",
 			"level": 3,
-			"heading": "Allgemeine Hinweise zu den Rechtsgrundlagen der Datenverarbeitung auf dieser Website",
+			"heading": "Speicherdauer",
 			"body": [
-				"Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO bzw. Art. 9 Abs. 2 lit. a DSGVO, sofern besondere Datenkategorien nach Art. 9 Abs. 1 DSGVO verarbeitet werden. Im Falle einer ausdrücklichen Einwilligung in die Übertragung personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung außerdem auf Grundlage von Art. 49 Abs. 1 lit. a DSGVO. Sofern Sie in die Speicherung von Cookies oder in den Zugriff auf Informationen in Ihr Endgerät (z. B. via Device-Fingerprinting) eingewilligt haben, erfolgt die Datenverarbeitung zusätzlich auf Grundlage von § 25 Abs. 1 TTDSG. Die Einwilligung ist jederzeit widerrufbar. Sind Ihre Daten zur Vertragserfüllung oder zur Durchführung vorvertraglicher Maßnahmen erforderlich, verarbeiten wir Ihre Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des Weiteren verarbeiten wir Ihre Daten, sofern diese zur Erfüllung einer rechtlichen Verpflichtung erforderlich sind auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Die Datenverarbeitung kann ferner auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen. Über die jeweils im Einzelfall einschlägigen Rechtsgrundlagen wird in den folgenden Absätzen dieser Datenschutzerklärung informiert."
+				"Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung haben."
 			]
 		},
 		{
 			"id": "sec-14",
 			"level": 3,
-			"heading": "Empfänger von personenbezogenen Daten",
+			"heading": "Allgemeine Hinweise zu den Rechtsgrundlagen",
 			"body": [
-				"Im Rahmen unserer Geschäftstätigkeit arbeiten wir mit verschiedenen externen Stellen zusammen. Dabei ist teilweise auch eine Übermittlung von personenbezogenen Daten an diese externen Stellen erforderlich. Wir geben personenbezogene Daten nur dann an externe Stellen weiter, wenn dies im Rahmen einer Vertragserfüllung erforderlich ist, wenn wir gesetzlich hierzu verpflichtet sind (z. B. Weitergabe von Daten an Steuerbehörden), wenn wir ein berechtigtes Interesse nach Art. 6 Abs. 1 lit. f DSGVO an der Weitergabe haben oder wenn eine sonstige Rechtsgrundlage die Datenweitergabe erlaubt. Beim Einsatz von Auftragsverarbeitern geben wir personenbezogene Daten unserer Kunden nur auf Grundlage eines gültigen Vertrags über Auftragsverarbeitung weiter. Im Falle einer gemeinsamen Verarbeitung wird ein Vertrag über gemeinsame Verarbeitung geschlossen."
+				"Sofern Sie in die Datenverarbeitung eingewilligt haben, verarbeiten wir Ihre personenbezogenen Daten auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO. Im Falle einer ausdrücklichen Einwilligung in die Übertragung personenbezogener Daten in Drittstaaten erfolgt die Datenverarbeitung außerdem auf Grundlage von Art. 49 Abs. 1 lit. a DSGVO.",
+				"Sind Ihre Daten zur Vertragserfüllung oder zur Durchführung vorvertraglicher Maßnahmen erforderlich, verarbeiten wir Ihre Daten auf Grundlage des Art. 6 Abs. 1 lit. b DSGVO. Des Weiteren verarbeiten wir Ihre Daten, sofern diese zur Erfüllung einer rechtlichen Verpflichtung erforderlich sind, auf Grundlage von Art. 6 Abs. 1 lit. c DSGVO. Die Datenverarbeitung kann ferner auf Grundlage unseres berechtigten Interesses nach Art. 6 Abs. 1 lit. f DSGVO erfolgen."
 			]
 		},
 		{
 			"id": "sec-15",
+			"level": 3,
+			"heading": "Empfänger von personenbezogenen Daten",
+			"body": [
+				"Wir geben personenbezogene Daten nur dann an externe Stellen weiter, wenn dies im Rahmen einer Vertragserfüllung erforderlich ist, wenn wir gesetzlich hierzu verpflichtet sind, wenn wir ein berechtigtes Interesse nach Art. 6 Abs. 1 lit. f DSGVO an der Weitergabe haben oder wenn eine sonstige Rechtsgrundlage die Datenweitergabe erlaubt. Beim Einsatz von Auftragsverarbeitern geben wir personenbezogene Daten nur auf Grundlage eines gültigen Vertrags über Auftragsverarbeitung weiter."
+			]
+		},
+		{
+			"id": "sec-16",
 			"level": 3,
 			"heading": "Widerruf Ihrer Einwilligung zur Datenverarbeitung",
 			"body": [
@@ -126,24 +141,24 @@
 			]
 		},
 		{
-			"id": "sec-16",
+			"id": "sec-17",
 			"level": 3,
 			"heading": "Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen sowie gegen Direktwerbung (Art. 21 DSGVO)",
 			"body": [
-				"WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, AUS GRÜNDEN, DIE SICH AUS IHRER BESONDEREN SITUATION ERGEBEN, GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN; DIES GILT AUCH FÜR EIN AUF DIESE BESTIMMUNGEN GESTÜTZTES PROFILING. DIE JEWEILIGE RECHTSGRUNDLAGE, AUF DENEN EINE VERARBEITUNG BERUHT, ENTNEHMEN SIE DIESER DATENSCHUTZERKLÄRUNG. WENN SIE WIDERSPRUCH EINLEGEN, WERDEN WIR IHRE BETROFFENEN PERSONENBEZOGENEN DATEN NICHT MEHR VERARBEITEN, ES SEI DENN, WIR KÖNNEN ZWINGENDE SCHUTZWÜRDIGE GRÜNDE FÜR DIE VERARBEITUNG NACHWEISEN, DIE IHRE INTERESSEN, RECHTE UND FREIHEITEN ÜBERWIEGEN ODER DIE VERARBEITUNG DIENT DER GELTENDMACHUNG, AUSÜBUNG ODER VERTEIDIGUNG VON RECHTSANSPRÜCHEN (WIDERSPRUCH NACH ART. 21 ABS. 1 DSGVO).",
-				"WERDEN IHRE PERSONENBEZOGENEN DATEN VERARBEITET, UM DIREKTWERBUNG ZU BETREIBEN, SO HABEN SIE DAS RECHT, JEDERZEIT WIDERSPRUCH GEGEN DIE VERARBEITUNG SIE BETREFFENDER PERSONENBEZOGENER DATEN ZUM ZWECKE DERARTIGER WERBUNG EINZULEGEN; DIES GILT AUCH FÜR DAS PROFILING, SOWEIT ES MIT SOLCHER DIREKTWERBUNG IN VERBINDUNG STEHT. WENN SIE WIDERSPRECHEN, WERDEN IHRE PERSONENBEZOGENEN DATEN ANSCHLIESSEND NICHT MEHR ZUM ZWECKE DER DIREKTWERBUNG VERWENDET (WIDERSPRUCH NACH ART. 21 ABS. 2 DSGVO)."
-			]
-		},
-		{
-			"id": "sec-17",
-			"level": 3,
-			"heading": "Beschwerderecht bei der zuständigen Aufsichtsbehörde",
-			"body": [
-				"Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes zu. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe."
+				"Wenn die Datenverarbeitung auf Grundlage von Art. 6 Abs. 1 lit. e oder f DSGVO erfolgt, haben Sie jederzeit das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, gegen die Verarbeitung Ihrer personenbezogenen Daten Widerspruch einzulegen. Die jeweilige Rechtsgrundlage entnehmen Sie dieser Datenschutzerklärung.",
+				"Wenn Sie Widerspruch einlegen, werden wir Ihre betroffenen personenbezogenen Daten nicht mehr verarbeiten, es sei denn, wir können zwingende schutzwürdige Gründe für die Verarbeitung nachweisen, die Ihre Interessen, Rechte und Freiheiten überwiegen, oder die Verarbeitung dient der Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen."
 			]
 		},
 		{
 			"id": "sec-18",
+			"level": 3,
+			"heading": "Beschwerderecht bei der zuständigen Aufsichtsbehörde",
+			"body": [
+				"Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde zu, insbesondere in dem Mitgliedstaat ihres gewöhnlichen Aufenthalts, ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes. Das Beschwerderecht besteht unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe."
+			]
+		},
+		{
+			"id": "sec-19",
 			"level": 3,
 			"heading": "Recht auf Datenübertragbarkeit",
 			"body": [
@@ -151,7 +166,7 @@
 			]
 		},
 		{
-			"id": "sec-19",
+			"id": "sec-20",
 			"level": 3,
 			"heading": "Auskunft, Berichtigung und Löschung",
 			"body": [
@@ -159,140 +174,94 @@
 			]
 		},
 		{
-			"id": "sec-20",
+			"id": "sec-21",
 			"level": 3,
 			"heading": "Recht auf Einschränkung der Verarbeitung",
 			"body": [
-				"Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Hierzu können Sie sich jederzeit an uns wenden. Das Recht auf Einschränkung der Verarbeitung besteht in folgenden Fällen:",
-				"Wenn Sie die Verarbeitung Ihrer personenbezogenen Daten eingeschränkt haben, dürfen diese Daten – von ihrer Speicherung abgesehen – nur mit Ihrer Einwilligung oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen oder zum Schutz der Rechte einer anderen natürlichen oder juristischen Person oder aus Gründen eines wichtigen öffentlichen Interesses der Europäischen Union oder eines Mitgliedstaats verarbeitet werden."
+				"Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Hierzu können Sie sich jederzeit an uns wenden. Das Recht auf Einschränkung der Verarbeitung besteht insbesondere, wenn Sie die Richtigkeit Ihrer Daten bestreiten, wenn die Verarbeitung unrechtmäßig geschah, wenn wir die Daten nicht mehr benötigen, Sie sie aber zur Geltendmachung von Rechtsansprüchen brauchen, oder wenn Sie Widerspruch nach Art. 21 Abs. 1 DSGVO eingelegt haben und eine Abwägung noch aussteht."
 			]
-		},
-		{
-			"id": "sec-21",
-			"level": 2,
-			"heading": "3. Datenerfassung auf dieser website",
-			"body": []
 		},
 		{
 			"id": "sec-22",
 			"level": 3,
-			"heading": "Kontaktformular",
+			"heading": "SSL- bzw. TLS-Verschlüsselung",
 			"body": [
-				"Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.",
-				"Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sofern diese abgefragt wurde; die Einwilligung ist jederzeit widerrufbar.",
-				"Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z. B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt."
+				"Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und am Schloss-Symbol in Ihrer Browserzeile.",
+				"Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden."
 			]
 		},
 		{
 			"id": "sec-23",
 			"level": 2,
-			"heading": "4. Soziale medien",
+			"heading": "4. Kontaktaufnahme",
 			"body": []
 		},
 		{
 			"id": "sec-24",
 			"level": 3,
-			"heading": "Facebook",
+			"heading": "Kontaktformular",
 			"body": [
-				"Auf dieser Website sind Elemente des sozialen Netzwerks Facebook integriert. Anbieter dieses Dienstes ist die Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland. Die erfassten Daten werden nach Aussage von Facebook jedoch auch in die USA und in andere Drittländer übertragen.",
-				"Eine Übersicht über die Facebook Social-Media-Elemente finden Sie hier:",
-				"https://developers.facebook.com/docs/plugins/?locale=de_DE",
-				"Wenn das Social-Media-Element aktiv ist, wird eine direkte Verbindung zwischen Ihrem Endgerät und dem Facebook-Server hergestellt. Facebook erhält dadurch die Information, dass Sie mit Ihrer IP-Adresse diese Website besucht haben. Wenn Sie den Facebook „Like-Button“ anklicken, während Sie in Ihrem Facebook-Account eingeloggt sind, können Sie die Inhalte dieser Website auf Ihrem Facebook-Profil verlinken. Dadurch kann Facebook den Besuch dieser Website Ihrem Benutzerkonto zuordnen. Wir weisen darauf hin, dass wir als Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten Daten sowie deren Nutzung durch Facebook erhalten. Weitere Informationen hierzu finden Sie in der Datenschutzerklärung von Facebook unter:",
-				"https://de-de.facebook.com/privacy/explanation",
-				"Soweit eine Einwilligung (Consent) eingeholt wurde, erfolgt der Einsatz des o. g. Dienstes auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 TTDSG. Die Einwilligung ist jederzeit widerrufbar. Soweit keine Einwilligung eingeholt wurde, erfolgt die Verwendung des Dienstes auf Grundlage unseres berechtigten Interesses an einer möglichst umfassenden Sichtbarkeit in den Sozialen Medien.",
-				"Soweit mit Hilfe des hier beschriebenen Tools personenbezogene Daten auf unserer Website erfasst und an Facebook weitergeleitet werden, sind wir und die Meta Platforms Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland gemeinsam für diese Datenverarbeitung verantwortlich (Art. 26 DSGVO). Die gemeinsame Verantwortlichkeit beschränkt sich dabei ausschließlich auf die Erfassung der Daten und deren Weitergabe an Facebook. Die nach der Weiterleitung erfolgende Verarbeitung durch Facebook ist nicht Teil der gemeinsamen Verantwortung. Die uns gemeinsam obliegenden Verpflichtungen wurden in einer Vereinbarung über gemeinsame Verarbeitung festgehalten. Den Wortlaut der Vereinbarung finden Sie unter:",
-				"https://www.facebook.com/legal/controller_addendum",
-				"Laut dieser Vereinbarung sind wir für die Erteilung der Datenschutzinformationen beim Einsatz des Facebook-Tools und für die datenschutzrechtlich sichere Implementierung des Tools auf unserer Website verantwortlich. Für die Datensicherheit der Facebook-Produkte ist Facebook verantwortlich. Betroffenenrechte (z. B. Auskunftsersuchen) hinsichtlich der bei Facebook verarbeiteten Daten können Sie direkt bei Facebook geltend machen. Wenn Sie die Betroffenenrechte bei uns geltend machen, sind wir verpflichtet, diese an Facebook weiterzuleiten.",
-				"Die Datenübertragung in die USA wird auf die Standardvertragsklauseln der EU-Kommission gestützt. Details finden Sie hier:",
-				"https://www.facebook.com/legal/EU_data_transfer_addendum",
-				"https://de-de.facebook.com/help/566994660333381",
-				"https://www.facebook.com/policy.php",
-				"Das Unternehmen verfügt über eine Zertifizierung nach dem „EU-US Data Privacy Framework“ (DPF). Der DPF ist ein Übereinkommen zwischen der Europäischen Union und den USA, der die Einhaltung europäischer Datenschutzstandards bei Datenverarbeitungen in den USA gewährleisten soll. Jedes nach dem DPF zertifizierte Unternehmen verpflichtet sich, diese Datenschutzstandards einzuhalten. Weitere Informationen hierzu erhalten Sie vom Anbieter unter folgendem Link:",
-				"https://www.dataprivacyframework.gov/s/participant-search/participant-detail?contact=true&id=a2zt0000000GnywAAC&status=Active"
+				"Das Kontaktformular auf dieser Website versendet nichts an uns. Wenn Sie es ausfüllen und absenden, öffnet Ihr Browser eine vorbereitete Nachricht in Ihrem eigenen E-Mail-Programm. Ihre Eingaben verlassen Ihr Gerät erst, wenn Sie diese Nachricht dort selbst abschicken — an uns übermittelt werden sie also ausschließlich per E-Mail und nicht über diese Website.",
+				"Ihre Angaben werden dadurch nicht auf unserem Webserver gespeichert, und es findet keine Weitergabe an Dritte statt."
 			]
 		},
 		{
 			"id": "sec-25",
 			"level": 3,
-			"heading": "Instagram",
+			"heading": "Anfrage per E-Mail oder Telefon",
 			"body": [
-				"Auf dieser Website sind Funktionen des Dienstes Instagram eingebunden. Diese Funktionen werden angeboten durch die Meta Platforms Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland.",
-				"Wenn das Social-Media-Element aktiv ist, wird eine direkte Verbindung zwischen Ihrem Endgerät und dem Instagram-Server hergestellt. Instagram erhält dadurch Informationen über den Besuch dieser Website durch Sie.",
-				"Wenn Sie in Ihrem Instagram-Account eingeloggt sind, können Sie durch Anklicken des Instagram-Buttons die Inhalte dieser Website mit Ihrem Instagram-Profil verlinken. Dadurch kann Instagram den Besuch dieser Website Ihrem Benutzerkonto zuordnen. Wir weisen darauf hin, dass wir als Anbieter der Seiten keine Kenntnis vom Inhalt der übermittelten Daten sowie deren Nutzung durch Instagram erhalten.",
-				"Soweit eine Einwilligung (Consent) eingeholt wurde, erfolgt der Einsatz des o. g. Dienstes auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 TTDSG. Die Einwilligung ist jederzeit widerrufbar. Soweit keine Einwilligung eingeholt wurde, erfolgt die Verwendung des Dienstes auf Grundlage unseres berechtigten Interesses an einer möglichst umfassenden Sichtbarkeit in den Sozialen Medien.",
-				"Soweit mit Hilfe des hier beschriebenen Tools personenbezogene Daten auf unserer Website erfasst und an Facebook bzw. Instagram weitergeleitet werden, sind wir und die Meta Platforms Ireland Limited, 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland gemeinsam für diese Datenverarbeitung verantwortlich (Art. 26 DSGVO). Die gemeinsame Verantwortlichkeit beschränkt sich dabei ausschließlich auf die Erfassung der Daten und deren Weitergabe an Facebook bzw. Instagram. Die nach der Weiterleitung erfolgende Verarbeitung durch Facebook bzw. Instagram ist nicht Teil der gemeinsamen Verantwortung. Die uns gemeinsam obliegenden Verpflichtungen wurden in einer Vereinbarung über gemeinsame Verarbeitung festgehalten. Den Wortlaut der Vereinbarung finden Sie unter:",
-				"https://www.facebook.com/legal/controller_addendum",
-				"Laut dieser Vereinbarung sind wir für die Erteilung der Datenschutzinformationen beim Einsatz des Facebook- bzw. Instagram-Tools und für die datenschutzrechtlich sichere Implementierung des Tools auf unserer Website verantwortlich. Für die Datensicherheit der Facebook bzw. Instagram-Produkte ist Facebook verantwortlich. Betroffenenrechte (z. B. Auskunftsersuchen) hinsichtlich der bei Facebook bzw. Instagram verarbeiteten Daten können Sie direkt bei Facebook geltend machen. Wenn Sie die Betroffenenrechte bei uns geltend machen, sind wir verpflichtet, diese an Facebook weiterzuleiten.",
-				"Die Datenübertragung in die USA wird auf die Standardvertragsklauseln der EU-Kommission gestützt.",
-				"Details finden Sie hier:",
-				"https://www.facebook.com/legal/EU_data_transfer_addendum",
-				"https://privacycenter.instagram.com/policy/",
-				"https://de-de.facebook.com/help/566994660333381",
-				"Weitere Informationen hierzu finden Sie in der Datenschutzerklärung von Instagram:",
-				"https://privacycenter.instagram.com/policy/",
-				"Das Unternehmen verfügt über eine Zertifizierung nach dem „EU-US Data Privacy Framework“ (DPF). Der DPF ist ein Übereinkommen zwischen der Europäischen Union und den USA, der die Einhaltung europäischer Datenschutzstandards bei Datenverarbeitungen in den USA gewährleisten soll. Jedes nach dem DPF zertifizierte Unternehmen verpflichtet sich, diese Datenschutzstandards einzuhalten. Weitere Informationen hierzu erhalten Sie vom Anbieter unter folgendem Link:",
-				"https://www.dataprivacyframework.gov/s/participant-search/participant-detail?contact=true&id=a2zt0000000GnywAAC&status=Active"
+				"Wenn Sie uns per E-Mail oder Telefon kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.",
+				"Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen beruht die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), sofern diese abgefragt wurde.",
+				"Die von Ihnen an uns per Kontaktanfrage übersandten Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt."
 			]
 		},
 		{
 			"id": "sec-26",
 			"level": 2,
-			"heading": "5. Plugins und Tools",
+			"heading": "5. Eingebundene Inhalte und externe Dienste",
 			"body": []
 		},
 		{
 			"id": "sec-27",
 			"level": 3,
-			"heading": "Youtube",
+			"heading": "YouTube-Videos (Zwei-Klick-Lösung)",
 			"body": [
-				"Diese Website bindet Videos der Website YouTube ein. Betreiber der Seiten ist die Google Ireland Limited („Google“), Gordon House, Barrow Street, Dublin 4, Irland.verlangen, erfolgt dies nur, soweit es technisch machbar ist.",
-				"Sobald Sie ein YouTube-Video auf dieser Website starten, wird eine Verbindung zu den Servern von YouTube hergestellt. Dabei wird dem YouTube-Server mitgeteilt, welche unserer Seiten Sie besucht haben. Wenn Sie in Ihrem YouTube-Account eingeloggt sind, ermöglichen Sie YouTube, Ihr Surfverhalten direkt Ihrem persönlichen Profil zuzuordnen. Dies können Sie verhindern, indem Sie sich aus Ihrem YouTube-Account ausloggen.",
-				"Des Weiteren kann YouTube nach Starten eines Videos verschiedene Cookies auf Ihrem Endgerät speichern oder vergleichbare Wiedererkennungstechnologien (z. B. Device-Fingerprinting) einsetzen. Auf diese Weise kann YouTube Informationen über Besucher dieser Website erhalten. Diese Informationen werden u. a. verwendet, um Videostatistiken zu erfassen, die Anwenderfreundlichkeit zu verbessern und Betrugsversuchen vorzubeugen.",
-				"Gegebenenfalls können nach dem Start eines YouTube-Videos weitere Datenverarbeitungsvorgänge ausgelöst werden, auf die wir keinen Einfluss haben.",
-				"Die Nutzung von YouTube erfolgt im Interesse einer ansprechenden Darstellung unserer Online-Angebote. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TTDSG umfasst. Die Einwilligung ist jederzeit widerrufbar.",
-				"Weitere Informationen über Datenschutz bei YouTube finden Sie in deren Datenschutzerklärung unter:",
-				"https://policies.google.com/privacy?hl=de",
-				"Das Unternehmen verfügt über eine Zertifizierung nach dem „EU-US Data Privacy Framework“ (DPF). Der DPF ist ein Übereinkommen zwischen der Europäischen Union und den USA, der die Einhaltung europäischer Datenschutzstandards bei Datenverarbeitungen in den USA gewährleisten soll. Jedes nach dem DPF zertifizierte Unternehmen verpflichtet sich, diese Datenschutzstandards einzuhalten. Weitere Informationen hierzu erhalten Sie vom Anbieter unter folgendem Link:",
-				"https://www.dataprivacyframework.gov/s/participant-search/participant-detail?contact=true&id=a2zt000000001L5AAI&status=Active"
+				"Auf dieser Website sind Videos eingebunden, die bei YouTube liegen. Betreiber ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland.",
+				"Beim bloßen Aufruf einer Seite wird keine Verbindung zu YouTube hergestellt. Anstelle des Videos sehen Sie zunächst nur ein Vorschaubild von unserem eigenen Server. Erst wenn Sie das Video ausdrücklich per Klick starten, wird eine Verbindung zu den Servern von YouTube aufgebaut und Ihre IP-Adresse dorthin übertragen. Wir nutzen dabei die Domain youtube-nocookie.com im erweiterten Datenschutzmodus.",
+				"Rechtsgrundlage für diese Verarbeitung ist Ihre durch den Klick erteilte Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO, die Sie jederzeit für die Zukunft widerrufen können, indem Sie keine weiteren Videos starten. Da eine Datenübermittlung in die USA nicht ausgeschlossen werden kann, willigen Sie mit dem Klick zugleich in diese Übermittlung nach Art. 49 Abs. 1 lit. a DSGVO ein.",
+				"Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von Google unter https://policies.google.com/privacy"
 			]
 		},
 		{
 			"id": "sec-28",
 			"level": 3,
-			"heading": "Google fonts (lokales Hosting)",
+			"heading": "Lokal gehostete Schriftarten",
 			"body": [
-				"Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Google Fonts, die von Google bereitgestellt werden. Die Google Fonts sind lokal installiert. Eine Verbindung zu Servern von Google findet dabei nicht statt.",
-				"Weitere Informationen zu Google Fonts finden Sie unter",
-				"https://developers.google.com/fonts/faq und in der Datenschutzerklärung von Google:",
-				"https://policies.google.com/privacy?hl=de"
+				"Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten Web Fonts, die lokal von unserem eigenen Server ausgeliefert werden. Eine Verbindung zu Servern Dritter — insbesondere zu Google Fonts — findet dabei nicht statt."
 			]
 		},
 		{
 			"id": "sec-29",
 			"level": 3,
-			"heading": "Font awesome (lokales hosting)",
+			"heading": "Links zu Ticketanbietern",
 			"body": [
-				"Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten Font Awesome. Font Awesome ist lokal installiert. Eine Verbindung zu Servern von Fonticons, Inc. findet dabei nicht statt.",
-				"Weitere Informationen zu Font Awesome finden Sie in der Datenschutzerklärung für Font Awesome unter:",
-				"https://fontawesome.com/privacy"
+				"Für den Ticketverkauf verlinken wir auf externe Anbieter, derzeit Eventim Light und ti.to. Wenn Sie einem solchen Link folgen, verlassen Sie diese Website. Für die Datenverarbeitung auf den Seiten der Anbieter ist ausschließlich der jeweilige Anbieter verantwortlich; es gelten dessen Datenschutzbestimmungen. Wir übermitteln dabei keine Daten über Sie an diese Anbieter."
 			]
 		},
 		{
 			"id": "sec-30",
 			"level": 3,
-			"heading": "Spotify",
+			"heading": "Links zu Podcast-Plattformen und sozialen Netzwerken",
 			"body": [
-				"Auf dieser Website sind Funktionen des Musik-Dienstes Spotify eingebunden. Anbieter ist die Spotify AB, Birger Jarlsgatan 61, 113 56 Stockholm in Schweden. Die Spotify Plugins erkennen Sie an dem grünen Logo auf dieser Website. Eine Übersicht über die Spotify-Plugins finden Sie unter:",
-				"https://developer.spotify.com",
-				"Dadurch kann beim Besuch dieser Website über das Plugin eine direkte Verbindung zwischen Ihrem Browser und dem Spotify-Server hergestellt werden. Spotify erhält dadurch die Information, dass Sie mit Ihrer IP-Adresse diese Website besucht haben. Wenn Sie den Spotify Button anklicken, während Sie in Ihrem Spotify-Account eingeloggt sind, können Sie die Inhalte dieser Website auf Ihrem Spotify Profil verlinken. Dadurch kann Spotify den Besuch dieser Website Ihrem Benutzerkonto zuordnen.",
-				"Wir weisen darauf hin, dass bei der Nutzung von Spotify Cookies von Google Analytics eingesetzt werden, sodass Ihre Nutzungsdaten bei der Nutzung von Spotify auch an Google weitergegeben werden können.",
-				"Google Analytics ist ein Tool des Google-Konzerns zur Analyse des Nutzerverhaltens mit Sitz in den USA. Für diese Einbindung ist allein Spotify verantwortlich. Wir als Websitebetreiber haben auf diese Verarbeitung keinen Einfluss.",
-				"Die Speicherung und Analyse der Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der ansprechenden akustischen Ausgestaltung seiner Website. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TTDSG umfasst. Die Einwilligung ist jederzeit widerrufbar.",
-				"Weitere Informationen hierzu finden Sie in der Datenschutzerklärung von Spotify:",
-				"https://www.spotify.com/de/legal/privacy-policy/",
-				"Wenn Sie nicht wünschen, dass Spotify den Besuch dieser Website Ihrem Spotify-Nutzerkonto zuordnen kann, loggen Sie sich bitte aus Ihrem Spotify-Benutzerkonto aus.",
-				"Quelle:",
-				"https://www.e-recht24.de"
+				"Wir verlinken auf unsere Profile bei Spotify, Apple Podcasts, Deezer, Instagram und Facebook. Es handelt sich dabei um einfache Links — es sind keine Plugins, Zählpixel oder Wiedergabefenster dieser Anbieter in unsere Seiten eingebettet. Eine Verbindung zu den Servern der Anbieter entsteht erst, wenn Sie einen dieser Links anklicken. Danach gelten ausschließlich die Datenschutzbestimmungen des jeweiligen Anbieters."
+			]
+		},
+		{
+			"id": "sec-31",
+			"level": 3,
+			"heading": "Weitere externe Links",
+			"body": [
+				"Unsere Seiten enthalten Links zu weiteren externen Websites, etwa zur Spielstätte oder zu einem Kartendienst zur Anzeige der Anfahrt. Kartenmaterial wird nicht in unsere Seiten eingebettet; ein Kartendienst wird erst geladen, wenn Sie den Link aufrufen und damit unsere Website verlassen."
 			]
 		}
 	]
