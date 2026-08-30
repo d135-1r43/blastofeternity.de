@@ -140,6 +140,10 @@ docker pull ghcr.io/d135-1r43/new.blastofeternity.de:latest
 Pull requests build the image and run a smoke test against it, but publish
 nothing.
 
+A package pushed by Actions starts out private, so that `docker pull` only
+works once the package's visibility has been set to public under **Packages →
+new.blastofeternity.de → Package settings**.
+
 ## Assets
 
 `originals/` holds the untouched photographs. `static/images/` holds the
