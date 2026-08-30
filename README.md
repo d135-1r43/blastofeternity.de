@@ -108,11 +108,12 @@ are no cookies, so no consent banner is needed.
 video, and a contact form that hands the message to the visitor's own mail
 client. Keep it in step if any of that changes.
 
-> **Before going live:** the hosting section carries the placeholder
-> `[Name und Anschrift des Hosting-Anbieters eintragen]`. Fill in the provider
-> and make sure a Vertrag über Auftragsverarbeitung (AVV) is in place with them.
-> The text is written to match what the code does, but it is not legal advice —
-> have it reviewed.
+The hoster is named in it as netcup GmbH, Karlsruhe.
+
+> **Before going live:** make sure a Vertrag über Auftragsverarbeitung (AVV) is
+> actually concluded with netcup — the text states that one exists. And while
+> this is written to match what the code does, it is not legal advice; have it
+> reviewed.
 
 ### TypeScript 6 and 7 side by side
 
