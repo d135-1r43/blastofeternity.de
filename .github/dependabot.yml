@@ -1,0 +1,37 @@
+# Dependency updates, one pull request per ecosystem rather than one per package.
+#
+# Everything an ecosystem has to offer goes into a single group, majors
+# included: this is a small static site with a full build-and-serve smoke test
+# on every PR, so a batched bump either passes that check or it does not, and
+# chasing the culprit across a handful of dependencies is cheaper than reviewing
+# a dozen separate branches.
+
+version: 2
+
+updates:
+  # The site itself — pnpm, resolved from pnpm-lock.yaml.
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      npm:
+        patterns: ['*']
+
+  # The actions used by .github/workflows.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      github-actions:
+        patterns: ['*']
+
+  # Both stages of the Dockerfile: the node build image and the nginx runtime.
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      docker:
+        patterns: ['*']
