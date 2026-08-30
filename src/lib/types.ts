@@ -34,6 +34,8 @@ export type Site = {
 	id: 'site';
 	title: string;
 	tagline: string;
+	/** Johannes 1,5 — set in the footer under the motto. */
+	verse: { text: string; lang: string };
 	presenter: string;
 	description: string;
 	url: string;

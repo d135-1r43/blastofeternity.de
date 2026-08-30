@@ -20,6 +20,9 @@
 
 		<p class="motto">{site.tagline}</p>
 
+		<!-- Johannes 1,5. `lang` so a screen reader does not read Latin as German. -->
+		<p class="verse" lang={site.verse.lang}>{site.verse.text}</p>
+
 		<div class="cols">
 			<section>
 				<h2 class="eyebrow">Veranstalter</h2>
@@ -92,13 +95,25 @@
 	}
 
 	.motto {
-		margin: 2rem 0 clamp(3rem, 7vw, 5rem);
+		margin: 2rem 0 0;
 		text-align: center;
 		font-family: var(--font-display);
 		font-weight: 600;
 		font-size: var(--step-1);
 		letter-spacing: 0.12em;
 		color: var(--silver-dim);
+	}
+
+	/* Set in the italic rather than the display face: against the Roman capitals
+	   of the motto directly above, the contrast reads as a quieter, older voice. */
+	.verse {
+		margin: 1.1rem 0 clamp(3rem, 7vw, 5rem);
+		text-align: center;
+		font-style: italic;
+		font-size: var(--step-0);
+		letter-spacing: 0.02em;
+		color: var(--steel);
+		text-wrap: balance;
 	}
 
 	.cols {

@@ -2,20 +2,45 @@
 	"id": "site",
 	"title": "Blast of Eternity",
 	"tagline": "Laut. Provozierend. Einzigartig.",
+	"verse": {
+		"text": "Et lux in tenebris lucet, et tenebrae eam non comprehenderunt",
+		"lang": "la"
+	},
 	"presenter": "CVJM Jugendkultur & Musik e. V.",
 	"description": "Blast of Eternity — Metal-Festival und Clubkonzerte in Heilbronn, veranstaltet vom CVJM Jugendkultur & Musik e. V.",
 	"url": "https://www.blastofeternity.de",
 	"locale": "de-DE",
 	"navigation": [
-		{ "label": "Festival", "href": "/boe" },
-		{ "label": "Clubkonzerte", "href": "/konzerte" },
-		{ "label": "Podcast", "href": "/podcast" },
-		{ "label": "Über uns", "href": "/uber-uns" },
-		{ "label": "Kontakt", "href": "/kontakt" }
+		{
+			"label": "Festival",
+			"href": "/boe"
+		},
+		{
+			"label": "Clubkonzerte",
+			"href": "/konzerte"
+		},
+		{
+			"label": "Podcast",
+			"href": "/podcast"
+		},
+		{
+			"label": "Über uns",
+			"href": "/uber-uns"
+		},
+		{
+			"label": "Kontakt",
+			"href": "/kontakt"
+		}
 	],
 	"legal_navigation": [
-		{ "label": "Impressum", "href": "/impressum" },
-		{ "label": "Datenschutz", "href": "/datenschutz" }
+		{
+			"label": "Impressum",
+			"href": "/impressum"
+		},
+		{
+			"label": "Datenschutz",
+			"href": "/datenschutz"
+		}
 	],
 	"socials": [
 		{
