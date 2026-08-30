@@ -1,0 +1,146 @@
+{
+	"id": "podcast",
+	"title": "Blast of Eternity Podcast",
+	"description": "Der Podcast zum Blast of Eternity — über christlichen Metal und Clubkultur. Von den Leuten, die auf, neben und hinter der Bühne dafür sorgen, dass ihr ein großartiges Festival habt.",
+	"platforms": [
+		{
+			"name": "Alle Episoden & Shownotes",
+			"url": "https://podcast.blastofeternity.de/@boe_podcast/episodes"
+		},
+		{ "name": "Spotify", "url": "https://open.spotify.com/show/4eSBCU0z5WmfZXp0rqGTTt" },
+		{ "name": "Apple Podcasts", "url": "https://podcasts.apple.com/podcast/id1524217781" },
+		{ "name": "Deezer", "url": "https://www.deezer.com/show/1525522" }
+	],
+	"episodes": [
+		{
+			"id": "ep-13",
+			"status": "published",
+			"number": 13,
+			"date": "2021-11-24",
+			"date_label": "24. November 2021",
+			"title": "Cheri Cheri Lady",
+			"guest": "Martin Renner",
+			"description": "Nach langer Pause haben wir uns mal wieder zusammengesetzt. Zu Gast ist Martin Renner, Geschäftsführer des Kreatief Neckarsulm und Veranstalter des Neckarsulmer Kultursommers, bei dem das BoE auch beteiligt war. Gemeinsam blicken wir auf das Festival zurück — und plötzlich ist die Idee für ein neues Bandprojekt geboren, mit Chor und Core."
+		},
+		{
+			"id": "ep-12",
+			"status": "published",
+			"number": 12,
+			"date": "2021-05-19",
+			"date_label": "19. Mai 2021",
+			"title": "Metal-Familienpackung",
+			"guest": "Johanna Streit",
+			"description": "Wir sprechen mit Johanna Streit über das neue Demokratiezentrum in Heilbronn und werfen Blicke auf Vergangenheit und Zukunft von Veranstaltungen in der Pandemie."
+		},
+		{
+			"id": "ep-11",
+			"status": "published",
+			"number": 11,
+			"date": "2021-04-22",
+			"date_label": "22. April 2021",
+			"title": "Das ungegriffene Griffbrett",
+			"guest": null,
+			"description": "Das BoE-Team nimmt todesmutig unter der Woche eine neue Folge auf und stürzt sich dazu in die Corona-Modellstadt Tübingen. Welche Erfahrungen dort gemacht wurden und wie das Prozedere mit Festivals zusammenhängt, erfahrt ihr ebenso wie News über Blasphemie und Glaubenszeugnisse."
+		},
+		{
+			"id": "ep-10",
+			"status": "published",
+			"number": 10,
+			"date": "2021-03-12",
+			"date_label": "12. März 2021",
+			"title": "Wall of Death im Gummiball",
+			"guest": "Daniel Frick",
+			"description": "Zu Gast ist der Chefredakteur des Musikmagazins Whiskey Soda. Wir sprechen über Musikmagazine, offline und online, und seine Arbeit als Seelsorger auf Metalkonzerten in der Schweiz. Außerdem: eine Interpretation der Jahreslosung und die neue Kategorie Wein der Woche."
+		},
+		{
+			"id": "ep-09",
+			"status": "published",
+			"number": 9,
+			"date": "2021-01-20",
+			"date_label": "20. Januar 2021",
+			"title": "Kultur aus dem Keller",
+			"guest": "Jan-Philipp Feil",
+			"description": "Zusammen mit Veranstaltungstechniker Jan-Philipp Feil befassen wir uns mit Livestreaming, diskutieren verschiedene Formate, beleuchten die Arbeiten im Hintergrund und sinnieren über mögliche zukünftige digitale Angebote."
+		},
+		{
+			"id": "ep-08",
+			"status": "published",
+			"number": 8,
+			"date": "2020-12-24",
+			"date_label": "24. Dezember 2020",
+			"title": "Gassi gehen mit dem Plüschhund",
+			"guest": "Malik Aziz",
+			"description": "Wir haben Malik Aziz von Start a Revolution zu Gast und diskutieren über digitale Tools für die Vereins- und Bandarbeit. Malik erzählt von seiner Band, den Touren ins ferne Russland und über Design und visuelle Kommunikation im Metal."
+		},
+		{
+			"id": "ep-07",
+			"status": "published",
+			"number": 7,
+			"date": "2020-12-20",
+			"date_label": "20. Dezember 2020",
+			"title": "Und dennoch hat sich Bolle ganz köstlich amüsiert",
+			"guest": null,
+			"description": "Corona treibt komische Blüten: Das BoE-Team konsumiert Online-Lesungen und Metal-Talkshows statt Livestream-Konzerten. Ausnahme: das Nordic Fest in der Online-Edition, welches ausführlich begutachtet wird."
+		},
+		{
+			"id": "ep-06",
+			"status": "published",
+			"number": 6,
+			"date": "2020-11-04",
+			"date_label": "4. November 2020",
+			"title": "Waymaker, Wein und Kuchen",
+			"guest": "Christian Liljegren",
+			"description": "Bekannt von Narnia und DivineFire, erzählt Christian Liljegren von seinem neuesten Projekt „The Waymaker“ und ein paar Anekdoten aus vergangenen Zeiten. Außerdem sprechen wir über Tonträger und Streaming."
+		},
+		{
+			"id": "ep-05",
+			"status": "published",
+			"number": 5,
+			"date": "2020-10-15",
+			"date_label": "15. Oktober 2020",
+			"title": "Fresh Metal Haircuts",
+			"guest": "Hannes (The Prophecy 23)",
+			"description": "Das BoE-Team diskutiert über Spotify für Hörer*innen und Musiker*innen. Zu Gast ist Hannes von The Prophecy 23. Er erzählt, wie die Band die ersten Monate der Corona-Zeit verbracht hat, und über die Entstehung des Albums „Fresh Metal“."
+		},
+		{
+			"id": "ep-04",
+			"status": "published",
+			"number": 4,
+			"date": "2020-09-03",
+			"date_label": "3. September 2020",
+			"title": "Zehnerpack",
+			"guest": "Christopher (African Corpse)",
+			"description": "Interview mit Christopher von African Corpse, die Zehnerjahre im christlichen Metal und Konzerte während Corona."
+		},
+		{
+			"id": "ep-03",
+			"status": "published",
+			"number": 3,
+			"date": "2020-08-18",
+			"date_label": "18. August 2020",
+			"title": "Nullerkultur",
+			"guest": null,
+			"description": "Das BoE-Team regt sich über kulturignorante Tweets auf, bedauert die Corona-Konzert-Pause und referiert über den christlichen Metal der Nullerjahre."
+		},
+		{
+			"id": "ep-02",
+			"status": "published",
+			"number": 2,
+			"date": "2020-08-05",
+			"date_label": "5. August 2020",
+			"title": "Es geht noch ein Flug von Lima",
+			"guest": "Julian & Jonas (The Cake Is a Lie)",
+			"description": "Ben nimmt uns mit auf eine Reise durch den christlichen Metal der 90er, voll von Verbindungen zwischen Bands, Musikern und Labels. Danach sprechen wir mit Julian und Jonas von The Cake Is a Lie über Bandnamen, Genres, DIY-Attitüde und ihre Südamerika-Tour."
+		},
+		{
+			"id": "ep-01",
+			"status": "published",
+			"number": 1,
+			"date": "2020-07-15",
+			"date_label": "15. Juli 2020",
+			"title": "Metaller, die auf Streams starren",
+			"guest": null,
+			"description": "In der ersten Folge stellen Ben, Markus, Schorsch und Tobias das Projekt BoE-Podcast und den CVJM Jugendkultur & Musik vor. Sie sprechen über Konzerte, die leider nicht stattfinden konnten, und darüber, was die Corona-Zeit für Veranstalter, Künstler und Kultureinrichtungen bedeutet."
+		}
+	]
+}

@@ -1,0 +1,356 @@
+@import './fonts.css';
+
+/* ==========================================================================
+   Blast of Eternity — design tokens
+
+   The palette is deliberately monochrome. The logo is polished silver, so the
+   whole interface is silver on ink and the only colour on the site comes from
+   the photographs themselves. One warm tone (`--filament`, the colour of a hot
+   valve) is reserved for a single job: anything you can buy a ticket with.
+   ========================================================================== */
+
+:root {
+	/* ground */
+	--ink: #08080a;
+	--ink-raised: #101014;
+	--ink-sunk: #050506;
+
+	/* silver */
+	--silver: #e7e8ec;
+	--silver-dim: #9ca0aa;
+	--steel: #6b6f7a;
+
+	--hairline: rgb(231 232 236 / 13%);
+	--hairline-strong: rgb(231 232 236 / 26%);
+
+	/* the single warm accent: a glowing valve filament */
+	--filament: #cf9552;
+	--filament-bright: #e8b478;
+
+	/* The logo's chrome bevel: light above the horizon, dark below, then a
+	   sudden bright flip. Reused for display type via background-clip. */
+	--chrome: linear-gradient(
+		177deg,
+		#ffffff 0%,
+		#d3d6dc 34%,
+		#7e828c 49%,
+		#f6f7f9 51.5%,
+		#aeb2ba 74%,
+		#6d7078 100%
+	);
+
+	/* type */
+	--font-display: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
+	--font-body: 'EB Garamond', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+
+	--step--1: clamp(0.8125rem, 0.79rem + 0.11vw, 0.875rem);
+	--step-0: clamp(1.0625rem, 1rem + 0.31vw, 1.25rem);
+	--step-1: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+	--step-2: clamp(1.5rem, 1.32rem + 0.9vw, 2rem);
+	--step-3: clamp(1.875rem, 1.55rem + 1.6vw, 2.75rem);
+	--step-4: clamp(2.25rem, 1.6rem + 3.2vw, 4rem);
+	--step-5: clamp(2.75rem, 1.4rem + 6.7vw, 6.5rem);
+
+	/* rhythm */
+	--gutter: clamp(1.25rem, 5vw, 4rem);
+	--measure: 36rem;
+	--page: 78rem;
+	--section-gap: clamp(5rem, 11vh, 9rem);
+
+	--ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+	color-scheme: dark;
+}
+
+/* ==========================================================================
+   base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	background: var(--ink);
+	color: var(--silver);
+	font-family: var(--font-body);
+	font-size: var(--step-0);
+	line-height: 1.68;
+	font-feature-settings:
+		'kern' 1,
+		'liga' 1;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
+	font-family: var(--font-display);
+	font-weight: 400;
+	line-height: 1.06;
+	letter-spacing: 0.005em;
+	text-wrap: balance;
+}
+
+p {
+	margin: 0 0 1.1em;
+	text-wrap: pretty;
+	hyphens: auto;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+
+a {
+	color: inherit;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+:focus-visible {
+	outline: 1px solid var(--silver);
+	outline-offset: 4px;
+}
+
+::selection {
+	background: var(--silver);
+	color: var(--ink);
+}
+
+/* ==========================================================================
+   layout
+   ========================================================================== */
+
+.page {
+	width: 100%;
+	max-width: var(--page);
+	margin-inline: auto;
+	padding-inline: var(--gutter);
+}
+
+.prose {
+	max-width: var(--measure);
+}
+
+.section {
+	padding-block: var(--section-gap);
+}
+
+.section--tight {
+	padding-block: clamp(3rem, 7vh, 5rem);
+}
+
+.bleed {
+	width: 100vw;
+	margin-inline: calc(50% - 50vw);
+}
+
+/* ==========================================================================
+   typographic devices
+   ========================================================================== */
+
+/* Small letterspaced Roman capitals — the voice the festival posters speak in.
+   Used for every label, eyebrow, date and piece of data on the site. */
+.eyebrow {
+	font-family: var(--font-display);
+	font-size: var(--step--1);
+	font-weight: 400;
+	letter-spacing: 0.28em;
+	text-transform: uppercase;
+	color: var(--silver-dim);
+	margin: 0;
+}
+
+.eyebrow--tight {
+	letter-spacing: 0.18em;
+}
+
+.rule {
+	border: 0;
+	border-top: 1px solid var(--hairline);
+	margin: 0;
+}
+
+/* A rule that carries the logo's bevel: bright, then a dark flip. */
+.rule--chrome {
+	height: 2px;
+	border: 0;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		var(--hairline-strong) 12%,
+		rgb(231 232 236 / 55%) 50%,
+		var(--hairline-strong) 88%,
+		transparent
+	);
+}
+
+.chrome-text {
+	background: var(--chrome);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.lead {
+	font-size: var(--step-1);
+	line-height: 1.5;
+	color: var(--silver);
+}
+
+.dim {
+	color: var(--silver-dim);
+}
+
+.numeral {
+	font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* ==========================================================================
+   links & actions
+   ========================================================================== */
+
+/* Text links keep a hairline underline that thickens on hover — no buttons
+   anywhere except the two places you can buy something. */
+.link {
+	color: var(--silver);
+	text-decoration: none;
+	background-image: linear-gradient(var(--hairline-strong), var(--hairline-strong));
+	background-repeat: no-repeat;
+	background-position: 0 100%;
+	background-size: 100% 1px;
+	transition: background-size 0.35s var(--ease);
+	padding-bottom: 0.12em;
+}
+
+.link:hover,
+.link:focus-visible {
+	background-image: linear-gradient(var(--silver), var(--silver));
+}
+
+.action {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.9em;
+	padding: 0.95em 1.9em;
+	border: 1px solid var(--hairline-strong);
+	font-family: var(--font-display);
+	font-size: var(--step--1);
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: var(--silver);
+	background: transparent;
+	transition:
+		border-color 0.3s var(--ease),
+		color 0.3s var(--ease),
+		background-color 0.3s var(--ease);
+}
+
+.action:hover,
+.action:focus-visible {
+	border-color: var(--silver);
+	background: rgb(231 232 236 / 5%);
+}
+
+/* The only warm thing on the site. */
+.action--ticket {
+	color: var(--filament-bright);
+	border-color: rgb(207 149 82 / 45%);
+}
+
+.action--ticket:hover,
+.action--ticket:focus-visible {
+	border-color: var(--filament);
+	background: rgb(207 149 82 / 8%);
+}
+
+.actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+/* ==========================================================================
+   motion
+   ========================================================================== */
+
+[data-reveal] {
+	opacity: 0;
+	transform: translateY(1.25rem);
+	transition:
+		opacity 0.9s var(--ease),
+		transform 0.9s var(--ease);
+	transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal='shown'] {
+	opacity: 1;
+	transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+
+	[data-reveal] {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+/* ==========================================================================
+   utilities
+   ========================================================================== */
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+}
+
+.skip-link {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -120%);
+	z-index: 100;
+	padding: 0.75rem 1.5rem;
+	background: var(--silver);
+	color: var(--ink);
+	font-family: var(--font-display);
+	font-size: var(--step--1);
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+.skip-link:focus {
+	transform: translate(-50%, 0);
+}

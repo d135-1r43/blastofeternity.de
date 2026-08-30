@@ -1,0 +1,65 @@
+{
+	"id": "site",
+	"title": "Blast of Eternity",
+	"tagline": "Laut. Provozierend. Einzigartig.",
+	"presenter": "CVJM Jugendkultur & Musik e. V.",
+	"description": "Blast of Eternity — Metal-Festival und Clubkonzerte in Heilbronn, veranstaltet vom CVJM Jugendkultur & Musik e. V.",
+	"url": "https://www.blastofeternity.de",
+	"locale": "de-DE",
+	"navigation": [
+		{ "label": "Festival", "href": "/boe" },
+		{ "label": "Clubkonzerte", "href": "/konzerte" },
+		{ "label": "Podcast", "href": "/podcast" },
+		{ "label": "Über uns", "href": "/uber-uns" },
+		{ "label": "Kontakt", "href": "/kontakt" }
+	],
+	"legal_navigation": [
+		{ "label": "Impressum", "href": "/impressum" },
+		{ "label": "Datenschutz", "href": "/datenschutz" }
+	],
+	"socials": [
+		{
+			"platform": "Instagram",
+			"handle": "@blastofeternity",
+			"url": "https://www.instagram.com/blastofeternity/"
+		},
+		{
+			"platform": "Facebook",
+			"handle": "blastofeternity",
+			"url": "https://www.facebook.com/blastofeternity"
+		}
+	],
+	"organisation": {
+		"name": "CVJM Jugendkultur & Musik e. V.",
+		"street": "Herdstr. 16",
+		"postal_code": "74252",
+		"city": "Massenbachhausen",
+		"country": "Deutschland",
+		"email": "info@blastofeternity.de",
+		"press_email": "mail@blastofeternity.de",
+		"phone": "+49 151 50663634",
+		"phone_label": "0151 50663634",
+		"board": ["Markus Herhoffer", "Georg Vogt"],
+		"register_court": "Amtsgericht Stuttgart",
+		"register_number": "VR 103542"
+	},
+	"bank": {
+		"holder": "CVJM Jugendkultur & Musik e. V.",
+		"bank": "Kreissparkasse Heilbronn",
+		"bic": "HEISDE66XXX",
+		"iban": "DE94 6205 0000 0000 2138 73"
+	},
+	"contact": {
+		"intro": "Fragen zum Festival, zu Konzerten, Sponsoring, Mitarbeit oder Booking? Schreib uns.",
+		"form_endpoint": null,
+		"subjects": [
+			"Festival",
+			"Clubkonzerte",
+			"Booking",
+			"Sponsoring",
+			"Mitarbeit",
+			"Presse",
+			"Sonstiges"
+		]
+	}
+}

@@ -1,0 +1,209 @@
+[
+	{
+		"id": "boe-2026",
+		"status": "published",
+		"sort": 1,
+		"state": "upcoming",
+		"year": 2026,
+		"slug": "2026",
+		"title": "Blast of Eternity Festival 2026",
+		"date_start": "2026-11-06",
+		"date_end": "2026-11-07",
+		"date_label": "6. & 7. November 2026",
+		"date_short": "Fr 06.11. / Sa 07.11.2026",
+		"venue": {
+			"name": "Maschinenfabrik Heilbronn",
+			"legal_name": "Freies Kulturzentrum Maschinenfabrik Heilbronn e. V.",
+			"street": "Olgastraße 45",
+			"postal_code": "74072",
+			"city": "Heilbronn",
+			"url": "https://www.maschinenfabrik-hn.de"
+		},
+		"poster": null,
+		"tickets": {
+			"url": "https://www.eventim-light.com/de/a/5b2552d4bb0a4d04c778b31f/e/6a6c86b958146fadd1e03c27",
+			"provider": "Eventim Light",
+			"note": "Alle Preise im Vorverkauf, zzgl. Gebühren.",
+			"prices": [
+				{ "label": "Freitag", "amount": 18, "currency": "EUR" },
+				{ "label": "Samstag", "amount": 23, "currency": "EUR" },
+				{ "label": "Freitag + Samstag", "amount": 33, "currency": "EUR" }
+			]
+		},
+		"running_order": [],
+		"running_order_note": "Die Running Order steht noch nicht fest. Sie erscheint hier, sobald sie feststeht.",
+		"lineup": [
+			{
+				"id": "wytch-hazel",
+				"sort": 1,
+				"tier": 1,
+				"name": "Wytch Hazel",
+				"origin": "GBR",
+				"genre": "Heavy Metal",
+				"image": "/images/bands/wytch-hazel.jpg",
+				"video": "79FMltWsgX0"
+			},
+			{
+				"id": "signum-regis",
+				"sort": 2,
+				"tier": 1,
+				"name": "Signum Regis",
+				"origin": "SVK",
+				"genre": "Power Metal",
+				"image": "/images/bands/signum-regis.jpg",
+				"video": "8pL64JPVzj4"
+			},
+			{
+				"id": "fellowship",
+				"sort": 3,
+				"tier": 1,
+				"name": "Fellowship",
+				"origin": "GBR",
+				"genre": "Power Metal",
+				"image": "/images/bands/fellowship.jpg",
+				"video": "p75OnvNL-HY"
+			},
+			{
+				"id": "thy-bleeding-skies",
+				"sort": 4,
+				"tier": 2,
+				"name": "Thy Bleeding Skies",
+				"origin": null,
+				"genre": "Melodic Death Metal",
+				"image": "/images/bands/thy-bleeding-skies.jpg",
+				"video": "wEag0-_cvp0"
+			},
+			{
+				"id": "triuwint",
+				"sort": 5,
+				"tier": 2,
+				"name": "Triuwint",
+				"origin": null,
+				"genre": "Melodic Black Metal",
+				"image": "/images/bands/triuwint.jpg",
+				"video": "JHRoMK1Jo3k"
+			},
+			{
+				"id": "cantus-levitas",
+				"sort": 6,
+				"tier": 2,
+				"name": "Cantus Levitas",
+				"origin": null,
+				"genre": "Folk Metal",
+				"image": "/images/bands/cantus-levitas.jpg",
+				"video": "7FKvcWJWPUE"
+			},
+			{
+				"id": "hell-patroel",
+				"sort": 7,
+				"tier": 2,
+				"name": "Hell Patröl",
+				"origin": null,
+				"genre": "Speed Metal",
+				"image": "/images/bands/hell-patroel.jpg",
+				"video": "ewKPMVl7BIw"
+			},
+			{
+				"id": "dawn-of-revenge",
+				"sort": 8,
+				"tier": 3,
+				"name": "Dawn of Revenge",
+				"origin": null,
+				"genre": "Modern Metal / Melodic Metalcore",
+				"image": "/images/bands/dawn-of-revenge.jpg",
+				"video": "jnwgeEfkyE8"
+			},
+			{
+				"id": "the-advent-of-a-miracle",
+				"sort": 9,
+				"tier": 3,
+				"name": "The Advent of a Miracle",
+				"origin": null,
+				"genre": "Hardcore",
+				"image": "/images/bands/the-advent-of-a-miracle.jpg",
+				"video": "QuaoDwLDxzE"
+			},
+			{
+				"id": "steikon",
+				"sort": 10,
+				"tier": 3,
+				"name": "Steikon",
+				"origin": null,
+				"genre": "Alternative Metal",
+				"image": "/images/bands/steikon.jpg",
+				"video": "zPYeVQ_ZJPY"
+			}
+		],
+		"faq": [
+			{
+				"id": "minderjaehrig",
+				"sort": 1,
+				"question": "Ich bin minderjährig. Was muss ich beachten?",
+				"answer": [
+					"Wenn du unter 16 Jahre alt bist, beachte bitte die Hinweise der Maschinenfabrik Heilbronn."
+				],
+				"link": {
+					"label": "Hinweise der Maschinenfabrik",
+					"url": "https://www.maschinenfabrik-hn.de"
+				}
+			},
+			{
+				"id": "barrierefreiheit",
+				"sort": 2,
+				"question": "Ich habe eine körperliche Beeinträchtigung. Kann ich trotzdem kommen?",
+				"answer": [
+					"Die Maschinenfabrik ist barrierefrei. Zum Club gibt es einen separaten, ebenerdigen Eingang, der auch für Rollstuhlfahrer*innen geeignet ist. Begleitpersonen erhalten freien Eintritt.",
+					"Damit beim Festival alles reibungslos funktioniert, nimm bitte vorher Kontakt mit uns auf."
+				],
+				"link": { "label": "Kontakt aufnehmen", "url": "/kontakt" }
+			},
+			{
+				"id": "eintritt",
+				"sort": 3,
+				"question": "Warum ist der Eintritt so günstig?",
+				"answer": [
+					"Es ist uns ein wichtiges Anliegen, dass sich auch in schwierigen Zeiten jeder einen Festivalbesuch leisten kann. Daher arbeiten wir mit Stiftungen und Sponsoren zusammen. Sämtliche Arbeiten, von der ersten Planung bis zur finalen Durchführung, leisten wir ehrenamtlich. Wir streben keinen Gewinn an, sondern die schwarze Null.",
+					"Wenn du uns über deinen Festivalbesuch hinaus unterstützen möchtest, freuen wir uns über eine Spende. Das hilft uns, das Festival in dieser Form auch in Zukunft zu erhalten."
+				],
+				"bank": true
+			},
+			{
+				"id": "mitarbeit",
+				"sort": 4,
+				"question": "Ich möchte bei euch mitarbeiten. An wen kann ich mich wenden?",
+				"answer": [
+					"Wir freuen uns immer über helfende Hände. Wenn du dich über die Möglichkeiten der Mitarbeit im CVJM Jugendkultur & Musik e. V. informieren möchtest, sprich uns am besten einfach beim Festival an.",
+					"Wenn du nicht da sein kannst oder ein bisschen schüchtern bist, schreib uns gerne über das Kontaktformular."
+				],
+				"link": { "label": "Kontaktformular", "url": "/kontakt" }
+			},
+			{
+				"id": "merch",
+				"sort": 5,
+				"question": "Gibt es Merch? Und wie läuft die Bezahlung?",
+				"answer": [
+					"Wir lieben Merch und die Bands natürlich auch. Deshalb haben wir im Café eine eigene Ecke, wo du dich mit dem Merch deiner Lieblingsband eindecken kannst. Dort kannst du grundsätzlich in bar bezahlen. Für Merch vom Blast of Eternity ist auch Kartenzahlung möglich."
+				]
+			},
+			{
+				"id": "essen",
+				"sort": 6,
+				"question": "Kann man auf dem Festival etwas essen?",
+				"answer": [
+					"Da wir nur ein kleines Team sind, können wir leider kein eigenes Essensangebot gewährleisten. Du kannst dich aber in der direkten Umgebung versorgen. Eine erlesene Auswahl an Getränken ist jedoch vorhanden."
+				]
+			}
+		],
+		"travel": {
+			"body": [
+				"Die Maschinenfabrik liegt in der Heilbronner Innenstadt, nur wenige Gehminuten vom Hauptbahnhof entfernt, und ist daher ideal mit öffentlichen Verkehrsmitteln zu erreichen.",
+				"Wer mit dem Auto kommen möchte, kann die Parkplätze in der Bahnhofsvorstadt und Innenstadt benutzen — zum Beispiel Theresienwiese, Telefunken-Park, Experimenta, Käthchenhof oder Stadtgalerie."
+			],
+			"link": {
+				"label": "Anfahrt bei der Maschinenfabrik",
+				"url": "https://www.maschinenfabrik-hn.de"
+			},
+			"map_url": "https://www.openstreetmap.org/search?query=Olgastra%C3%9Fe%2045%2C%2074072%20Heilbronn"
+		}
+	}
+]

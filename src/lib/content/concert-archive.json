@@ -1,0 +1,306 @@
+[
+	{
+		"id": "rites-of-the-blood-moon-2026",
+		"status": "published",
+		"sort": 1,
+		"date": "2026-02-21",
+		"date_label": "21. Februar 2026",
+		"title": "Rites of the Blood Moon",
+		"city": "Heilbronn",
+		"lineup": ["Ereb Altor", "Skyforger", "Wolfchant", "Belore"],
+		"description": [
+			"Ereb Altor verbinden die rohe Energie des Metals mit atmosphärischen Klängen — im Gepäck ihr Album „Hälsingemörker“. Skyforger feiern 30 Jahre lettisches Folk-Metal-Erbe, Wolfchant entführen mit Growls und Melodien in eine Welt voller Mythen, und Belore verschmelzen atmosphärischen Metal mit hypnotisierenden Melodien."
+		],
+		"note": null
+	},
+	{
+		"id": "dornenreich-arcane-ceremonies-2024",
+		"status": "published",
+		"sort": 2,
+		"date": "2024-10-12",
+		"date_label": "12. Oktober 2024",
+		"title": "Dornenreich — akustisch (Arcane Ceremonies)",
+		"city": "Heilbronn",
+		"lineup": ["Dornenreich", "Ellereve"],
+		"description": [
+			"Entlang eines speziellen Spannungsbogens boten Dornenreich eine Auswahl aus verschiedensten Schaffensperioden der Band. Support kam von Ellereve — der Singer-Songwriterin Elisa Giulia Teschner, deren intensive Dark-Rock-Songs voller emotionaler Dringlichkeit und Sehnsucht sind."
+		],
+		"note": null
+	},
+	{
+		"id": "kilian-mohns-micha-kunze-2023",
+		"status": "published",
+		"sort": 3,
+		"date": "2023-05-26",
+		"date_label": "26. Mai 2023",
+		"title": "Kilian Mohns & Micha Kunze",
+		"city": "Heilbronn",
+		"lineup": ["Kilian Mohns", "Micha Kunze", "Dumon"],
+		"description": [
+			"„Abwarten & Tee trinken“-Tour 2023. Ein Mix aus Akustik-Klängen und Poetry — unaufdringlich, tief, ehrlich. Kilian Mohns mischt melancholische Singer-Songwriter-Musik mit einer Ein-Mann-Loop-Show, Micha Kunze bringt nur ein Instrument mit: seine Stimme."
+		],
+		"note": null
+	},
+	{
+		"id": "finsterforst-2023",
+		"status": "published",
+		"sort": 4,
+		"date": "2023-02-05",
+		"date_label": "5. Februar 2023",
+		"title": "Finsterforst + Morgarten + Entgeist",
+		"city": "Heilbronn",
+		"lineup": ["Finsterforst", "Morgarten", "Entgeist"],
+		"description": [
+			"Seit 2006 präsentieren die Schwarzwälder von Finsterforst Pagan Metal mit starkem Black-Metal-Einschlag. Mit „Zerfall“ schaffte es die Band erstmals in die Charts."
+		],
+		"note": null
+	},
+	{
+		"id": "dornenreich-doppeltour-2022",
+		"status": "published",
+		"sort": 5,
+		"date": "2022-06-11",
+		"date_label": "11. Juni 2022",
+		"title": "Dornenreich — Doppeltour 2022",
+		"city": "Stuttgart",
+		"lineup": ["Dornenreich"],
+		"description": [
+			"20 Jahre „Her von welken Nächten“ und Präsentation des Albums „Du wilde Liebe sei“. An Mikrofon und Bassgitarre unterstützt von Heretoirs Eklatanz."
+		],
+		"note": null
+	},
+	{
+		"id": "keine-konzerte-2021",
+		"status": "published",
+		"sort": 6,
+		"date": "2021-01-01",
+		"date_label": "2021",
+		"title": "Keine Clubkonzerte",
+		"city": null,
+		"lineup": [],
+		"description": [],
+		"note": "Aufgrund der Corona-Pandemie fanden 2021 keine Clubkonzerte statt."
+	},
+	{
+		"id": "from-shadows-to-light-2020",
+		"status": "published",
+		"sort": 7,
+		"date": "2020-03-13",
+		"date_label": "13. März 2020",
+		"title": "From Shadows to Light, Ashes Emblaze, Nevermore Awake",
+		"city": "Neckarsulm",
+		"lineup": ["From Shadows to Light", "Ashes Emblaze", "Nevermore Awake"],
+		"description": [
+			"Mitreißend, vielseitig und einprägsam: From Shadows to Light schaffen mit starken Metalcore-Einflüssen ihren eigenen Stil, mit mehrstimmigem Gesang und Cello als Alleinstellungsmerkmal."
+		],
+		"note": "Ashes Emblaze mussten kurzfristig absagen."
+	},
+	{
+		"id": "winter-armageddon-2020",
+		"status": "published",
+		"sort": 8,
+		"date": "2020-01-18",
+		"date_label": "18. Januar 2020",
+		"title": "Winter Armageddon",
+		"city": "Neckarsulm",
+		"lineup": ["Welicoruss", "Cantus Levitas", "Opus Iræ"],
+		"description": [
+			"Welicoruss präsentierten „Siberian Heathen Horde“ — die unheimliche Atmosphäre der sibirischen Wälder. Dazu Folk Metal von Cantus Levitas und die Dunkelheit und Mystik von Opus Iræ."
+		],
+		"note": null
+	},
+	{
+		"id": "shark-tank-2019",
+		"status": "published",
+		"sort": 9,
+		"date": "2019-10-26",
+		"date_label": "26. Oktober 2019",
+		"title": "Shark Tank & The Cake Is a Lie",
+		"city": "Neckarsulm",
+		"lineup": ["Shark Tank", "The Cake Is a Lie", "Florida or Bust", "Silence Failed"],
+		"description": [
+			"Ein fränkischer Doppelpack in Sachen Post-Hardcore, Metalcore und Melodic Hardcore — beide mit brandneuem Album im Gepäck. Unterstützt von den lokalen Helden Florida or Bust und Silence Failed."
+		],
+		"note": null
+	},
+	{
+		"id": "ancient-bards-2019",
+		"status": "published",
+		"sort": 10,
+		"date": "2019-10-12",
+		"date_label": "12. Oktober 2019",
+		"title": "Ancient Bards & Sleeping Romance",
+		"city": "Neckarsulm",
+		"lineup": ["Ancient Bards", "Sleeping Romance", "Hell Patröl"],
+		"description": [
+			"Ancient Bards aus Rimini nehmen ihre Hörer mit in die Welt der Fantasysaga „The Black Crystal Sword“. Sleeping Romance bieten mediterranen Symphonic Metal. Den Abend eröffnete Hell Patröl."
+		],
+		"note": null
+	},
+	{
+		"id": "dornenreich-eklatanz-2019",
+		"status": "published",
+		"sort": 11,
+		"date": "2019-04-13",
+		"date_label": "13. April 2019",
+		"title": "Dornenreich feat. Eklatanz / Heretoir",
+		"city": "Neckarsulm",
+		"lineup": ["Dornenreich"],
+		"description": [
+			"Eine exklusive Warmup-Show zur „Leben und Leidenschaft“-Festivaltour. Auf nur 100 Stück limitierte Tickets sorgten für eine einmalige, intensive Atmosphäre."
+		],
+		"note": null
+	},
+	{
+		"id": "winter-armageddon-2019",
+		"status": "published",
+		"sort": 12,
+		"date": "2019-01-05",
+		"date_label": "5. Januar 2019",
+		"title": "Winter Armageddon Fest",
+		"city": "Neckarsulm",
+		"lineup": ["Cantus Levitas", "Opus Iræ", "Demorphed", "Entgeist"],
+		"description": [
+			"Dunkle und folkige Klänge im frostigen Winter: Folk Metal, Black Metal und Blackened Death im Kreatief Neckarsulm."
+		],
+		"note": null
+	},
+	{
+		"id": "leonov-2018",
+		"status": "published",
+		"sort": 13,
+		"date": "2018-11-10",
+		"date_label": "10. November 2018",
+		"title": "Leonov",
+		"city": "Neckarsulm",
+		"lineup": ["Leonov", "Eternal Engine", "OneInchMan"],
+		"description": [
+			"Irgendwo zwischen Sphärik, Post-Rock und Metal lässt sich die Osloer Formation Leonov verorten. Ihre Performance im Kreatief war ihre einzige in Deutschland in jenem Jahr."
+		],
+		"note": null
+	},
+	{
+		"id": "fight-the-fade-2018",
+		"status": "published",
+		"sort": 14,
+		"date": "2018-09-28",
+		"date_label": "28. September 2018",
+		"title": "Fight the Fade, Rising Insane, Mel T. Eyes",
+		"city": "Neckarsulm",
+		"lineup": ["Fight the Fade", "Rising Insane", "Mel T. Eyes"],
+		"description": [
+			"Fight the Fade kamen auf ihrer „Darkness in Me“-Tour erstmals nach Neckarsulm. Toursupport von Rising Insane und der Heilbronner Melodic-Hardcore-Institution Mel T. Eyes."
+		],
+		"note": null
+	},
+	{
+		"id": "sleeping-romance-2018",
+		"status": "published",
+		"sort": 15,
+		"date": "2018-09-22",
+		"date_label": "22. September 2018",
+		"title": "Sleeping Romance — Alba European Tour",
+		"city": "Neckarsulm",
+		"lineup": ["Sleeping Romance", "Within Silence", "Askara"],
+		"description": [
+			"Die Symphonic-Metal-Band Sleeping Romance kehrte mit der CD „Alba“ nach Neckarsulm zurück, begleitet von Within Silence aus der Slowakei und Askara aus der Schweiz."
+		],
+		"note": null
+	},
+	{
+		"id": "dornenreich-akustik-2018",
+		"status": "published",
+		"sort": 16,
+		"date": "2018-05-12",
+		"date_label": "12. Mai 2018",
+		"title": "Dornenreich — Akustik-Show",
+		"city": "Neckarsulm",
+		"lineup": ["Dornenreich"],
+		"description": [],
+		"note": null
+	},
+	{
+		"id": "welicoruss-2018",
+		"status": "published",
+		"sort": 17,
+		"date": "2018-02-25",
+		"date_label": "25. Februar 2018",
+		"title": "Welicoruss, Opus Iræ, Entgeist, Mournful Winter",
+		"city": "Neckarsulm",
+		"lineup": ["Welicoruss", "Opus Iræ", "Entgeist", "Mournful Winter"],
+		"description": [
+			"Welicoruss stehen für dunklen und mystischen Black Metal, der zeigt, wie eindrucksvoll moderner Metal und intensive Atmosphäre sich vereinen."
+		],
+		"note": null
+	},
+	{
+		"id": "dark-december-days-2017",
+		"status": "published",
+		"sort": 18,
+		"date": "2017-12-22",
+		"date_label": "22. Dezember 2017",
+		"title": "Dark December Days",
+		"city": "Neckarsulm",
+		"lineup": ["Wind Rose", "Morgarten", "Trollort", "Deathtiny"],
+		"description": [
+			"Treibender Black und Death Metal, gepaart mit folkigen Melodien: die zweiten Dark December Days widmeten sich ganz dem fantastischen Metal zwischen Zwergen, epischen Schlachten und dunkler Mystik."
+		],
+		"note": null
+	},
+	{
+		"id": "innerwish-2017",
+		"status": "published",
+		"sort": 19,
+		"date": "2017-03-03",
+		"date_label": "3. März 2017",
+		"title": "InnerWish, African Corpse, Pyroclasm",
+		"city": "Neckarsulm",
+		"lineup": ["InnerWish", "Pyroclasm"],
+		"description": [
+			"InnerWish aus Athen, seit 1995 eine der einflussreichsten Melodic-Metal-Bands ihres Teils von Europa, kamen für zwei exklusive Konzerte nach Deutschland."
+		],
+		"note": "African Corpse konnten aus gesundheitlichen Gründen nicht spielen."
+	},
+	{
+		"id": "winter-armageddon-2016",
+		"status": "published",
+		"sort": 20,
+		"date": "2016-12-17",
+		"date_label": "17. Dezember 2016",
+		"title": "Winter Armageddon Fest",
+		"city": "Neckarsulm",
+		"lineup": ["Slechtvalk", "Morgarten", "Nightland", "Cantus Levitas", "Opus Iræ"],
+		"description": [
+			"Das jährliche Black-Metal-Clubkonzert fand erstmals unter dem Namen „Winter Armageddon Fest“ statt. Headliner waren die niederländischen Black Metaller von Slechtvalk."
+		],
+		"note": null
+	},
+	{
+		"id": "theocracy-2016",
+		"status": "published",
+		"sort": 21,
+		"date": "2016-11-05",
+		"date_label": "5. November 2016",
+		"title": "Theocracy, Within Silence & Support",
+		"city": "Neckarsulm",
+		"lineup": ["Theocracy", "Within Silence", "Circle of Silence", "Acromonia"],
+		"description": [
+			"Theocracy aus den USA zählen spätestens seit „Mirror of Souls“ zu den beliebtesten Power-Metal-Bands der christlichen Szene. Ihren Stil beschreiben sie selbst als „Epic Melodic Power Metal“."
+		],
+		"note": null
+	},
+	{
+		"id": "welicoruss-2016",
+		"status": "published",
+		"sort": 22,
+		"date": "2016-09-02",
+		"date_label": "2. September 2016",
+		"title": "Welicoruss, Morgarten, Opus Iræ, Ferah",
+		"city": "Neckarsulm",
+		"lineup": ["Welicoruss", "Morgarten", "Opus Iræ", "Ferah"],
+		"description": [
+			"Komplexes Songwriting trifft auf Folk-Melodien, progressive Riffs und epische Sinfonik — inspiriert von altrussischer und skandinavischer Kultur."
+		],
+		"note": null
+	}
+]

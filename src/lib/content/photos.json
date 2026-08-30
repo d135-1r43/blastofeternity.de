@@ -1,0 +1,98 @@
+[
+	{
+		"id": "crowd",
+		"status": "published",
+		"sort": 1,
+		"src": "/images/crowd",
+		"widths": [800, 1400, 1800, 2200],
+		"width": 2500,
+		"height": 1667,
+		"alt": "Publikum mit erhobenen Händen vor der Bühne, violett und weiß ausgeleuchtet",
+		"caption": "Blast of Eternity, Neckarsulm",
+		"year": 2012
+	},
+	{
+		"id": "stage",
+		"status": "published",
+		"sort": 2,
+		"src": "/images/stage",
+		"widths": [800, 1400, 1800, 2200],
+		"width": 2500,
+		"height": 1667,
+		"alt": "Band auf der Bühne im grünen Scheinwerferlicht, davor das Publikum",
+		"caption": "Blast of Eternity, Neckarsulm",
+		"year": 2012
+	},
+	{
+		"id": "hands",
+		"status": "published",
+		"sort": 3,
+		"src": "/images/hands",
+		"widths": [800, 1400, 1800, 2200],
+		"width": 2500,
+		"height": 1667,
+		"alt": "Voller Saal, hunderte erhobene Hände im Gegenlicht",
+		"caption": "Blast of Eternity, Neckarsulm",
+		"year": 2012
+	},
+	{
+		"id": "stagedive",
+		"status": "published",
+		"sort": 4,
+		"src": "/images/stagedive",
+		"widths": [800, 1400, 1800, 2200],
+		"width": 2500,
+		"height": 1667,
+		"alt": "Sänger beugt sich im warmen Bühnenlicht über das Publikum",
+		"caption": "Blast of Eternity, Neckarsulm",
+		"year": 2012
+	},
+	{
+		"id": "guitar",
+		"status": "published",
+		"sort": 5,
+		"src": "/images/guitar",
+		"widths": [800, 1400, 1800, 2200],
+		"width": 2500,
+		"height": 1667,
+		"alt": "Gitarrist im Gegenlicht, orange und grün angestrahlt",
+		"caption": "Blast of Eternity, Neckarsulm",
+		"year": 2012
+	},
+	{
+		"id": "headbang",
+		"status": "published",
+		"sort": 6,
+		"src": "/images/headbang",
+		"widths": [800, 1400, 1800, 2200],
+		"width": 2500,
+		"height": 1667,
+		"alt": "Headbangende Person mit fliegenden Haaren im roten Licht",
+		"caption": "Blast of Eternity, Neckarsulm",
+		"year": 2012
+	},
+	{
+		"id": "amp",
+		"status": "published",
+		"sort": 7,
+		"src": "/images/amp",
+		"widths": [800, 1400, 1800, 2200],
+		"width": 2500,
+		"height": 1667,
+		"alt": "Glühende Röhren eines Gitarrenverstärkers im violetten Licht",
+		"caption": "Backline, Blast of Eternity",
+		"year": 2012
+	},
+	{
+		"id": "reach",
+		"status": "published",
+		"sort": 8,
+		"src": "/images/reach",
+		"widths": [800, 960],
+		"width": 960,
+		"height": 640,
+		"alt": "Ausgestreckte Hände greifen im Gegenlicht zur Bühne — Schwarzweiß",
+		"caption": "Blast of Eternity, Neckarsulm",
+		"year": 2011
+	}
+]

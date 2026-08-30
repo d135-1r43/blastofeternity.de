@@ -1,0 +1,5 @@
+# Legacy URLs from the Webflow site. Netlify and Cloudflare Pages read this file;
+# on other hosts set up the same three redirects in the server config.
+/historie   /impressum/   301
+/boe        /boe/         301
+/uber-uns   /uber-uns/    301

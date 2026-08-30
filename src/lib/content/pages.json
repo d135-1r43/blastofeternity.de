@@ -1,0 +1,85 @@
+{
+	"home": {
+		"id": "home",
+		"aftermovie": {
+			"title": "Aftermovie 2025",
+			"video": "uXCiGO9o3Pw",
+			"caption": "Zwei Tage Blast of Eternity 2025 in dreieinhalb Minuten."
+		},
+		"intro": [
+			"Seit 2011 veranstalten wir Konzerte von Rock- und Metalbands mit christlichem Hintergrund sowie von lokalen Bands aus Heilbronn und Umgebung.",
+			"Zwei Tage Festival im November. Über das Jahr verteilt Clubkonzerte. Alles ehrenamtlich, ohne Gewinnabsicht."
+		]
+	},
+	"about": {
+		"id": "about",
+		"title": "Über uns",
+		"lead": "Hinter dem Blast of Eternity steht der CVJM Jugendkultur & Musik e. V.",
+		"body": [
+			"Seit 2011 veranstalten wir Konzerte von Rock- und Metalbands mit christlichem Hintergrund sowie von lokalen Bands aus Heilbronn und Umgebung.",
+			"Unser Ziel ist es zu zeigen, dass sich christlicher Glaube und harte Musik nicht widersprechen. Mit dem Festival Blast of Eternity und mit Clubkonzerten beweisen wir, dass sich Glaube nicht auf den Gottesdienst am Sonntag beschränken muss.",
+			"Mit unserer Arbeit unterstützen wir Menschen bei der Suche nach Antworten auf zentrale Fragen ihres Lebens aus dem christlichen Glauben und nehmen ihre Individualität wahr. Als Christen sorgen wir dafür, dass die Botschaft von Jesus Christus in der Metal- und Rockszene auf ihre ganz eigene Art erlebbar wird."
+		],
+		"pull_quote": "Laut. Provozierend. Einzigartig.",
+		"facts": [
+			{ "label": "Gegründet", "value": "2011" },
+			{ "label": "Festivalausgaben", "value": "13" },
+			{ "label": "Bands auf unseren Bühnen", "value": "über 150" },
+			{ "label": "Bezahlte Stellen", "value": "keine" }
+		]
+	},
+	"imprint": {
+		"id": "imprint",
+		"title": "Impressum",
+		"sections": [
+			{
+				"heading": "Angaben gemäß § 5 DDG",
+				"body": ["CVJM Jugendkultur & Musik e. V.", "Herdstr. 16", "74252 Massenbachhausen"]
+			},
+			{
+				"heading": "Vertreten durch",
+				"body": ["Die Vorstände Markus Herhoffer und Georg Vogt"]
+			},
+			{
+				"heading": "Kontakt",
+				"body": ["Telefon: 0151 50663634", "E-Mail: mail@blastofeternity.de"]
+			},
+			{
+				"heading": "Registereintrag",
+				"body": [
+					"Eintragung im Vereinsregister",
+					"Registergericht: Stuttgart",
+					"Registernummer: VR 103542"
+				]
+			},
+			{
+				"heading": "Streitschlichtung",
+				"body": [
+					"Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+				]
+			},
+			{
+				"heading": "Haftung für Inhalte",
+				"body": [
+					"Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen."
+				]
+			},
+			{
+				"heading": "Haftung für Links",
+				"body": [
+					"Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen."
+				]
+			},
+			{
+				"heading": "Urheberrecht",
+				"body": [
+					"Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen."
+				]
+			},
+			{
+				"heading": "Quelle",
+				"body": ["https://www.e-recht24.de"]
+			}
+		]
+	}
+}

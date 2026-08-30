@@ -1,0 +1,27 @@
+[
+	{
+		"id": "dornenreich-vinsta-2026",
+		"status": "published",
+		"sort": 1,
+		"state": "upcoming",
+		"date": "2026-11-29",
+		"date_label": "29. November 2026",
+		"title": "Dornenreich",
+		"subtitle": "Unser Flügelschlag — Akustiktour",
+		"support": ["Vinsta"],
+		"venue": "Nikolaikirche",
+		"city": "Heilbronn",
+		"tickets_url": "https://ti.to/blastofeternity/dornenreich-vinsta-2026",
+		"image": "/images/reach-960.jpg",
+		"description": [
+			"Im Vorfeld der Aufnahmen ihres mit Spannung erwarteten neuen Studioalbums kehren Dornenreich 2026 mit ihrem legendären Akustikprogramm auf ausgewählte Bühnen zurück — für wenige exklusive Konzerte und mit einer fein gesponnenen Setliste, die auch Live-Premieren nie zuvor gespielter Fanfavoriten einschließen wird.",
+			"Das für die Musik der Band ureigene Zusammenspiel aus Dynamik, feinfühligen Nuancen und Intensität verleiht den akustischen Bearbeitungen ihrer Lieder eine zusätzliche Ebene an Tiefe und Authentizität.",
+			"Dornenreichs Ausdruck speist sich aus der geheimnisvollen Intimität des Folk, aus der urwüchsigen Energie von Rock und Metal wie auch aus der Eindringlichkeit klassischer Musik. Das stetige Weiterdenken und Finden frischer Zugänge macht Dornenreich zu einem sich stets neu entwickelnden Erlebnis, das sich anhand des reichen Albenkatalogs nachzeichnen lässt.",
+			"Begleitet werden Dornenreich von ihren österreichischen Freunden Vinsta, die nach längerer Konzertpause mit einem speziellen Akustikprogramm aufwarten — reduziert, direkt und getragen von ihren charakteristischen alpinen Klängen."
+		],
+		"quote": {
+			"text": "So klingt keine andere Band auf diesem Planeten.",
+			"source": "Sonic Seducer, Juni 2021"
+		}
+	}
+]
