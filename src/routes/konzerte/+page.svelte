@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
 	import Figure from '$lib/components/Figure.svelte';
 	import PageHead from '$lib/components/PageHead.svelte';
 	import SectionHead from '$lib/components/SectionHead.svelte';
@@ -9,13 +10,12 @@
 	const [plateHeadbang] = $derived(photos);
 </script>
 
-<svelte:head>
-	<title>Clubkonzerte — Blast of Eternity</title>
-	<meta
-		name="description"
-		content="Anstehende Clubkonzerte des CVJM Jugendkultur & Musik e. V. in Heilbronn — und ein Archiv aller Shows seit 2016."
-	/>
-</svelte:head>
+<Seo
+	site={data.site}
+	title="Clubkonzerte"
+	description="Anstehende Clubkonzerte des CVJM Jugendkultur & Musik e. V. in Heilbronn — und ein Archiv aller Shows seit 2016."
+	image="/og/konzerte.jpg"
+/>
 
 <PageHead eyebrow="Das ganze Jahr" title="Clubkonzerte" photo={plateHeadbang}>
 	Zwischen den Festivals holen wir Bands in kleine Räume: ein paar hundert Leute, kurze Wege, nichts

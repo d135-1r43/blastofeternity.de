@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
 	import PageHead from '$lib/components/PageHead.svelte';
 	import { reveal } from '$lib/reveal';
 
@@ -6,11 +7,12 @@
 	const { privacy } = $derived(data);
 </script>
 
-<svelte:head>
-	<title>Datenschutzerklärung — Blast of Eternity</title>
-	<meta name="description" content="Datenschutzerklärung von blastofeternity.de." />
-	<meta name="robots" content="noindex" />
-</svelte:head>
+<Seo
+	site={data.site}
+	title={privacy.title}
+	description="Datenschutzerklärung von blastofeternity.de."
+	noindex
+/>
 
 <PageHead eyebrow="Rechtliches" title={privacy.title} />
 

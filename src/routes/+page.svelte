@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
 	import EventSchema from '$lib/components/EventSchema.svelte';
 	import Figure from '$lib/components/Figure.svelte';
 	import Hero from '$lib/components/Hero.svelte';
@@ -13,16 +14,13 @@
 	const [plateHands, plateDive] = $derived(plates);
 </script>
 
-<svelte:head>
-	<title>Blast of Eternity — Metal-Festival & Clubkonzerte in Heilbronn</title>
-	<meta
-		name="description"
-		content="Blast of Eternity {festival.year}: {festival.date_label} in der {festival.venue
-			.name}. Dazu Clubkonzerte über das ganze Jahr. Veranstaltet vom CVJM Jugendkultur & Musik e. V."
-	/>
-	<meta property="og:title" content="Blast of Eternity {festival.year}" />
-	<meta property="og:image" content="{data.site.url}/images/crowd-1400.jpg" />
-</svelte:head>
+<Seo
+	site={data.site}
+	title={data.site.title}
+	description="Blast of Eternity {festival.year}: {festival.date_label} in der {festival.venue
+		.name}. Dazu Clubkonzerte über das ganze Jahr. Veranstaltet vom CVJM Jugendkultur & Musik e. V."
+	image="/og/home.jpg"
+/>
 
 <EventSchema {festival} site={data.site} />
 

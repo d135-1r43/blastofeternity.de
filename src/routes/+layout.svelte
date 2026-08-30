@@ -10,12 +10,6 @@
 	const overlay = $derived(page.url.pathname === '/');
 </script>
 
-<svelte:head>
-	<meta property="og:site_name" content={data.site.title} />
-	<meta property="og:type" content="website" />
-	<meta property="og:locale" content="de_DE" />
-</svelte:head>
-
 <a class="skip-link" href="#inhalt">Zum Inhalt</a>
 
 <Header site={data.site} {overlay} />

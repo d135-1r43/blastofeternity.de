@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
 	import PageHead from '$lib/components/PageHead.svelte';
 	import SectionHead from '$lib/components/SectionHead.svelte';
 	import { reveal } from '$lib/reveal';
@@ -7,10 +8,7 @@
 	const { podcast, photo } = $derived(data);
 </script>
 
-<svelte:head>
-	<title>Podcast — Blast of Eternity</title>
-	<meta name="description" content={podcast.description} />
-</svelte:head>
+<Seo site={data.site} title="Podcast" description={podcast.description} image="/og/podcast.jpg" />
 
 <PageHead eyebrow="Zum Nachhören" title="Podcast" {photo}>
 	{podcast.description}

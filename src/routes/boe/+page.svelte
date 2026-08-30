@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
 	import EventSchema from '$lib/components/EventSchema.svelte';
 	import Figure from '$lib/components/Figure.svelte';
 	import Lineup from '$lib/components/Lineup.svelte';
@@ -13,14 +14,13 @@
 	const [plateStage, plateGuitar] = $derived(photos);
 </script>
 
-<svelte:head>
-	<title>Blast of Eternity Festival {festival.year} — Line-up, Tickets, Anfahrt</title>
-	<meta
-		name="description"
-		content="{festival.date_label}, {festival.venue
-			.name}. Line-up, Running Order, Tickets, FAQ und Anfahrt zum Blast of Eternity {festival.year}."
-	/>
-</svelte:head>
+<Seo
+	site={data.site}
+	title="Blast of Eternity Festival {festival.year}"
+	description="{festival.date_label} in der {festival.venue
+		.name}. Line-up, Tickets, Running Order, FAQ und Anfahrt."
+	image="/og/festival.jpg"
+/>
 
 <EventSchema {festival} site={data.site} />
 

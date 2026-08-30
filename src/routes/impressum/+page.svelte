@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
 	import PageHead from '$lib/components/PageHead.svelte';
 	import { reveal } from '$lib/reveal';
 
@@ -6,14 +7,12 @@
 	const { imprint } = $derived(data);
 </script>
 
-<svelte:head>
-	<title>Impressum — Blast of Eternity</title>
-	<meta
-		name="description"
-		content="Impressum des CVJM Jugendkultur & Musik e. V., Veranstalter des Blast of Eternity."
-	/>
-	<meta name="robots" content="noindex" />
-</svelte:head>
+<Seo
+	site={data.site}
+	title={imprint.title}
+	description="Impressum des CVJM Jugendkultur & Musik e. V., Veranstalter des Blast of Eternity."
+	noindex
+/>
 
 <PageHead eyebrow="Rechtliches" title={imprint.title} />
 

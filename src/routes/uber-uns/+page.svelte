@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Seo from '$lib/components/Seo.svelte';
 	import Figure from '$lib/components/Figure.svelte';
 	import Ornament from '$lib/components/Ornament.svelte';
 	import PageHead from '$lib/components/PageHead.svelte';
@@ -9,10 +10,7 @@
 	const [plateHands, plateReach] = $derived(photos);
 </script>
 
-<svelte:head>
-	<title>Über uns — Blast of Eternity</title>
-	<meta name="description" content={about.lead} />
-</svelte:head>
+<Seo site={data.site} title={about.title} description={about.lead} image="/og/about.jpg" />
 
 <PageHead eyebrow="Wer wir sind" title={about.title} photo={plateReach}>
 	{about.lead}

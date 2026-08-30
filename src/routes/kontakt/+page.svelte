@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { untrack } from 'svelte';
+	import Seo from '$lib/components/Seo.svelte';
 	import PageHead from '$lib/components/PageHead.svelte';
 	import { reveal } from '$lib/reveal';
 
@@ -48,13 +49,12 @@
 	}
 </script>
 
-<svelte:head>
-	<title>Kontakt — Blast of Eternity</title>
-	<meta
-		name="description"
-		content="Fragen zum Blast of Eternity, zu Clubkonzerten, Sponsoring, Mitarbeit oder Booking? So erreichst du uns."
-	/>
-</svelte:head>
+<Seo
+	site={data.site}
+	title="Kontakt"
+	description="Fragen zum Blast of Eternity, zu Clubkonzerten, Sponsoring, Mitarbeit oder Booking? So erreichst du uns."
+	image="/og/kontakt.jpg"
+/>
 
 <PageHead eyebrow="Schreib uns" title="Kontakt" photo={data.photo}>
 	{site.contact.intro}

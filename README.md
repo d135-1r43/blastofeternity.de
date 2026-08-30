@@ -12,6 +12,7 @@ pnpm build      # → build/
 pnpm preview    # serve build/ locally
 pnpm check      # svelte-check
 pnpm format     # prettier
+pnpm og         # regenerate the social cards in static/og
 ```
 
 ## How it is put together
@@ -112,6 +113,20 @@ client. Keep it in step if any of that changes.
 > and make sure a Vertrag über Auftragsverarbeitung (AVV) is in place with them.
 > The text is written to match what the code does, but it is not legal advice —
 > have it reviewed.
+
+### Social cards and the 404
+
+Every route sets its title, description, canonical URL and social card through
+`Seo.svelte`. The cards in `static/og` are rendered by `scripts/og-images.mjs`
+from the site's own wordmark and typeface — run `pnpm og` after changing the
+photographs or the wording, and commit the result.
+
+The 404 is a real prerendered page, not adapter-static's `fallback` shell: the
+shell is empty until JavaScript runs, and nothing else here needs JavaScript to
+render. `src/routes/404/` is built like any other route and
+`scripts/postbuild.mjs` copies it to `build/404.html`, where nginx and the
+static hosts look for it. Asset paths are absolute (`paths.relative: false`) so
+that copy stays valid a directory up.
 
 ## Deploying
 
