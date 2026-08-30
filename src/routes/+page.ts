@@ -12,17 +12,20 @@ export async function load() {
 		getUpcomingConcerts(),
 		getPodcast(),
 		getPages(),
-		getPhotosById('crowd', 'hands', 'amp', 'stagedive')
+		Promise.all([
+			getPhotosById('crowd', 'guitar', 'headbang', 'stage'),
+			getPhotosById('hands', 'stagedive')
+		])
 	]);
 
-	const [hero, ...plates] = photos;
+	const [heroPhotos, plates] = photos;
 
 	return {
 		festival,
 		concert: concerts[0] ?? null,
 		podcast,
 		pages,
-		hero,
+		heroPhotos,
 		plates
 	};
 }

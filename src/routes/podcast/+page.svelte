@@ -87,8 +87,9 @@
 		padding: 0.85em 1.5em;
 		border: 1px solid var(--hairline);
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step--1);
-		letter-spacing: 0.18em;
+		letter-spacing: 0.11em;
 		text-transform: uppercase;
 		text-decoration: none;
 		color: var(--silver-dim);
@@ -133,6 +134,7 @@
 	.number {
 		margin: 0;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step-2);
 		line-height: 1.2;
 		color: var(--steel);
@@ -148,8 +150,9 @@
 		gap: 0.4rem 1.25rem;
 		margin: 0.9rem 0 1.1rem;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step--1);
-		letter-spacing: 0.16em;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: var(--steel);
 	}

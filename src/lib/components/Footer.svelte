@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Ornament from './Ornament.svelte';
+	import Wordmark from './Wordmark.svelte';
 	import type { Site } from '$lib/types';
 
 	type Props = { site: Site };
@@ -10,6 +11,11 @@
 
 <footer class="footer">
 	<div class="page">
+		<a class="footer-mark" href="/">
+			<Wordmark height="clamp(2.75rem, 6vw, 3.75rem)" />
+			<span class="visually-hidden">Blast of Eternity — Startseite</span>
+		</a>
+
 		<Ornament width="14rem" />
 
 		<p class="motto">{site.tagline}</p>
@@ -72,10 +78,24 @@
 		background: var(--ink-sunk);
 	}
 
+	.footer-mark {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 2.25rem;
+		color: var(--silver-dim);
+		transition: color 0.3s var(--ease);
+	}
+
+	.footer-mark:hover,
+	.footer-mark:focus-visible {
+		color: var(--silver);
+	}
+
 	.motto {
 		margin: 2rem 0 clamp(3rem, 7vw, 5rem);
 		text-align: center;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step-1);
 		letter-spacing: 0.12em;
 		color: var(--silver-dim);

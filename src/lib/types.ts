@@ -7,6 +7,17 @@
  * that swapping the JSON for API responses is a change in `content.ts` only.
  */
 
+/** Anything `Figure` can render: a base path plus the widths on disk. */
+export type Image = {
+	/** Path without width suffix or extension, e.g. `/images/crowd`. */
+	src: string;
+	/** Rendered widths available on disk, ascending. */
+	widths: number[];
+	width: number;
+	height: number;
+	alt: string;
+};
+
 export type Link = {
 	label: string;
 	url: string;
@@ -149,7 +160,7 @@ export type Concert = {
 	venue: string;
 	city: string;
 	tickets_url: string | null;
-	image: string | null;
+	image: Image | null;
 	description: string[];
 	quote?: { text: string; source: string };
 };
@@ -190,17 +201,10 @@ export type Podcast = {
 
 /* ------------------------------------------------------------ collection: photos */
 
-export type Photo = {
+export type Photo = Image & {
 	id: string;
 	status: string;
 	sort: number;
-	/** Path without width suffix or extension, e.g. `/images/crowd`. */
-	src: string;
-	/** Rendered widths available on disk, ascending. */
-	widths: number[];
-	width: number;
-	height: number;
-	alt: string;
 	caption: string;
 	year: number;
 };

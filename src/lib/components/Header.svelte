@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
+	import Wordmark from './Wordmark.svelte';
 	import type { Site } from '$lib/types';
 
 	type Props = { site: Site; overlay?: boolean };
@@ -34,8 +35,8 @@
 <header class="masthead" class:overlay class:scrolled class:open>
 	<div class="page inner">
 		<a class="wordmark" href="/">
-			Blast of Eternity
-			<span class="visually-hidden">— Startseite</span>
+			<Wordmark height="var(--wordmark-height)" />
+			<span class="visually-hidden">Blast of Eternity — Startseite</span>
 		</a>
 
 		<button
@@ -82,10 +83,13 @@
 		border-bottom-color: transparent;
 	}
 
-	.masthead.overlay:not(.scrolled):not(.open) .wordmark,
 	.masthead.overlay:not(.scrolled):not(.open) nav a,
 	.masthead.overlay:not(.scrolled):not(.open) .toggle {
 		text-shadow: 0 1px 10px rgb(8 8 10 / 90%);
+	}
+
+	.masthead.overlay:not(.scrolled):not(.open) .wordmark {
+		filter: drop-shadow(0 1px 10px rgb(8 8 10 / 95%));
 	}
 
 	.masthead.overlay.scrolled,
@@ -100,17 +104,21 @@
 		align-items: center;
 		justify-content: space-between;
 		gap: 2rem;
-		min-height: 4.5rem;
+		min-height: 5.25rem;
 	}
 
 	.wordmark {
-		font-family: var(--font-display);
-		font-size: var(--step--1);
-		letter-spacing: 0.3em;
-		text-transform: uppercase;
-		text-decoration: none;
+		--wordmark-height: 2.45rem;
+		display: block;
+		flex: none;
 		color: var(--silver);
-		white-space: nowrap;
+		text-decoration: none;
+		transition: color 0.3s var(--ease);
+	}
+
+	.wordmark:hover,
+	.wordmark:focus-visible {
+		color: #fff;
 	}
 
 	nav ul {
@@ -123,8 +131,9 @@
 
 	nav a {
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step--1);
-		letter-spacing: 0.16em;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		text-decoration: none;
 		color: var(--silver-dim);
@@ -151,14 +160,19 @@
 		background: none;
 		padding: 0.5rem 0;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step--1);
-		letter-spacing: 0.2em;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--silver);
 		cursor: pointer;
 	}
 
 	@media (max-width: 52rem) {
+		.wordmark {
+			--wordmark-height: 2rem;
+		}
+
 		.toggle {
 			display: block;
 		}
@@ -193,7 +207,7 @@
 			padding: 1rem 0;
 			border-bottom: 0;
 			font-size: var(--step-0);
-			letter-spacing: 0.2em;
+			letter-spacing: 0.12em;
 		}
 	}
 </style>

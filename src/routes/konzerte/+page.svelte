@@ -6,7 +6,7 @@
 
 	let { data } = $props();
 	const { concerts, archive, photos } = $derived(data);
-	const [plateAmp, plateHeadbang] = $derived(photos);
+	const [plateHeadbang] = $derived(photos);
 </script>
 
 <svelte:head>
@@ -30,9 +30,11 @@
 		{#if concerts.length}
 			{#each concerts as concert (concert.id)}
 				<article class="concert">
-					<div class="concert-media" use:reveal>
-						<Figure photo={plateAmp} sizes="(max-width: 62rem) 100vw, 40vw" showCaption={false} />
-					</div>
+					{#if concert.image}
+						<div class="concert-media" use:reveal>
+							<Figure photo={concert.image} sizes="(max-width: 62rem) min(100vw, 24rem), 34vw" />
+						</div>
+					{/if}
 
 					<div class="concert-text" use:reveal={100}>
 						<p class="date numeral">{concert.date_label}</p>
@@ -136,8 +138,9 @@
 	.date {
 		margin: 0;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step--1);
-		letter-spacing: 0.24em;
+		letter-spacing: 0.14em;
 		text-transform: uppercase;
 		color: var(--silver-dim);
 	}
@@ -183,6 +186,7 @@
 	blockquote p {
 		margin: 0;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step-1);
 		line-height: 1.4;
 		color: var(--silver);
@@ -193,14 +197,23 @@
 		margin-top: 0.9rem;
 		font-style: normal;
 		font-size: var(--step--1);
-		letter-spacing: 0.16em;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		font-family: var(--font-display);
+		font-weight: 600;
 		color: var(--steel);
 	}
 
 	.actions {
 		margin-top: 2.5rem;
+	}
+
+	.concert-media :global(.frame) {
+		border: 1px solid var(--hairline);
+	}
+
+	.concert-media {
+		max-width: 24rem;
 	}
 
 	.empty {
@@ -240,14 +253,16 @@
 
 	.show-date {
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step--1);
-		letter-spacing: 0.16em;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: var(--silver-dim);
 	}
 
 	.show-title {
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step-1);
 		line-height: 1.3;
 	}
@@ -292,6 +307,7 @@
 
 	.lineup {
 		font-family: var(--font-display);
+		font-weight: 600;
 		color: var(--silver);
 		line-height: 1.9;
 	}

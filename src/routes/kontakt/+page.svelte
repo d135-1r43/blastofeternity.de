@@ -98,7 +98,7 @@
 				</div>
 
 				<div class="submit">
-					<button class="action" type="submit" disabled={status === 'sending'}>
+					<button class="action action--primary" type="submit" disabled={status === 'sending'}>
 						{status === 'sending' ? 'Wird gesendet' : 'Absenden'}
 					</button>
 					<p class="hint dim" role="status">
@@ -178,8 +178,9 @@
 		display: block;
 		margin-bottom: 0.65rem;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step--1);
-		letter-spacing: 0.2em;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--silver-dim);
 	}
@@ -237,7 +238,7 @@
 	}
 
 	button[disabled] {
-		opacity: 0.5;
+		opacity: 0.55;
 		cursor: progress;
 	}
 

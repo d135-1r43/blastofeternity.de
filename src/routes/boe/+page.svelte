@@ -262,6 +262,7 @@
 	.dates {
 		margin: 0;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step-1);
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
@@ -299,8 +300,9 @@
 
 	.prices dt {
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step--1);
-		letter-spacing: 0.2em;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--silver-dim);
 	}
@@ -308,6 +310,7 @@
 	.prices dd {
 		margin: 0;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step-2);
 	}
 
@@ -362,10 +365,12 @@
 
 	.order .time {
 		font-family: var(--font-display);
+		font-weight: 600;
 	}
 
 	.order .band {
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step-1);
 	}
 
@@ -378,6 +383,7 @@
 
 	.tba-mark {
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step-3);
 		letter-spacing: 0.1em;
 		color: var(--steel);
@@ -428,8 +434,9 @@
 		gap: 0.65rem 1.25rem;
 		margin: 1.1rem 0 0;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step--1);
-		letter-spacing: 0.2em;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 	}
 
@@ -457,6 +464,7 @@
 		cursor: pointer;
 		list-style: none;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step-1);
 		line-height: 1.3;
 		transition: color 0.3s var(--ease);
@@ -524,6 +532,7 @@
 		flex: none;
 		width: 8rem;
 		font-family: var(--font-display);
+		font-weight: 600;
 		letter-spacing: 0.14em;
 		text-transform: uppercase;
 		color: var(--steel);
@@ -599,6 +608,7 @@
 		margin: 1rem 0 0;
 		padding: 0;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step-0);
 		line-height: 2;
 		color: var(--silver);

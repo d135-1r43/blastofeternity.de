@@ -5,8 +5,8 @@
 
    The palette is deliberately monochrome. The logo is polished silver, so the
    whole interface is silver on ink and the only colour on the site comes from
-   the photographs themselves. One warm tone (`--filament`, the colour of a hot
-   valve) is reserved for a single job: anything you can buy a ticket with.
+   the photographs themselves. One red (`--ember`) is reserved for a single job:
+   anything you can buy a ticket with.
    ========================================================================== */
 
 :root {
@@ -17,15 +17,17 @@
 
 	/* silver */
 	--silver: #e7e8ec;
-	--silver-dim: #9ca0aa;
-	--steel: #6b6f7a;
+	--silver-dim: #bcc0c9;
+	--steel: #949aa5;
 
 	--hairline: rgb(231 232 236 / 13%);
 	--hairline-strong: rgb(231 232 236 / 26%);
 
-	/* the single warm accent: a glowing valve filament */
-	--filament: #cf9552;
-	--filament-bright: #e8b478;
+	/* The single accent. Deep rather than cherry, so it sits with the silver
+	   instead of shouting over it. White on --ember is 6.2:1. */
+	--ember: #c1121f;
+	--ember-bright: #d81f2c;
+	--ember-text: #ef5f5f; /* when red has to be text on ink */
 
 	/* The logo's chrome bevel: light above the horizon, dark below, then a
 	   sudden bright flip. Reused for display type via background-clip. */
@@ -43,7 +45,7 @@
 	--font-display: 'Cinzel', 'Trajan Pro', 'Times New Roman', serif;
 	--font-body: 'EB Garamond', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
 
-	--step--1: clamp(0.8125rem, 0.79rem + 0.11vw, 0.875rem);
+	--step--1: clamp(0.875rem, 0.85rem + 0.12vw, 0.9375rem);
 	--step-0: clamp(1.0625rem, 1rem + 0.31vw, 1.25rem);
 	--step-1: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
 	--step-2: clamp(1.5rem, 1.32rem + 0.9vw, 2rem);
@@ -82,12 +84,12 @@ body {
 	color: var(--silver);
 	font-family: var(--font-body);
 	font-size: var(--step-0);
-	line-height: 1.68;
+	font-weight: 500;
+	line-height: 1.6;
 	font-feature-settings:
 		'kern' 1,
 		'liga' 1;
 	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
 	overflow-x: hidden;
 }
 
@@ -97,8 +99,8 @@ h3,
 h4 {
 	margin: 0;
 	font-family: var(--font-display);
-	font-weight: 400;
-	line-height: 1.06;
+	font-weight: 600;
+	line-height: 1.08;
 	letter-spacing: 0.005em;
 	text-wrap: balance;
 }
@@ -107,6 +109,7 @@ p {
 	margin: 0 0 1.1em;
 	text-wrap: pretty;
 	hyphens: auto;
+	hyphenate-limit-chars: 9 4 4;
 }
 
 p:last-child {
@@ -169,15 +172,15 @@ img {
 .eyebrow {
 	font-family: var(--font-display);
 	font-size: var(--step--1);
-	font-weight: 400;
-	letter-spacing: 0.28em;
+	font-weight: 600;
+	letter-spacing: 0.15em;
 	text-transform: uppercase;
 	color: var(--silver-dim);
 	margin: 0;
 }
 
 .eyebrow--tight {
-	letter-spacing: 0.18em;
+	letter-spacing: 0.1em;
 }
 
 .rule {
@@ -243,41 +246,71 @@ img {
 	background-image: linear-gradient(var(--silver), var(--silver));
 }
 
+/* Buttons. The hierarchy is: solid amber = buy a ticket, solid silver = the
+   primary action on a page that sells nothing, outline = everything else. */
 .action {
 	display: inline-flex;
 	align-items: center;
+	justify-content: center;
 	gap: 0.9em;
-	padding: 0.95em 1.9em;
-	border: 1px solid var(--hairline-strong);
+	padding: 1.05em 2.25em;
+	border: 2px solid rgb(231 232 236 / 40%);
 	font-family: var(--font-display);
 	font-size: var(--step--1);
-	letter-spacing: 0.22em;
+	font-weight: 600;
+	letter-spacing: 0.13em;
 	text-transform: uppercase;
 	text-decoration: none;
+	line-height: 1;
 	color: var(--silver);
-	background: transparent;
+	background: rgb(231 232 236 / 5%);
+	cursor: pointer;
 	transition:
-		border-color 0.3s var(--ease),
-		color 0.3s var(--ease),
-		background-color 0.3s var(--ease);
+		border-color 0.25s var(--ease),
+		color 0.25s var(--ease),
+		background-color 0.25s var(--ease),
+		transform 0.25s var(--ease);
 }
 
 .action:hover,
 .action:focus-visible {
 	border-color: var(--silver);
-	background: rgb(231 232 236 / 5%);
+	background: rgb(231 232 236 / 14%);
+	transform: translateY(-1px);
 }
 
-/* The only warm thing on the site. */
+.action:active {
+	transform: translateY(0);
+}
+
+/* The one thing on the site you can buy. */
 .action--ticket {
-	color: var(--filament-bright);
-	border-color: rgb(207 149 82 / 45%);
+	color: #fff;
+	border-color: var(--ember);
+	background: var(--ember);
+	box-shadow: 0 6px 26px rgb(193 18 31 / 30%);
 }
 
 .action--ticket:hover,
 .action--ticket:focus-visible {
-	border-color: var(--filament);
-	background: rgb(207 149 82 / 8%);
+	color: #fff;
+	border-color: var(--ember-bright);
+	background: var(--ember-bright);
+	box-shadow: 0 8px 30px rgb(216 31 44 / 42%);
+}
+
+/* Primary action on pages that sell nothing, so amber stays ticket-only. */
+.action--primary {
+	color: var(--ink);
+	border-color: var(--silver);
+	background: var(--silver);
+}
+
+.action--primary:hover,
+.action--primary:focus-visible {
+	color: var(--ink);
+	border-color: #fff;
+	background: #fff;
 }
 
 .actions {

@@ -56,8 +56,9 @@
 		margin-bottom: 0.9rem;
 		line-height: 1.5;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step-0);
-		letter-spacing: 0.16em;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: var(--silver-dim);
 	}

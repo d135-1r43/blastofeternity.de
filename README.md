@@ -77,7 +77,7 @@ Two things want doing at the same time:
 ### Design
 
 - **Palette.** Silver on ink, and nothing else. The only colour on the site
-  comes out of the photographs; the one warm tone (`--filament`) is reserved for
+  comes out of the photographs; the one accent (`--ember`, a deep red) is reserved for
   things you can buy a ticket with. Tokens are at the top of `src/app.css`.
 - **Type.** Cinzel for display, EB Garamond for text — the Roman capitals the
   festival already sets its posters in, and an old-style face for reading. Both
@@ -86,9 +86,15 @@ Two things want doing at the same time:
 - **The line-up** (`Lineup.svelte`) is set the way the posters are set: centred
   capitals, one band per line, size falling with the billing. Tier comes from
   the `tier` field on each band, so the poster is editable content.
-- **Motion** is one page-load sequence in the hero (a specular highlight travels
-  across the wordmark once) plus scroll reveals via `use:reveal`. All of it is
-  off under `prefers-reduced-motion`.
+- **Weight.** Cinzel and EB Garamond are both used above their lightest cut
+  (600 and 500), and `-webkit-font-smoothing` is deliberately left alone —
+  `antialiased` thins glyphs on macOS, which reads as weak on a dark ground.
+- **The hero** cross-fades four photographs with a slow drift. Only the first
+  loads with the page; each next one mounts a beat before it is needed, so a
+  visitor who scrolls straight past never downloads the set.
+- **Motion** is the hero sequence (a specular highlight crosses the wordmark
+  once) plus scroll reveals via `use:reveal`. All of it is off under
+  `prefers-reduced-motion`, which also freezes the hero on its first slide.
 
 ### Privacy
 
@@ -146,9 +152,12 @@ new.blastofeternity.de → Package settings**.
 
 ## Assets
 
-`originals/` holds the untouched photographs. `static/images/` holds the
-rendered widths the site serves — regenerate them from the originals if you
-need other sizes.
+`originals/` holds the source artwork; `static/images/` holds the rendered
+widths the site serves. Regenerate from the originals if you need other sizes.
+
+Sources are kept at roughly twice the largest rendered width rather than at full
+capture resolution — enough to re-derive any web size, without carrying tens of
+megabytes in the repo.
 
 ## Licence
 

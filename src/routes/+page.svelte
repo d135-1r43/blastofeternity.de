@@ -9,8 +9,8 @@
 
 	let { data } = $props();
 
-	const { festival, concert, podcast, pages, hero, plates } = $derived(data);
-	const [plateHands, plateAmp, plateDive] = $derived(plates);
+	const { festival, concert, podcast, pages, heroPhotos, plates } = $derived(data);
+	const [plateHands, plateDive] = $derived(plates);
 </script>
 
 <svelte:head>
@@ -26,7 +26,7 @@
 
 <EventSchema {festival} site={data.site} />
 
-<Hero {festival} photo={hero} />
+<Hero {festival} photos={heroPhotos} />
 
 <!-- ============================================================ line-up -->
 <section class="section" id="festival">
@@ -85,9 +85,11 @@
 				</div>
 			</div>
 
-			<div class="split-media" use:reveal={120}>
-				<Figure photo={plateAmp} sizes="(max-width: 60rem) 100vw, 42vw" showCaption={false} />
-			</div>
+			{#if concert.image}
+				<div class="split-media" use:reveal={120}>
+					<Figure photo={concert.image} sizes="(max-width: 60rem) min(100vw, 22rem), 26vw" />
+				</div>
+			{/if}
 		</div>
 	</section>
 {/if}
@@ -152,8 +154,9 @@
 
 	.prices dt {
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step--1);
-		letter-spacing: 0.2em;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--silver-dim);
 	}
@@ -161,6 +164,7 @@
 	.prices dd {
 		margin: 0;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step-2);
 		color: var(--silver);
 	}
@@ -173,6 +177,15 @@
 	.actions.center {
 		justify-content: center;
 		margin-top: 2.25rem;
+	}
+
+	.split-media {
+		max-width: 22rem;
+		justify-self: center;
+	}
+
+	.split-media :global(.frame) {
+		border: 1px solid var(--hairline);
 	}
 
 	/* -------------------------------------------------------------- split */
@@ -193,8 +206,9 @@
 	.split-text .when {
 		margin: 1.25rem 0 0.5rem;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step--1);
-		letter-spacing: 0.2em;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--silver-dim);
 	}

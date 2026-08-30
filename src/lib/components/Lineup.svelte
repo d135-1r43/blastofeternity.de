@@ -49,6 +49,7 @@
 		margin: 0;
 		padding: 0;
 		font-family: var(--font-display);
+		font-weight: 600;
 		line-height: 1.16;
 		letter-spacing: 0.015em;
 		color: var(--silver);
@@ -68,19 +69,20 @@
 	.tier--2 {
 		font-size: clamp(1.375rem, 5vw, 2.75rem);
 		margin-top: 0.5em;
-		color: #cdd0d7;
+		color: #dfe1e6;
 	}
 
 	.tier--3 {
 		font-size: clamp(1.0625rem, 3.9vw, 2rem);
 		margin-top: 0.7em;
-		color: #adb1ba;
+		color: #cbcfd6;
 	}
 
 	/* The origin is set at full size, the way the printed posters set it, so the
 	   line centres on the whole entry rather than leaving the name hanging left. */
 	.origin {
-		color: var(--steel);
+		font-weight: 500;
+		color: #7f8590;
 		white-space: nowrap;
 	}
 

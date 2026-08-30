@@ -2,23 +2,71 @@
 	import Ornament from './Ornament.svelte';
 	import type { Festival, Photo } from '$lib/types';
 
-	type Props = { festival: Festival; photo: Photo };
-	let { festival, photo }: Props = $props();
+	type Props = {
+		festival: Festival;
+		/** Cross-faded behind the wordmark. The first one loads with the page. */
+		photos: Photo[];
+	};
+	let { festival, photos }: Props = $props();
 
-	const srcset = $derived(photo.widths.map((w) => `${photo.src}-${w}.jpg ${w}w`).join(', '));
+	const SLIDE_MS = 14000;
+
+	let index = $state(0);
+	/**
+	 * The slide being faded away from. It is held fully opaque underneath the
+	 * incoming one, so the dissolve never lets the ink ground show through —
+	 * fading both layers at once would dim the picture halfway through.
+	 */
+	let previous = $state(-1);
+	/**
+	 * How many slides exist in the DOM. Only the first loads with the page; each
+	 * following one is mounted a beat before it is needed, so a visitor who
+	 * scrolls straight past the hero never downloads the whole set.
+	 */
+	let mounted = $state(1);
+	let reduced = $state(false);
+
+	const visible = $derived(photos.slice(0, mounted));
+	const srcsetFor = (p: Photo) => p.widths.map((w) => `${p.src}-${w}.jpg ${w}w`).join(', ');
+	const largest = (p: Photo) => `${p.src}-${p.widths[p.widths.length - 1]}.jpg`;
+
+	$effect(() => {
+		reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		if (reduced || photos.length < 2) return;
+
+		// bring in the second slide once the page has settled
+		const warm = setTimeout(() => (mounted = Math.min(2, photos.length)), 1500);
+		const tick = setInterval(() => {
+			previous = index;
+			index = (index + 1) % photos.length;
+			// keep exactly one slide ahead of the one on screen
+			mounted = Math.max(mounted, Math.min(index + 2, photos.length));
+		}, SLIDE_MS);
+		return () => {
+			clearTimeout(warm);
+			clearInterval(tick);
+		};
+	});
 </script>
 
 <section class="hero">
 	<div class="backdrop">
-		<img
-			src="{photo.src}-{photo.widths[photo.widths.length - 1]}.jpg"
-			{srcset}
-			sizes="100vw"
-			width={photo.width}
-			height={photo.height}
-			alt=""
-			fetchpriority="high"
-		/>
+		{#each visible as slide, i (slide.id)}
+			<img
+				class="slide"
+				class:active={i === index}
+				class:holding={i === previous}
+				style:z-index={i === index ? 2 : i === previous ? 1 : 0}
+				src={largest(slide)}
+				srcset={srcsetFor(slide)}
+				sizes="100vw"
+				width={slide.width}
+				height={slide.height}
+				alt=""
+				loading={i === 0 ? 'eager' : 'lazy'}
+				fetchpriority={i === 0 ? 'high' : 'low'}
+			/>
+		{/each}
 		<div class="scrim"></div>
 	</div>
 
@@ -67,17 +115,72 @@
 	}
 
 	.backdrop,
-	.backdrop img {
+	.backdrop .slide {
 		position: absolute;
 		inset: 0;
 		width: 100%;
 		height: 100%;
 	}
 
-	.backdrop img {
+	/* Contain the slides' z-index so it orders them against each other only. */
+	.backdrop {
+		z-index: 0;
+		isolation: isolate;
+	}
+
+	/* Slides cross-fade; the active one drifts and scales very slowly so the
+	   hero breathes without ever calling attention to the movement. */
+	.slide {
 		object-fit: cover;
 		object-position: center 42%;
 		filter: grayscale(0.3) contrast(1.05);
+		opacity: 0;
+		transform: scale(1.06);
+		/* linear, because two eased opacity curves crossing would read as a dip */
+		transition: opacity 4.5s linear;
+		will-change: opacity, transform;
+	}
+
+	/* The outgoing slide stays opaque under the incoming one until the fade is
+	   over, then drops out of sight behind it. */
+	.slide.holding {
+		opacity: 1;
+		transition: none;
+	}
+
+	.slide.active {
+		opacity: 1;
+	}
+
+	/* Both the incoming and the outgoing slide keep drifting, so nothing freezes
+	   mid-dissolve. 19s covers the 14s hold plus the 4.5s fade. */
+	.slide.active,
+	.slide.holding {
+		animation: drift 19s linear both;
+	}
+
+	/* alternate the direction so a loop never feels mechanical */
+	.slide:nth-child(even).active,
+	.slide:nth-child(even).holding {
+		animation-name: drift-alt;
+	}
+
+	@keyframes drift {
+		from {
+			transform: scale(1.05) translate3d(0, 0, 0);
+		}
+		to {
+			transform: scale(1.15) translate3d(-1.6%, -1.1%, 0);
+		}
+	}
+
+	@keyframes drift-alt {
+		from {
+			transform: scale(1.15) translate3d(1.4%, -0.8%, 0);
+		}
+		to {
+			transform: scale(1.05) translate3d(0, 0.6%, 0);
+		}
 	}
 
 	/* The photograph stays bright; only the type is protected.
@@ -87,6 +190,7 @@
 	.scrim {
 		position: absolute;
 		inset: 0;
+		z-index: 3;
 		background:
 			radial-gradient(
 				56% 62% at 50% 44%,
@@ -107,14 +211,16 @@
 
 	.content {
 		position: relative;
+		z-index: 2;
 		text-align: center;
 	}
 
 	.presenter {
 		margin: 0 0 clamp(1.75rem, 4vw, 2.75rem);
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step--1);
-		letter-spacing: 0.3em;
+		letter-spacing: 0.18em;
 		text-transform: uppercase;
 		color: var(--silver);
 		text-shadow: 0 1px 12px rgb(8 8 10 / 90%);
@@ -163,20 +269,21 @@
 		flex-direction: column;
 		gap: 0.7rem;
 		font-family: var(--font-display);
+		font-weight: 600;
 		text-shadow: 0 1px 14px rgb(8 8 10 / 85%);
 		animation: rise 1.2s var(--ease) 0.35s both;
 	}
 
 	.date {
 		font-size: var(--step-1);
-		letter-spacing: 0.16em;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: var(--silver);
 	}
 
 	.where {
 		font-size: var(--step--1);
-		letter-spacing: 0.28em;
+		letter-spacing: 0.16em;
 		text-transform: uppercase;
 		color: var(--silver);
 	}
@@ -191,6 +298,7 @@
 
 	.cue {
 		position: absolute;
+		z-index: 2;
 		bottom: 2.25rem;
 		left: 50%;
 		translate: -50% 0;
@@ -265,6 +373,14 @@
 
 		.sheen {
 			display: none;
+		}
+
+		.slide,
+		.slide.active,
+		.slide.holding {
+			animation: none;
+			transition: none;
+			transform: none;
 		}
 
 		.cue-line::after {

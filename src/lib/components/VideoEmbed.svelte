@@ -123,8 +123,9 @@
 		left: 1.25rem;
 		bottom: 1rem;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step--1);
-		letter-spacing: 0.2em;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 		color: var(--silver-dim);
 	}

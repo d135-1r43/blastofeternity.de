@@ -96,8 +96,9 @@
 
 	.facts dt {
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step--1);
-		letter-spacing: 0.18em;
+		letter-spacing: 0.11em;
 		text-transform: uppercase;
 		color: var(--steel);
 	}
@@ -105,6 +106,7 @@
 	.facts dd {
 		margin: 0.5rem 0 0;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step-2);
 		color: var(--silver);
 	}
@@ -122,6 +124,7 @@
 		justify-content: center;
 		gap: 0.2em 0.6em;
 		font-family: var(--font-display);
+		font-weight: 600;
 		font-size: var(--step-5);
 		line-height: 1.05;
 		letter-spacing: 0.01em;
