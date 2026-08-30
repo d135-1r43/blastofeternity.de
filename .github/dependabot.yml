@@ -17,6 +17,14 @@ updates:
     groups:
       npm:
         patterns: ['*']
+    ignore:
+      # svelte-check cannot run against TypeScript 7 on its own: it wants 6 as
+      # `typescript` and 7 aliased as `@typescript/native`, driven by --tsgo.
+      # That is how package.json is set up, so a straight bump of `typescript`
+      # to 7 would break `pnpm check` again. Drop this once svelte-check
+      # supports TypeScript 7 as the only installed version.
+      - dependency-name: typescript
+        update-types: ['version-update:semver-major']
 
   # The actions used by .github/workflows.
   - package-ecosystem: github-actions

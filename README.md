@@ -10,7 +10,7 @@ pnpm install
 pnpm dev        # http://localhost:5173
 pnpm build      # → build/
 pnpm preview    # serve build/ locally
-pnpm check      # svelte-check
+pnpm check      # svelte-check (see the TypeScript note below)
 pnpm format     # prettier
 pnpm og         # regenerate the social cards in static/og
 ```
@@ -113,6 +113,14 @@ client. Keep it in step if any of that changes.
 > and make sure a Vertrag über Auftragsverarbeitung (AVV) is in place with them.
 > The text is written to match what the code does, but it is not legal advice —
 > have it reviewed.
+
+### TypeScript 6 and 7 side by side
+
+svelte-check cannot yet run against TypeScript 7 alone — it wants 6 installed as
+`typescript` and 7 aliased as `@typescript/native`, driven by the `--tsgo` flag.
+`package.json` is set up that way, and Dependabot is told not to bump
+`typescript` across a major, which would quietly break `pnpm check`. Collapse
+all of that back to a single dependency once svelte-check supports 7 on its own.
 
 ### Social cards and the 404
 
