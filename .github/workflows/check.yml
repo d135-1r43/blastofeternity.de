@@ -1,0 +1,47 @@
+# Typechecks, lints and builds the site outside Docker.
+#
+# The image build only runs `pnpm build`, and Vite does not typecheck, so a
+# change that breaks `pnpm check` or the formatting still passes it. This job
+# covers that gap and is required on main alongside the Docker build.
+
+name: Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v7
+
+      # Same Node as the Dockerfile's build stage. Node no longer ships
+      # corepack, so it is installed to pick up the pnpm version pinned in
+      # package.json's `packageManager` field.
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 26
+
+      - name: Install dependencies
+        run: |
+          npm install --global corepack@latest
+          corepack enable
+          pnpm install --frozen-lockfile
+
+      - run: pnpm check
+
+      - run: pnpm lint
+
+      - run: pnpm build

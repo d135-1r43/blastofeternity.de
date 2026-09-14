@@ -174,7 +174,10 @@ docker pull ghcr.io/d135-1r43/new.blastofeternity.de:latest
 ```
 
 Pull requests build the image and run a smoke test against it, but publish
-nothing.
+nothing. Alongside it, `.github/workflows/check.yml` runs `pnpm check`,
+`pnpm lint` and `pnpm build` outside Docker, since the image build does not
+typecheck. Both jobs, `build` and `check`, are required to pass before
+anything merges into `main`.
 
 A package pushed by Actions starts out private, so that `docker pull` only
 works once the package's visibility has been set to public under **Packages →
