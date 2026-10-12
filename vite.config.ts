@@ -9,6 +9,11 @@ export default defineConfig({
 			// up a directory after the build — relative asset paths would break it.
 			paths: { relative: false },
 
+			// SvelteKit 3 replaced `$lib` with the `#lib` subpath import, but
+			// svelte-check can't yet resolve `.svelte` files through subpath imports
+			// and would type every component as `any`. Keep `$lib` as an alias.
+			alias: { $lib: 'src/lib' },
+
 			compilerOptions: {
 				// Force runes mode for the project, except for libraries. Can be removed in svelte 6.
 				runes: ({ filename }) =>
