@@ -51,8 +51,6 @@ export type Site = {
 		country: string;
 		email: string;
 		press_email: string;
-		phone: string;
-		phone_label: string;
 		board: string[];
 		register_court: string;
 		register_number: string;

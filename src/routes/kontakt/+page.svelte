@@ -123,9 +123,6 @@
 				<p class="mail">
 					<a class="link" href="mailto:{site.organisation.email}">{site.organisation.email}</a>
 				</p>
-				<p class="dim">
-					<a class="link" href="tel:{site.organisation.phone}">{site.organisation.phone_label}</a>
-				</p>
 			</section>
 
 			<section>
