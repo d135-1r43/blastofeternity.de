@@ -10,10 +10,10 @@ importers:
     devDependencies:
       '@sveltejs/adapter-static':
         specifier: ^4.0.0
-        version: 4.0.0(@sveltejs/kit@3.0.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.4))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.4))
+        version: 4.0.0(@sveltejs/kit@3.1.0(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.4))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.4))
       '@sveltejs/kit':
-        specifier: ^3.0.1
-        version: 3.0.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.4))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.4)
+        specifier: ^3.1.0
+        version: 3.1.0(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.4))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.4)
       '@sveltejs/vite-plugin-svelte':
         specifier: ^7.3.1
         version: 7.3.1(svelte@5.57.2)(vite@8.3.4)
@@ -21,14 +21,14 @@ importers:
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
       prettier:
-        specifier: ^3.9.9
-        version: 3.9.9
+        specifier: ^3.9.10
+        version: 3.9.10
       prettier-plugin-svelte:
         specifier: ^4.1.0
-        version: 4.1.1(prettier@3.9.9)(svelte@5.57.2)
+        version: 4.1.1(prettier@3.9.10)(svelte@5.57.2)
       puppeteer-core:
-        specifier: ^25.13.0
-        version: 25.13.0
+        specifier: ^25.14.0
+        version: 25.14.0
       svelte:
         specifier: ^5.57.2
         version: 5.57.2
@@ -66,8 +66,8 @@ packages:
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
 
-  '@puppeteer/browsers@3.2.4':
-    resolution: {integrity: sha512-okJ6yQMc0SBexOKxMi966omwAV1uAPwgF/YMZdb04gZQPXVjWHl9bmXjZYtIcsN1+PN3Bz4iFfGK3g+c6lZJ0Q==}
+  '@puppeteer/browsers@3.2.5':
+    resolution: {integrity: sha512-UoCo3Pynbm37aLEEoydSiG+t24ui7sLD40+07CKxzxNy4PpSowJMkvlLIiV67XjP1lMVynhQVnuwlTABqBH8LQ==}
     engines: {node: '>=22.12.0'}
     hasBin: true
     peerDependencies:
@@ -191,8 +191,8 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^3.0.0-next.0
 
-  '@sveltejs/kit@3.0.1':
-    resolution: {integrity: sha512-8JMCCq7ZUJELi3hbhb0+c9Rs8qnbHW90vhOfM+t1FSF4fhIpG9/FOsH4IYgcITMhbdkSrrn+Kvd9G+q8A+UO6Q==}
+  '@sveltejs/kit@3.1.0':
+    resolution: {integrity: sha512-JTWlq2HQlkqx6vIoxhC0R6sc4WVqbQoRyEmr5YlqKmiYbzY1U3awtSWTmjMLlS056a49AmkQR6rnNANXIE8B0Q==}
     engines: {node: '>=22.17'}
     hasBin: true
     peerDependencies:
@@ -524,11 +524,14 @@ packages:
   magic-string@1.4.2:
     resolution: {integrity: sha512-vG+rjFRj1PqdIBozIxAGMjPlOhaVe+GXpbttY/iSK7rGcJRMlwNJO7dcUwmUqkymsFLJiNGI06t4D7Fr7yRC9g==}
 
+  magic-string@1.4.3:
+    resolution: {integrity: sha512-z12OxmaPGE0F4xlpGdjuAUckipLpQlTAuAmyGhNoD7ODpYUzvDfvtxUbjM/jwznyP178oju/KDdyi220wNJ0RQ==}
+
   mitt@3.0.1:
     resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
 
-  modern-tar@0.8.5:
-    resolution: {integrity: sha512-snEhs+6G5Tjd4I7tLCDOaoln2RgE0bD19RzEKgvgK2hZ5VKy3MpLhLTZ2fWpXSTg4K2cyPwp+VHATFJhxfnOeA==}
+  modern-tar@0.8.6:
+    resolution: {integrity: sha512-LYSks0tNVqbtez/9OB0YFP6qLRSqkdAxJWOQpVaR67lNTbj2zNLyYpowkRMia5lXLCZKzxwoxkxH2MbbBR2aEg==}
     engines: {node: '>=18.0.0'}
 
   mri@1.2.0:
@@ -566,13 +569,13 @@ packages:
       prettier: ^3.0.0
       svelte: ^5.0.0
 
-  prettier@3.9.9:
-    resolution: {integrity: sha512-Z/CJHIkdujO/OtN7nXUii0Rf3VT5SRuhjBA82Xvu2XhBUgX3nhP67T0LHceBdQLex7OOFGTox+Q5Yg8Jk2Qivg==}
+  prettier@3.9.10:
+    resolution: {integrity: sha512-skGHTH1Yb9QvaTC4hWnRTzEYtCpApF0UMBPz+t/0ZPzP8ihefo/btKd+QA7pUE0fEwA1SbS/NmhyEcstdXOIdA==}
     engines: {node: '>=14'}
     hasBin: true
 
-  puppeteer-core@25.13.0:
-    resolution: {integrity: sha512-cyBS0OEx3e9NS53B5F6+UazXtR7f9Tw0cR1/FbPW59/hV6JPZbkIiMnxK2543IkFp3rsGlLn1iPDLF77TJsJsA==}
+  puppeteer-core@25.14.0:
+    resolution: {integrity: sha512-LQitnes3tBeVbdZ7V/4iwJPLZGgkl9uBVK0W7YYMh68j/3Y9eNuvj4yl+Fdo7zN0SuajOMrhd7aPj3DifK8k6A==}
     engines: {node: '>=22.12.0'}
 
   readdirp@4.1.2:
@@ -726,8 +729,8 @@ packages:
   zimmerframe@1.1.5:
     resolution: {integrity: sha512-msJxIvYDYcoNL+PJsu+7qmpDWsYmAxTY+2TNYXXF0hzBzBk0BMecOqDOG/EckUoKCuKwObfbugIl8QpqHDXeFA==}
 
-  zod@4.6.5:
-    resolution: {integrity: sha512-v5l/aFXZQeai4awLbOpSoHecE9UiMrnfx75tEXLjNonXVARxQ5mOeipTjROUchszUNCqnE+hqAMujRsRHsut2Q==}
+  zod@4.6.7:
+    resolution: {integrity: sha512-g8W2D2kU6a8untc053fX1uVBKzM7yqAxW/3zwk83+6RyF2+SKOuV+c0wBDhUwzV1PaGapmZH+rmcUzPf+3CGwg==}
 
 snapshots:
 
@@ -754,9 +757,9 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@puppeteer/browsers@3.2.4':
+  '@puppeteer/browsers@3.2.5':
     dependencies:
-      modern-tar: 0.8.5
+      modern-tar: 0.8.6
       yargs: 18.2.0
 
   '@rolldown/binding-android-arm-eabi@1.2.13':
@@ -812,11 +815,11 @@ snapshots:
     dependencies:
       acorn: 8.19.0
 
-  '@sveltejs/adapter-static@4.0.0(@sveltejs/kit@3.0.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.4))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.4))':
+  '@sveltejs/adapter-static@4.0.0(@sveltejs/kit@3.1.0(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.4))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.4))':
     dependencies:
-      '@sveltejs/kit': 3.0.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.4))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.4)
+      '@sveltejs/kit': 3.1.0(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.4))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.4)
 
-  '@sveltejs/kit@3.0.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.4))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.4)':
+  '@sveltejs/kit@3.1.0(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.4))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.4)':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
       '@standard-schema/spec': 1.1.0
@@ -824,7 +827,7 @@ snapshots:
       cookie: 2.0.1
       devalue: 5.9.4
       esm-env: 1.2.2
-      magic-string: 1.4.2
+      magic-string: 1.4.3
       mrmime: 2.0.1
       sirv: 3.0.2
       svelte: 5.57.2
@@ -923,7 +926,7 @@ snapshots:
     dependencies:
       devtools-protocol: 0.0.1696802
       mitt: 3.0.1
-      zod: 4.6.5
+      zod: 4.6.7
 
   cliui@9.0.1:
     dependencies:
@@ -1027,9 +1030,13 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.6.0
 
+  magic-string@1.4.3:
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.6.0
+
   mitt@3.0.1: {}
 
-  modern-tar@0.8.5: {}
+  modern-tar@0.8.6: {}
 
   mri@1.2.0: {}
 
@@ -1049,16 +1056,16 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.2
 
-  prettier-plugin-svelte@4.1.1(prettier@3.9.9)(svelte@5.57.2):
+  prettier-plugin-svelte@4.1.1(prettier@3.9.10)(svelte@5.57.2):
     dependencies:
-      prettier: 3.9.9
+      prettier: 3.9.10
       svelte: 5.57.2
 
-  prettier@3.9.9: {}
+  prettier@3.9.10: {}
 
-  puppeteer-core@25.13.0:
+  puppeteer-core@25.14.0:
     dependencies:
-      '@puppeteer/browsers': 3.2.4
+      '@puppeteer/browsers': 3.2.5
       chromium-bidi: 157.0.8090-0(devtools-protocol@0.0.1696802)
       devtools-protocol: 0.0.1696802
       typed-query-selector: 2.12.3
@@ -1226,4 +1233,4 @@ snapshots:
 
   zimmerframe@1.1.5: {}
 
-  zod@4.6.5: {}
+  zod@4.6.7: {}
