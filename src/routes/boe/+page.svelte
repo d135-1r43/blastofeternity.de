@@ -8,10 +8,19 @@
 	import SectionHead from '$lib/components/SectionHead.svelte';
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte';
 	import { reveal } from '$lib/reveal';
+	import type { RunningOrderSlot } from '$lib/types';
 
 	let { data } = $props();
 	const { festival, archive, photos } = $derived(data);
 	const [plateStage, plateGuitar] = $derived(photos);
+
+	const runningDays = $derived.by(() => {
+		const days = new Map<string, RunningOrderSlot[]>();
+		for (const slot of festival.running_order) {
+			days.set(slot.day, [...(days.get(slot.day) ?? []), slot]);
+		}
+		return [...days];
+	});
 </script>
 
 <Seo
@@ -70,15 +79,21 @@
 	<div class="page">
 		<SectionHead eyebrow="Ablauf" title="Running Order" id="running-order" />
 		{#if festival.running_order.length}
-			<ol class="order">
-				{#each festival.running_order as slot (slot.day + slot.time + slot.band)}
-					<li>
-						<span class="eyebrow eyebrow--tight">{slot.day}</span>
-						<span class="numeral time">{slot.time}</span>
-						<span class="band">{slot.band}</span>
-					</li>
+			<div class="order">
+				{#each runningDays as [day, slots] (day)}
+					<div class="order-day" use:reveal>
+						<h3 class="eyebrow">{day}</h3>
+						<ol>
+							{#each slots as slot (slot.time + slot.band)}
+								<li class:doors={slot.doors}>
+									<span class="numeral time">{slot.time}</span>
+									<span class="act">{slot.band}</span>
+								</li>
+							{/each}
+						</ol>
+					</div>
 				{/each}
-			</ol>
+			</div>
 		{:else}
 			<p class="tba" use:reveal>
 				<span class="tba-mark">t.&thinsp;b.&thinsp;a.</span>
@@ -349,18 +364,39 @@
 	/* ------------------------------------------------------ running order */
 
 	.order {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+		gap: clamp(2.5rem, 6vw, 4rem);
+	}
+
+	.order h3 {
+		margin: 0 0 0.75rem;
+	}
+
+	.order ol {
 		list-style: none;
 		margin: 0;
 		padding: 0;
+		border-top: 1px solid var(--hairline);
 	}
 
 	.order li {
 		display: grid;
-		grid-template-columns: 6rem 5rem 1fr;
+		grid-template-columns: 4.5rem 1fr;
 		gap: 1rem;
 		align-items: baseline;
 		padding-block: 1rem;
 		border-bottom: 1px solid var(--hairline);
+	}
+
+	.order li.doors {
+		color: var(--steel);
+	}
+
+	.order li.doors .act {
+		font-size: var(--step-0);
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
 	}
 
 	.order .time {
@@ -368,7 +404,7 @@
 		font-weight: 600;
 	}
 
-	.order .band {
+	.order .act {
 		font-family: var(--font-display);
 		font-weight: 600;
 		font-size: var(--step-1);

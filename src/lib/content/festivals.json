@@ -30,7 +30,20 @@
 				{ "label": "Freitag + Samstag", "amount": 33, "currency": "EUR" }
 			]
 		},
-		"running_order": [],
+		"running_order": [
+			{ "day": "Freitag 06.11.", "time": "17:30", "band": "Einlass", "doors": true },
+			{ "day": "Freitag 06.11.", "time": "18:00", "band": "The Advent of a Miracle" },
+			{ "day": "Freitag 06.11.", "time": "19:05", "band": "Dawn of Revenge" },
+			{ "day": "Freitag 06.11.", "time": "20:20", "band": "Fellowship" },
+			{ "day": "Freitag 06.11.", "time": "21:50", "band": "Signum Regis" },
+			{ "day": "Samstag 07.11.", "time": "16:30", "band": "Einlass", "doors": true },
+			{ "day": "Samstag 07.11.", "time": "17:00", "band": "Steikon" },
+			{ "day": "Samstag 07.11.", "time": "17:50", "band": "Hell Patröl" },
+			{ "day": "Samstag 07.11.", "time": "18:45", "band": "Cantus Levitas" },
+			{ "day": "Samstag 07.11.", "time": "19:45", "band": "Triuwint" },
+			{ "day": "Samstag 07.11.", "time": "20:50", "band": "Wytch Hazel" },
+			{ "day": "Samstag 07.11.", "time": "22:25", "band": "Thy Bleeding Skies" }
+		],
 		"running_order_note": "Die Running Order steht noch nicht fest. Sie erscheint hier, sobald sie feststeht.",
 		"lineup": [
 			{

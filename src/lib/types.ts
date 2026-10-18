@@ -102,6 +102,8 @@ export type RunningOrderSlot = {
 	day: string;
 	time: string;
 	band: string;
+	/** Doors open rather than a band slot. */
+	doors?: boolean;
 };
 
 export type Festival = {
