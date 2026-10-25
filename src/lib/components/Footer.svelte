@@ -1,10 +1,10 @@
 <script lang="ts">
 	import Ornament from './Ornament.svelte';
 	import Wordmark from './Wordmark.svelte';
-	import type { Site } from '$lib/types';
+	import type { Partner, Site } from '$lib/types';
 
-	type Props = { site: Site };
-	let { site }: Props = $props();
+	type Props = { site: Site; partners: Partner[] };
+	let { site, partners }: Props = $props();
 
 	const year = new Date().getFullYear();
 </script>
@@ -60,6 +60,27 @@
 				</ul>
 			</section>
 		</div>
+
+		{#if partners.length}
+			<section class="partners">
+				<h2 class="eyebrow">Partner, Unterstützer und Sponsoren</h2>
+				<ul>
+					{#each partners as partner (partner.id)}
+						<li>
+							{#if partner.logo}
+								<a href={partner.url} rel="noopener" target="_blank" title={partner.name}>
+									<img src={partner.logo} alt={partner.name} loading="lazy" />
+								</a>
+							{:else}
+								<a class="link" href={partner.url} rel="noopener" target="_blank">
+									{partner.name}
+								</a>
+							{/if}
+						</li>
+					{/each}
+				</ul>
+			</section>
+		{/if}
 
 		<hr class="rule" />
 
@@ -138,6 +159,45 @@
 		padding: 0;
 		line-height: 1.9;
 		color: var(--silver-dim);
+	}
+
+	/* The logos are drawn in the footer's silver, like everything else on the
+	   site; colour stays with the photographs. Full strength on hover. */
+	.partners {
+		margin-top: clamp(3rem, 6vw, 4.5rem);
+		padding-top: clamp(2.5rem, 5vw, 3.5rem);
+		border-top: 1px solid var(--hairline);
+		text-align: center;
+	}
+
+	.partners ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 2rem clamp(2rem, 4vw, 3.25rem);
+		margin-top: 1.75rem;
+	}
+
+	.partners a {
+		display: block;
+	}
+
+	/* A fixed height, because SVGs without a width and height of their own
+	   would otherwise collapse to nothing. */
+	.partners img {
+		width: auto;
+		height: 2.75rem;
+		max-width: 10.5rem;
+		object-fit: contain;
+		filter: brightness(0) invert(1);
+		opacity: 0.6;
+		transition: opacity 0.3s var(--ease);
+	}
+
+	.partners a:hover img,
+	.partners a:focus-visible img {
+		opacity: 1;
 	}
 
 	.rule {
