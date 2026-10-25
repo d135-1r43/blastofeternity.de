@@ -75,6 +75,8 @@ export type Band = {
 	origin: string | null;
 	genre: string;
 	image: string | null;
+	/** CSS `object-position` that keeps the faces in frame when the photo is cropped. */
+	image_focus?: string;
 	/** YouTube video id. */
 	video: string | null;
 };
@@ -104,6 +106,8 @@ export type RunningOrderSlot = {
 	band: string;
 	/** Doors open rather than a band slot. */
 	doors?: boolean;
+	/** End of the set, `HH:MM`. The signage at /ps estimates it when absent. */
+	end?: string;
 };
 
 export type Festival = {
@@ -133,6 +137,20 @@ export type Festival = {
 	travel: { body: string[]; link: Link; map_url: string };
 };
 
+/** A coming edition that is announced before it goes on sale: date and first bands. */
+export type FestivalAnnouncement = {
+	id: string;
+	status: string;
+	sort: number;
+	year: number;
+	title: string;
+	date_start: string;
+	date_end: string;
+	date_label: string;
+	/** Confirmed so far, in the order they were announced. */
+	bands: { name: string; logo: string | null }[];
+};
+
 export type ArchivedFestival = {
 	id: string;
 	status: string;
@@ -145,6 +163,19 @@ export type ArchivedFestival = {
 	poster: string | null;
 	lineup: string[];
 	note: string | null;
+};
+
+/* ---------------------------------------------------------- collection: partners */
+
+/** Funders, partners and sponsors, credited on the signage at /ps. */
+export type Partner = {
+	id: string;
+	status: string;
+	sort: number;
+	name: string;
+	/** On a light ground. `null` sets the name as type instead. */
+	logo: string | null;
+	url: string | null;
 };
 
 /* ---------------------------------------------------------- collection: concerts */

@@ -19,9 +19,11 @@
 
 import concertArchiveJson from './content/concert-archive.json';
 import concertsJson from './content/concerts.json';
+import festivalAnnouncementsJson from './content/festival-announcements.json';
 import festivalArchiveJson from './content/festival-archive.json';
 import festivalsJson from './content/festivals.json';
 import pagesJson from './content/pages.json';
+import partnersJson from './content/partners.json';
 import photosJson from './content/photos.json';
 import podcastJson from './content/podcast.json';
 import privacyJson from './content/privacy.json';
@@ -31,7 +33,9 @@ import type {
 	ArchivedFestival,
 	Concert,
 	Festival,
+	FestivalAnnouncement,
 	Pages,
+	Partner,
 	Photo,
 	Podcast,
 	Privacy,
@@ -40,10 +44,12 @@ import type {
 
 const site = siteJson as Site;
 const festivals = festivalsJson as unknown as Festival[];
+const festivalAnnouncements = festivalAnnouncementsJson as FestivalAnnouncement[];
 const festivalArchive = festivalArchiveJson as ArchivedFestival[];
 const concerts = concertsJson as unknown as Concert[];
 const concertArchive = concertArchiveJson as ArchivedConcert[];
 const podcast = podcastJson as Podcast;
+const partners = partnersJson as Partner[];
 const photos = photosJson as Photo[];
 const pages = pagesJson as Pages;
 const privacy = privacyJson as Privacy;
@@ -57,6 +63,11 @@ export async function getSite(): Promise<Site> {
 /** The festival currently being sold. There is exactly one at a time. */
 export async function getFestival(): Promise<Festival> {
 	return festivals.filter((f) => f.state === 'upcoming').sort(bySort)[0];
+}
+
+/** Editions that have a date but are not on sale yet. */
+export async function getFestivalAnnouncements(): Promise<FestivalAnnouncement[]> {
+	return festivalAnnouncements.filter((f) => f.status === 'published').sort(bySort);
 }
 
 export async function getFestivalArchive(): Promise<ArchivedFestival[]> {
@@ -73,6 +84,10 @@ export async function getConcertArchive(): Promise<ArchivedConcert[]> {
 
 export async function getPodcast(): Promise<Podcast> {
 	return podcast;
+}
+
+export async function getPartners(): Promise<Partner[]> {
+	return partners.filter((p) => p.status === 'published').sort(bySort);
 }
 
 export async function getPhotos(): Promise<Photo[]> {

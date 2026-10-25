@@ -1,0 +1,13 @@
+[
+	{
+		"id": "boe-2027",
+		"status": "published",
+		"sort": 1,
+		"year": 2027,
+		"title": "Blast of Eternity 2027",
+		"date_start": "2027-11-05",
+		"date_end": "2027-11-06",
+		"date_label": "5. & 6. November 2027",
+		"bands": [{ "name": "Lucidrae", "logo": "/images/signage/lucidrae.png" }]
+	}
+]

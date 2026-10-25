@@ -8,17 +8,23 @@
 
 	// The home page opens with a full-bleed photograph; the masthead floats over it.
 	const overlay = $derived(page.url.pathname === '/');
+	// The festival signage at /ps fills a screen in the venue on its own.
+	const signage = $derived(page.url.pathname.startsWith('/ps/'));
 </script>
 
-<a class="skip-link" href="#inhalt">Zum Inhalt</a>
-
-<Header site={data.site} {overlay} />
-
-<main id="inhalt">
+{#if signage}
 	{@render children()}
-</main>
+{:else}
+	<a class="skip-link" href="#inhalt">Zum Inhalt</a>
 
-<Footer site={data.site} />
+	<Header site={data.site} {overlay} />
+
+	<main id="inhalt">
+		{@render children()}
+	</main>
+
+	<Footer site={data.site} partners={data.partners} />
+{/if}
 
 <style>
 	main {

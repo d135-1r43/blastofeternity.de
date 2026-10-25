@@ -1,0 +1,58 @@
+[
+	{
+		"id": "plansecur-stiftung",
+		"status": "published",
+		"sort": 1,
+		"name": "Plansecur Stiftung",
+		"logo": "/images/partners/plansecur-stiftung.png",
+		"url": "https://www.plansecur-stiftung.de"
+	},
+	{
+		"id": "kulturstiftung-ksk-heilbronn",
+		"status": "published",
+		"sort": 2,
+		"name": "KulturStiftung der Kreissparkasse Heilbronn",
+		"logo": "/images/partners/kulturstiftung-ksk-heilbronn.png",
+		"url": "https://www.ksk-heilbronn.de"
+	},
+	{
+		"id": "maschinenfabrik",
+		"status": "published",
+		"sort": 3,
+		"name": "Maschinenfabrik Heilbronn",
+		"logo": "/images/partners/maschinenfabrik.svg",
+		"url": "https://www.maschinenfabrik-hn.de"
+	},
+	{
+		"id": "stadt-heilbronn",
+		"status": "published",
+		"sort": 4,
+		"name": "Stadt Heilbronn",
+		"logo": "/images/partners/stadt-heilbronn.png",
+		"url": "https://www.heilbronn.de/kultur-freizeit/kulturfoerderung/richtlinien-und-antragsformular.html"
+	},
+	{
+		"id": "powermetal",
+		"status": "published",
+		"sort": 5,
+		"name": "Powermetal.de",
+		"logo": "/images/partners/powermetal.png",
+		"url": "https://www.powermetal.de"
+	},
+	{
+		"id": "sozialministerium-bw",
+		"status": "published",
+		"sort": 6,
+		"name": "Ministerium für Soziales, Arbeit und Gesundheit Baden-Württemberg",
+		"logo": "/images/partners/sozialministerium-bw.png",
+		"url": "https://jugendarbeitsnetz.de/geld/foerdermittel-nach-vwv-kja-und-jsa"
+	},
+	{
+		"id": "dsee",
+		"status": "published",
+		"sort": 7,
+		"name": "Deutsche Stiftung für Engagement und Ehrenamt",
+		"logo": "/images/partners/dsee.svg",
+		"url": "https://www.deutsche-stiftung-engagement-und-ehrenamt.de"
+	}
+]
