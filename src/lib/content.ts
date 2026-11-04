@@ -34,6 +34,7 @@ import type {
 	Concert,
 	Festival,
 	FestivalAnnouncement,
+	LuxPhoto,
 	Pages,
 	Partner,
 	Photo,
@@ -107,4 +108,31 @@ export async function getPages(): Promise<Pages> {
 
 export async function getPrivacy(): Promise<Privacy> {
 	return privacy;
+}
+
+/**
+ * All photos from lux-in-tenebris.de, for the signage. Read at build time
+ * from the gallery's own API — it sends no CORS headers, so the screen cannot
+ * fetch it itself. A failed request leaves the slide out rather than the build.
+ */
+export async function getLuxPhotos(): Promise<LuxPhoto[]> {
+	try {
+		const res = await fetch('https://lux-in-tenebris.de/api/images?offset=0&limit=1000', {
+			signal: AbortSignal.timeout(15_000)
+		});
+		if (!res.ok) throw new Error(`HTTP ${res.status}`);
+		const { images } = (await res.json()) as { images: LuxPhoto[] };
+		return images.map(({ id, url, width, height, band, festival, year }) => ({
+			id,
+			url,
+			width,
+			height,
+			band,
+			festival,
+			year
+		}));
+	} catch (error) {
+		console.warn(`Lux in Tenebris photos unavailable, slide skipped: ${error}`);
+		return [];
+	}
 }

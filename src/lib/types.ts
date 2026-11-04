@@ -286,3 +286,15 @@ export type Privacy = {
 	updated: string;
 	sections: { id: string; level: 2 | 3; heading: string; body: string[] }[];
 };
+
+/** A concert photo from Lux in Tenebris, the club's concert photography. */
+export type LuxPhoto = {
+	id: string;
+	/** Directus asset URL; takes `?width=…` transforms. */
+	url: string;
+	width: number;
+	height: number;
+	band: string;
+	festival: string;
+	year: number;
+};

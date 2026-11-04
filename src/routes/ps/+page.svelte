@@ -4,6 +4,7 @@
 	import Seo from '$lib/components/Seo.svelte';
 	import AnnouncementSlide from '$lib/components/signage/AnnouncementSlide.svelte';
 	import ConcertSlide from '$lib/components/signage/ConcertSlide.svelte';
+	import LuxSlide, { prepareLux } from '$lib/components/signage/LuxSlide.svelte';
 	import PartnersSlide from '$lib/components/signage/PartnersSlide.svelte';
 	import Programme from '$lib/components/signage/Programme.svelte';
 	import { buildDays, clock, momentAt, presets } from '$lib/signage';
@@ -19,7 +20,7 @@
 	 */
 
 	let { data } = $props();
-	const { festival, site, promos, announcements, partners } = $derived(data);
+	const { festival, site, promos, announcements, partners, lux } = $derived(data);
 	const days = $derived(buildDays(festival));
 
 	/* ----------------------------------------------------------- the clock */
@@ -70,6 +71,7 @@
 				anchor = Date.now();
 			}
 			held = params.get('slide');
+			prepareLux(lux.photos);
 			now = read();
 			const tick = setInterval(() => {
 				now = read();
@@ -98,6 +100,7 @@
 		promo?: Promo;
 		announcement?: Announcement;
 		partners?: boolean;
+		lux?: boolean;
 	};
 
 	/**
@@ -132,6 +135,9 @@
 				})),
 			...(partners.length
 				? [{ id: 'partner', label: 'Partner', seconds: PROMO_SECONDS, partners: true }]
+				: []),
+			...(lux.photos.length
+				? [{ id: 'lux', label: 'Lux in Tenebris', seconds: PROMO_SECONDS, lux: true }]
 				: [])
 		];
 		if (!others.length) return [programme];
@@ -216,6 +222,13 @@
 	noindex
 />
 
+<svelte:head>
+	{#if lux.photos.length}
+		<!-- Bebas Neue Pro for the Lux in Tenebris slide, from the same Adobe Fonts kit as lux-in-tenebris.de -->
+		<link rel="stylesheet" href="https://use.typekit.net/auh6rjy.css" />
+	{/if}
+</svelte:head>
+
 <svelte:window onkeydown={onKey} />
 
 <div class="signage" class:debug ondblclick={toggleFullscreen} role="presentation">
@@ -228,6 +241,8 @@
 					<AnnouncementSlide announcement={slide.announcement} />
 				{:else if slide.partners}
 					<PartnersSlide {partners} />
+				{:else if slide.lux}
+					<LuxSlide photos={lux.photos} qr={lux.qr} />
 				{:else}
 					<Programme {festival} {site} {days} {now} {moment} />
 				{/if}
