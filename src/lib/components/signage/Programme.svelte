@@ -6,6 +6,8 @@
 		countdown,
 		dayAfter,
 		relativeDay,
+		sideNow,
+		withSide,
 		type FestivalDay,
 		type Moment,
 		type TimedSlot
@@ -37,12 +39,18 @@
 				: '/images/stage-2200.jpg'
 	);
 
-	/** Whatever the main area isn't showing, still to come today. */
+	/** Whatever the main area isn't showing, still to come today, side programme included. */
 	const following = $derived.by((): TimedSlot[] => {
-		if (moment.mode === 'live') return moment.later;
-		if (moment.mode === 'soon') return moment.later;
+		if (moment.mode === 'live' || moment.mode === 'soon') {
+			return withSide(moment.later, moment.day, now);
+		}
 		return [];
 	});
+
+	/** A welcome, interview, … happening right now, next to the stage programme. */
+	const aside = $derived(
+		moment.mode === 'live' || moment.mode === 'soon' ? sideNow(moment.day, now) : null
+	);
 
 	/** After the last band of a day: what the next day brings. */
 	const tomorrow = $derived(moment.mode !== 'over' ? dayAfter(days, moment.day) : null);
@@ -128,15 +136,23 @@
 			<aside class="rail">
 				<h2 class="eyebrow">Running Order</h2>
 				<ol class="order">
-					{#each moment.acts as act (act.time)}
-						<li>
-							<span class="numeral time">{act.time}</span><span class="act">{act.name}</span>
+					{#each withSide(moment.acts, moment.day, now) as act (act.time + act.name)}
+						<li class:side={act.side}>
+							<span class="numeral time">{act.time}</span><span class="act"
+								>{act.name}{#if act.place}<span class="place">{act.place}</span>{/if}</span
+							>
 						</li>
 					{/each}
 				</ol>
 			</aside>
 		{:else if moment.mode === 'live' || moment.mode === 'soon'}
 			<aside class="rail">
+				{#if aside}
+					<h2 class="eyebrow">Jetzt · Rahmenprogramm</h2>
+					<p class="aside-name">{aside.name}</p>
+					{#if aside.place}<p class="next-meta">Im {aside.place}</p>{/if}
+				{/if}
+
 				{#if moment.mode === 'live' && moment.next}
 					{@const next = moment.next}
 					<h2 class="eyebrow">Als Nächstes</h2>
@@ -161,9 +177,11 @@
 				{#if following.length}
 					<h2 class="eyebrow">Danach</h2>
 					<ol class="order">
-						{#each following as act (act.time)}
-							<li>
-								<span class="numeral time">{act.time}</span><span class="act">{act.name}</span>
+						{#each following as act (act.time + act.name)}
+							<li class:side={act.side}>
+								<span class="numeral time">{act.time}</span><span class="act"
+									>{act.name}{#if act.place}<span class="place">{act.place}</span>{/if}</span
+								>
 							</li>
 						{/each}
 					</ol>
@@ -180,9 +198,11 @@
 									>
 								</li>
 							{/if}
-							{#each tomorrow.acts as act (act.time)}
-								<li>
-									<span class="numeral time">{act.time}</span><span class="act">{act.name}</span>
+							{#each withSide(tomorrow.acts, tomorrow, now) as act (act.time + act.name)}
+								<li class:side={act.side}>
+									<span class="numeral time">{act.time}</span><span class="act"
+										>{act.name}{#if act.place}<span class="place">{act.place}</span>{/if}</span
+									>
 								</li>
 							{/each}
 						</ol>
@@ -494,6 +514,28 @@
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: var(--steel);
+	}
+
+	.order li.side .act {
+		font-size: 1.15em;
+		color: var(--silver-dim);
+	}
+
+	.order .place {
+		display: block;
+		margin-top: 0.35em;
+		font-size: 0.7em;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--steel);
+	}
+
+	.aside-name {
+		margin: 0;
+		font-family: var(--font-display);
+		font-weight: 600;
+		font-size: 1.6em;
+		line-height: 1.15;
 	}
 
 	.closing {

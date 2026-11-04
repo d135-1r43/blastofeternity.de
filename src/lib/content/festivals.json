@@ -44,6 +44,22 @@
 			{ "day": "Samstag 07.11.", "time": "20:50", "band": "Wytch Hazel" },
 			{ "day": "Samstag 07.11.", "time": "22:25", "band": "Thy Bleeding Skies" }
 		],
+		"side_programme": [
+			{ "day": "Freitag 06.11.", "time": "18:45", "title": "Welcome", "place": "Café" },
+			{ "day": "Freitag 06.11.", "time": "23:00", "title": "Mitternachtsimpuls", "place": "Café" },
+			{
+				"day": "Samstag 07.11.",
+				"time": "18:30",
+				"title": "Interview Anna Jäger-Hauer · Linestyle Artwork",
+				"place": "Café"
+			},
+			{
+				"day": "Samstag 07.11.",
+				"time": "19:30",
+				"title": "Interview Thy Bleeding Skies · Album Release",
+				"place": "Café"
+			}
+		],
 		"running_order_note": "Die Running Order steht noch nicht fest. Sie erscheint hier, sobald sie feststeht.",
 		"lineup": [
 			{

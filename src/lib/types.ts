@@ -110,6 +110,14 @@ export type RunningOrderSlot = {
 	end?: string;
 };
 
+export type SideProgrammeItem = {
+	day: string;
+	time: string;
+	title: string;
+	/** Where in the venue, e.g. `Café`. */
+	place: string;
+};
+
 export type Festival = {
 	id: string;
 	status: string;
@@ -132,6 +140,8 @@ export type Festival = {
 	};
 	running_order: RunningOrderSlot[];
 	running_order_note: string;
+	/** Welcome, interviews, … away from the stage. */
+	side_programme?: SideProgrammeItem[];
 	lineup: Band[];
 	faq: FaqItem[];
 	travel: { body: string[]; link: Link; map_url: string };

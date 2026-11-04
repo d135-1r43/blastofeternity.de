@@ -15,6 +15,8 @@ import type { Band, Festival, RunningOrderSlot } from './types';
 const CHANGEOVER_MIN = 15;
 /** Assumed length of the last set of a day when it has no explicit `end`. */
 const LAST_SET_MIN = 75;
+/** Assumed length of a side programme item (welcome, interview, …). */
+const SIDE_MIN = 15;
 
 const MINUTE = 60_000;
 
@@ -25,6 +27,10 @@ export type TimedSlot = {
 	time: string;
 	name: string;
 	doors: boolean;
+	/** Side programme away from the stage rather than a band. */
+	side: boolean;
+	/** Where a side programme item takes place, e.g. `Café`. */
+	place: string | null;
 	band: Band | null;
 	start: Date;
 	end: Date;
@@ -37,6 +43,8 @@ export type FestivalDay = {
 	date: string;
 	doors: TimedSlot | null;
 	acts: TimedSlot[];
+	/** Side programme items; they never count as a band on stage. */
+	side: TimedSlot[];
 	start: Date;
 	end: Date;
 };
@@ -76,23 +84,39 @@ const normalise = (s: string) => s.toLocaleLowerCase('de-DE').trim();
 
 export function buildDays(festival: Festival): FestivalDay[] {
 	const bands = new Map(festival.lineup.map((b) => [normalise(b.name), b]));
-	const grouped = new Map<string, RunningOrderSlot[]>();
-	for (const slot of festival.running_order) {
+	type Slot = RunningOrderSlot & { side?: boolean; place?: string };
+	const all: Slot[] = [
+		...festival.running_order,
+		...(festival.side_programme ?? []).map((item) => ({
+			day: item.day,
+			time: item.time,
+			band: item.title,
+			side: true,
+			place: item.place
+		}))
+	];
+	const grouped = new Map<string, Slot[]>();
+	for (const slot of all) {
 		grouped.set(slot.day, [...(grouped.get(slot.day) ?? []), slot]);
 	}
 
-	return [...grouped].map(([label, slots]) => {
+	return [...grouped].map(([label, unsorted]) => {
+		const slots = [...unsorted].sort((a, b) => a.time.localeCompare(b.time));
 		const date = dateOf(label, festival.year);
-		const starts = slots.map((s) => at(date, s.time));
+		// Side items run alongside the changeovers and don't shorten the set before them.
+		const stage = slots.filter((s) => !s.side);
+		const stageStarts = stage.map((s) => at(date, s.time));
 
-		const timed = slots.map((slot, i): TimedSlot => {
-			const start = starts[i];
-			const following = starts[i + 1];
+		const timed = slots.map((slot): TimedSlot => {
+			const start = at(date, slot.time);
+			const following = slot.side ? undefined : stageStarts[stage.indexOf(slot) + 1];
 			let end: Date;
 			if (slot.end) {
 				end = at(date, slot.end);
 				// a set that runs past midnight
 				if (end <= start) end = new Date(end.getTime() + 24 * 60 * MINUTE);
+			} else if (slot.side) {
+				end = new Date(start.getTime() + SIDE_MIN * MINUTE);
 			} else if (slot.doors) {
 				end = following ?? new Date(start.getTime() + 30 * MINUTE);
 			} else if (following) {
@@ -106,20 +130,23 @@ export function buildDays(festival: Festival): FestivalDay[] {
 				time: slot.time,
 				name: slot.band,
 				doors: !!slot.doors,
-				band: slot.doors ? null : (bands.get(normalise(slot.band)) ?? null),
+				side: !!slot.side,
+				place: slot.place ?? null,
+				band: slot.doors || slot.side ? null : (bands.get(normalise(slot.band)) ?? null),
 				start,
 				end,
 				endKnown: !!slot.end
 			};
 		});
 
-		const acts = timed.filter((s) => !s.doors);
+		const acts = timed.filter((s) => !s.doors && !s.side);
 		const doors = timed.find((s) => s.doors) ?? null;
 		return {
 			label,
 			date,
 			doors,
 			acts,
+			side: timed.filter((s) => s.side),
 			start: timed[0].start,
 			end: acts.length ? acts[acts.length - 1].end : timed[timed.length - 1].end
 		};
@@ -147,6 +174,20 @@ export function momentAt(days: FestivalDay[], now: Date): Moment {
 	const [next, ...later] = ahead;
 	const doorsOpen = !day.acts.some((a) => a.start.getTime() <= t);
 	return { mode: 'soon', day, doorsOpen, next, later };
+}
+
+/** The side programme item running at `now`, if any. */
+export function sideNow(day: FestivalDay, now: Date): TimedSlot | null {
+	const t = now.getTime();
+	return day.side.find((s) => s.start.getTime() <= t && t < s.end.getTime()) ?? null;
+}
+
+/** `acts` merged with the side programme of `day` that starts after `now`, in time order. */
+export function withSide(acts: TimedSlot[], day: FestivalDay, now: Date): TimedSlot[] {
+	const t = now.getTime();
+	return [...acts, ...day.side.filter((s) => s.start.getTime() > t)].sort(
+		(a, b) => a.start.getTime() - b.start.getTime()
+	);
 }
 
 /** The day after `day`, if the festival has one. */
@@ -200,12 +241,16 @@ export function presets(days: FestivalDay[]): { day: string; items: Preset[] }[]
 			items.push({ label: 'Kurz vor Einlass', time: plus(day.doors.start, -10) });
 			items.push({ label: 'Einlass läuft', time: plus(day.doors.start, 10) });
 		}
+		day.side.forEach((item) => {
+			items.push({ label: item.name, time: plus(item.start, 3) });
+		});
 		day.acts.forEach((act, i) => {
 			items.push({ label: act.name, time: plus(act.start, 10) });
 			if (i < day.acts.length - 1) {
 				items.push({ label: 'Umbau', time: plus(act.end, 3) });
 			}
 		});
+		items.sort((a, b) => a.time.getTime() - b.time.getTime());
 		items.push({ label: 'Nach Programmende', time: plus(day.end, 20) });
 		return { day: day.label, items };
 	});

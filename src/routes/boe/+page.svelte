@@ -8,7 +8,7 @@
 	import SectionHead from '$lib/components/SectionHead.svelte';
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte';
 	import { reveal } from '$lib/reveal';
-	import type { RunningOrderSlot } from '$lib/types';
+	import type { RunningOrderSlot, SideProgrammeItem } from '$lib/types';
 
 	let { data } = $props();
 	const { festival, archive, photos } = $derived(data);
@@ -20,6 +20,20 @@
 			days.set(slot.day, [...(days.get(slot.day) ?? []), slot]);
 		}
 		return [...days];
+	});
+
+	const sideDays = $derived.by(() => {
+		const days = new Map<string, SideProgrammeItem[]>();
+		for (const item of festival.side_programme ?? []) {
+			days.set(item.day, [...(days.get(item.day) ?? []), item]);
+		}
+		return [...days];
+	});
+
+	/** Where the side programme happens, when it is all in one place. */
+	const sidePlace = $derived.by(() => {
+		const places = new Set((festival.side_programme ?? []).map((item) => item.place));
+		return places.size === 1 ? [...places][0] : null;
 	});
 </script>
 
@@ -102,6 +116,36 @@
 		{/if}
 	</div>
 </section>
+
+<!-- ==================================================== side programme -->
+{#if sideDays.length}
+	<section class="section section--tight">
+		<div class="page">
+			<SectionHead eyebrow="Neben der Bühne" title="Rahmenprogramm" id="rahmenprogramm">
+				{#if sidePlace}<p class="dim">Im {sidePlace} der {festival.venue.name}.</p>{/if}
+			</SectionHead>
+			<div class="order">
+				{#each sideDays as [day, items] (day)}
+					<div class="order-day" use:reveal>
+						<h3 class="eyebrow">{day}</h3>
+						<ol>
+							{#each items as item (item.time + item.title)}
+								<li>
+									<span class="numeral time">{item.time}</span>
+									<span class="act"
+										>{item.title}{#if !sidePlace}<span class="place dim">
+												· {item.place}</span
+											>{/if}</span
+									>
+								</li>
+							{/each}
+						</ol>
+					</div>
+				{/each}
+			</div>
+		</div>
+	</section>
+{/if}
 
 <Figure photo={plateGuitar} variant="bleed" sizes="100vw" dim={0.2} />
 
