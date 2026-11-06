@@ -1,21 +1,45 @@
 <script lang="ts">
 	import { untrack } from 'svelte';
 	import Seo from '$lib/components/Seo.svelte';
+	import { buildDays, relativeDay } from '$lib/signage';
 
 	/**
-	 * Slides for the Impuls: a quiet opener, the words of a song, then its
-	 * video full screen. Driven by hand — arrow keys, page up/down (what a
+	 * Slides for the Impuls: a quiet opener, the words of a song, the opener
+	 * again behind the sermon, the song's video full screen and a good night. Driven by hand — arrow keys, page up/down (what a
 	 * presenter clicker sends) or the space bar. `f` or a double click toggles
-	 * full screen. `#text` or `#video` opens on that slide.
+	 * full screen. A slide's id as the hash (`#video`) opens on it.
 	 */
 
 	let { data } = $props();
-	const { site } = $derived(data);
+	const { site, festival } = $derived(data);
+
+	/**
+	 * The next festival day, for the good night. Read when the slides change,
+	 * as the evening may well run past midnight: until 6 in the morning the
+	 * night still belongs to the day before, and the next day is then `Heute`.
+	 */
+	let now = $state<Date | null>(null);
+	const NIGHT_ENDS_HOUR = 6;
+	const nextDay = $derived.by(() => {
+		if (!now) return null;
+		const evening = new Date(now.getTime() - NIGHT_ENDS_HOUR * 60 * 60_000);
+		const after = new Date(evening.getFullYear(), evening.getMonth(), evening.getDate() + 1);
+		const day = buildDays(festival).find((d) => d.start >= after);
+		if (!day) return null;
+		const when = relativeDay(day, now);
+		return {
+			when: when === day.label ? day.label : `${when} · ${day.label}`,
+			doors: day.doors?.time ?? null,
+			first: day.acts[0] ?? null
+		};
+	});
 
 	const SONG = {
 		title: 'Herr, ich komme zu dir',
 		credit: 'Albert Frey',
-		youtube: 'CexN15gu6x4',
+		youtube: 'uXuIY-cynwE',
+		/** The video after the sermon is a different piece from the song. */
+		videoTitle: 'Fear of the Dark – Kirchenorgel & Schlagzeug',
 		/** Each part once; the video carries the repeats. */
 		verse: [
 			[
@@ -41,12 +65,27 @@
 		]
 	};
 
-	const SLIDES = ['start', 'text', 'video'] as const;
+	const SLIDES = ['start', 'text', 'predigt', 'video', 'nacht'] as const;
 	let index = $state(0);
 	const current = $derived(SLIDES[index]);
 
+	/** Slides on the cross, and what each says over it — nothing behind the sermon. */
+	const CROSS: Partial<Record<(typeof SLIDES)[number], string>> = {
+		start: 'Impuls',
+		predigt: '',
+		nacht: 'Eine gute Nacht'
+	};
+	const onCross = $derived(current in CROSS);
+	const crossLabel = $derived(CROSS[current]);
+	// Kept after leaving the cross so the label doesn't vanish mid-fade.
+	let shownLabel = $state(CROSS.start!);
+	$effect(() => {
+		if (crossLabel) shownLabel = crossLabel;
+	});
+
 	function go(to: number) {
 		index = Math.max(0, Math.min(SLIDES.length - 1, to));
+		now = new Date();
 		const hash = index ? `#${SLIDES[index]}` : window.location.pathname;
 		history.replaceState(history.state, '', hash);
 	}
@@ -74,6 +113,7 @@
 
 	$effect(() =>
 		untrack(() => {
+			now = new Date();
 			const at = SLIDES.indexOf(window.location.hash.slice(1) as (typeof SLIDES)[number]);
 			if (at > 0) index = at;
 		})
@@ -144,19 +184,32 @@
 		class="video"
 		class:shown={current === 'video'}
 		src="https://www.youtube-nocookie.com/embed/{SONG.youtube}?enablejsapi=1&rel=0&playsinline=1&iv_load_policy=3"
-		title={SONG.title}
+		title={SONG.videoTitle}
 		allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
 		allowfullscreen
 		tabindex="-1"
 		onload={() => setTimeout(sync, 500)}
 	></iframe>
 
-	<div class="start" class:shown={current === 'start'} aria-hidden={current !== 'start'}>
+	<div class="start" class:shown={onCross} aria-hidden={!onCross}>
 		<img class="sky" src="/images/signage/impuls-kreuz.jpg" alt="" />
-		<div class="start-text">
+		<div class="start-text" class:quiet={!crossLabel}>
 			<img class="logo" src="/logo-boe.png" alt="Blast of Eternity" width="1600" height="668" />
 			<hr class="rule--chrome" />
-			<p class="impuls">Impuls</p>
+			<p class="impuls">{shownLabel}</p>
+			{#if nextDay}
+				<div class="next" class:quiet={current !== 'nacht'}>
+					<p class="eyebrow">{nextDay.when}</p>
+					<p class="numeral">
+						{[
+							nextDay.doors && `Einlass ${nextDay.doors}`,
+							nextDay.first && `${nextDay.first.name} ab ${nextDay.first.time}`
+						]
+							.filter(Boolean)
+							.join(' · ')}
+					</p>
+				</div>
+			{/if}
 		</div>
 	</div>
 
@@ -267,7 +320,39 @@
 		flex-direction: column;
 		align-items: flex-start;
 		gap: 2.2em;
-		width: 22em;
+		min-width: 22em;
+		transition: opacity 900ms var(--ease);
+	}
+
+	.start-text.quiet,
+	.next.quiet {
+		opacity: 0;
+	}
+
+	/* Out of the flow, so it doesn't stretch the rule on the other slides. */
+	.next {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		white-space: nowrap;
+		margin-top: 3.4em;
+		/* it sits over the bright part of the sky */
+		text-shadow:
+			0 0 1.2em rgb(0 0 0 / 70%),
+			0 0.05em 0.2em rgb(0 0 0 / 60%);
+		transition: opacity 900ms var(--ease);
+	}
+
+	.next .eyebrow {
+		font-size: 1.1em;
+		color: var(--steel);
+	}
+
+	.next p:last-child {
+		margin: 0.5em 0 0;
+		font-family: var(--font-body);
+		font-size: 2em;
+		color: var(--silver-dim);
 	}
 
 	.start-text .logo {
@@ -288,6 +373,7 @@
 		font-size: 2.4em;
 		letter-spacing: 0.42em;
 		text-transform: uppercase;
+		white-space: nowrap;
 		color: var(--silver-dim);
 	}
 
