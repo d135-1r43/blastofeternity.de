@@ -3,6 +3,7 @@
 	import { fade } from 'svelte/transition';
 	import { version } from '$app/env';
 	import Seo from '$lib/components/Seo.svelte';
+	import ArtistSlide from '$lib/components/signage/ArtistSlide.svelte';
 	import AnnouncementSlide from '$lib/components/signage/AnnouncementSlide.svelte';
 	import ConcertSlide from '$lib/components/signage/ConcertSlide.svelte';
 	import LuxSlide, { prepareLux } from '$lib/components/signage/LuxSlide.svelte';
@@ -21,7 +22,7 @@
 	 */
 
 	let { data } = $props();
-	const { festival, site, promos, announcements, partners, lux } = $derived(data);
+	const { festival, site, promos, announcements, partners, lux, artist } = $derived(data);
 	const days = $derived(buildDays(festival));
 
 	/* ----------------------------------------------------------- the clock */
@@ -102,6 +103,7 @@
 		announcement?: Announcement;
 		partners?: boolean;
 		lux?: boolean;
+		artist?: boolean;
 	};
 
 	/**
@@ -134,6 +136,7 @@
 					seconds: PROMO_SECONDS,
 					announcement
 				})),
+			{ id: 'artwork', label: 'Artwork', seconds: PROMO_SECONDS, artist: true },
 			...(partners.length
 				? [{ id: 'partner', label: 'Partner', seconds: PROMO_SECONDS, partners: true }]
 				: []),
@@ -274,6 +277,8 @@
 					<ConcertSlide concert={slide.promo.concert} qr={slide.promo.qr} />
 				{:else if slide.announcement}
 					<AnnouncementSlide announcement={slide.announcement} />
+				{:else if slide.artist && now}
+					<ArtistSlide year={festival.year} {days} {now} qr={artist.qr} />
 				{:else if slide.partners}
 					<PartnersSlide {partners} />
 				{:else if slide.lux}
