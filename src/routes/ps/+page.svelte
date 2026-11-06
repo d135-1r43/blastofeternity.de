@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { untrack } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import { version } from '$app/env';
 	import Seo from '$lib/components/Seo.svelte';
 	import AnnouncementSlide from '$lib/components/signage/AnnouncementSlide.svelte';
 	import ConcertSlide from '$lib/components/signage/ConcertSlide.svelte';
@@ -187,6 +188,40 @@
 			document.removeEventListener('visibilitychange', onVisible);
 			lock?.release();
 		};
+	});
+
+	/* ------------------------------------------------------------ updates */
+
+	/** How often the screen asks whether a new build has been deployed. */
+	const UPDATE_CHECK_SECONDS = 60;
+
+	// A redeploy during the event reaches the screens on their own: once a
+	// minute, compare the deployed build with the one running here, and reload
+	// only when it changed and the new page actually answers. Anything going
+	// wrong — the container restarting, the network gone — leaves the running
+	// page alone; it has everything it needs and keeps cycling until the next
+	// check succeeds. The debug view is left alone so it isn't reset mid-test.
+	$effect(() => {
+		if (debug) return;
+		let busy = false;
+		const check = async () => {
+			if (busy) return;
+			busy = true;
+			try {
+				const opts = { cache: 'no-store', signal: AbortSignal.timeout(10_000) } as const;
+				const res = await fetch('/_app/version.json', opts);
+				if (!res.ok || (await res.json()).version === version) return;
+				// the new page must be served before the current one is thrown away
+				const next = await fetch(window.location.href, opts);
+				if (next.ok) window.location.reload();
+			} catch {
+				// offline or mid-deploy: try again next time
+			} finally {
+				busy = false;
+			}
+		};
+		const timer = setInterval(check, UPDATE_CHECK_SECONDS * 1000);
+		return () => clearInterval(timer);
 	});
 
 	function toggleFullscreen() {
