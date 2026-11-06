@@ -83,3 +83,16 @@ jobs:
           }
           curl -fsS http://127.0.0.1:8080/boe/ > /dev/null
           docker rm -f boe
+
+      # Redeploy the Portainer stack once the new image is pushed and has passed
+      # the smoke test above. A stack webhook is a bare POST — no body, no auth
+      # beyond the secret id in the URL — and a 2xx only means Portainer accepted
+      # it; the redeploy runs after the call returns. A 409 means a deploy is
+      # still running, so it is retried a few times before giving up.
+      - name: Redeploy on Portainer
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          WEBHOOK: ${{ secrets.PORTAINER_WEBHOOK_URL }}
+        run: |
+          curl -fsS -X POST --retry 5 --retry-delay 15 --retry-all-errors \
+            -o /dev/null -w 'Portainer answered %{http_code}\n' "$WEBHOOK"
