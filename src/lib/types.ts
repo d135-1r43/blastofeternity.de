@@ -133,10 +133,17 @@ export type Festival = {
 	venue: Venue;
 	poster: string | null;
 	tickets: {
-		url: string;
-		provider: string;
+		/** The online shop; `null` once tickets are only sold at the door. */
+		url: string | null;
+		provider: string | null;
 		note: string;
-		prices: { label: string; amount: number; currency: string }[];
+		prices: {
+			label: string;
+			amount: number;
+			/** The presale price, shown struck through once the box office applies. */
+			presale?: number;
+			currency: string;
+		}[];
 	};
 	running_order: RunningOrderSlot[];
 	running_order_note: string;

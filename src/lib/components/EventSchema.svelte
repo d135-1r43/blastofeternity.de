@@ -42,7 +42,7 @@
 			name: price.label,
 			price: price.amount,
 			priceCurrency: price.currency,
-			url: festival.tickets.url,
+			...(festival.tickets.url ? { url: festival.tickets.url } : {}),
 			availability: 'https://schema.org/InStock'
 		}))
 	});

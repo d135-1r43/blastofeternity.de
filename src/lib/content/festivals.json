@@ -21,13 +21,13 @@
 		},
 		"poster": null,
 		"tickets": {
-			"url": "https://www.eventim-light.com/de/a/5b2552d4bb0a4d04c778b31f/e/6a6c86b958146fadd1e03c27",
-			"provider": "Eventim Light",
-			"note": "Alle Preise im Vorverkauf, zzgl. Gebühren.",
+			"url": null,
+			"provider": null,
+			"note": "Preise an der Abendkasse. Soliticket jeweils 5 € mehr.",
 			"prices": [
-				{ "label": "Freitag", "amount": 18, "currency": "EUR" },
-				{ "label": "Samstag", "amount": 23, "currency": "EUR" },
-				{ "label": "Freitag + Samstag", "amount": 33, "currency": "EUR" }
+				{ "label": "Freitag", "amount": 23, "presale": 18, "currency": "EUR" },
+				{ "label": "Samstag", "amount": 30, "presale": 23, "currency": "EUR" },
+				{ "label": "Freitag + Samstag", "amount": 40, "presale": 33, "currency": "EUR" }
 			]
 		},
 		"running_order": [

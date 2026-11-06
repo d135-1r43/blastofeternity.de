@@ -42,15 +42,25 @@
 				{#each festival.tickets.prices as price (price.label)}
 					<div>
 						<dt>{price.label}</dt>
-						<dd class="numeral">{price.amount}&thinsp;€</dd>
+						<dd class="numeral">
+							{#if price.presale}<s class="presale">{price.presale}&thinsp;€</s>{/if}
+							{price.amount}&thinsp;€
+						</dd>
 					</div>
 				{/each}
 			</dl>
 			<p class="fine dim">{festival.tickets.note}</p>
 			<div class="actions center">
-				<a class="action action--ticket" href={festival.tickets.url} rel="noopener" target="_blank">
-					Tickets sichern
-				</a>
+				{#if festival.tickets.url}
+					<a
+						class="action action--ticket"
+						href={festival.tickets.url}
+						rel="noopener"
+						target="_blank"
+					>
+						Tickets sichern
+					</a>
+				{/if}
 				<a class="action" href="/boe">Bands, FAQ &amp; Anfahrt</a>
 			</div>
 		</div>
@@ -165,6 +175,14 @@
 		font-weight: 600;
 		font-size: var(--step-2);
 		color: var(--silver);
+	}
+
+	/* the presale price, struck through once the box office applies */
+	.presale {
+		margin-right: 0.4em;
+		font-size: 0.7em;
+		color: var(--steel);
+		text-decoration-thickness: 0.08em;
 	}
 
 	.fine {

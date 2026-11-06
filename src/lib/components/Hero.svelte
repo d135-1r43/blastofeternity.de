@@ -92,9 +92,11 @@
 
 		<div class="actions">
 			<a class="action" href="/boe">Line-up &amp; Infos</a>
-			<a class="action action--ticket" href={festival.tickets.url} rel="noopener" target="_blank">
-				Tickets ab {festival.tickets.prices[0].amount}&thinsp;€
-			</a>
+			{#if festival.tickets.url}
+				<a class="action action--ticket" href={festival.tickets.url} rel="noopener" target="_blank">
+					Tickets ab {festival.tickets.prices[0].amount}&thinsp;€
+				</a>
+			{/if}
 		</div>
 	</div>
 
