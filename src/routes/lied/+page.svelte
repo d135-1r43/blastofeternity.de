@@ -5,7 +5,8 @@
 
 	/**
 	 * Slides for the Impuls: a quiet opener, the words of a song, the opener
-	 * again behind the sermon, the song's video full screen and a good night. Driven by hand — arrow keys, page up/down (what a
+	 * again behind the sermon, a video full screen, the cross once more behind
+	 * the intercessions and a good night. Driven by hand — arrow keys, page up/down (what a
 	 * presenter clicker sends) or the space bar. `f` or a double click toggles
 	 * full screen. A slide's id as the hash (`#video`) opens on it.
 	 */
@@ -65,7 +66,7 @@
 		]
 	};
 
-	const SLIDES = ['start', 'text', 'predigt', 'video', 'nacht'] as const;
+	const SLIDES = ['start', 'text', 'predigt', 'video', 'fuerbitten', 'nacht'] as const;
 	let index = $state(0);
 	const current = $derived(SLIDES[index]);
 
@@ -73,6 +74,7 @@
 	const CROSS: Partial<Record<(typeof SLIDES)[number], string>> = {
 		start: 'Impuls',
 		predigt: '',
+		fuerbitten: '',
 		nacht: 'Eine gute Nacht'
 	};
 	const onCross = $derived(current in CROSS);
