@@ -43,7 +43,6 @@
 					<div>
 						<dt>{price.label}</dt>
 						<dd class="numeral">
-							{#if price.presale}<s class="presale">{price.presale}&thinsp;€</s>{/if}
 							{price.amount}&thinsp;€
 						</dd>
 					</div>
@@ -175,14 +174,6 @@
 		font-weight: 600;
 		font-size: var(--step-2);
 		color: var(--silver);
-	}
-
-	/* the presale price, struck through once the box office applies */
-	.presale {
-		margin-right: 0.4em;
-		font-size: 0.7em;
-		color: var(--steel);
-		text-decoration-thickness: 0.08em;
 	}
 
 	.fine {

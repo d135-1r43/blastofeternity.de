@@ -140,8 +140,6 @@ export type Festival = {
 		prices: {
 			label: string;
 			amount: number;
-			/** The presale price, shown struck through once the box office applies. */
-			presale?: number;
 			currency: string;
 		}[];
 	};

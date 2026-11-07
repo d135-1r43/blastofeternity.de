@@ -25,9 +25,9 @@
 			"provider": null,
 			"note": "Preise an der Abendkasse. Soliticket jeweils 5 € mehr.",
 			"prices": [
-				{ "label": "Freitag", "amount": 23, "presale": 18, "currency": "EUR" },
-				{ "label": "Samstag", "amount": 30, "presale": 23, "currency": "EUR" },
-				{ "label": "Freitag + Samstag", "amount": 40, "presale": 33, "currency": "EUR" }
+				{ "label": "Freitag", "amount": 23, "currency": "EUR" },
+				{ "label": "Samstag", "amount": 30, "currency": "EUR" },
+				{ "label": "Freitag + Samstag", "amount": 40, "currency": "EUR" }
 			]
 		},
 		"running_order": [
