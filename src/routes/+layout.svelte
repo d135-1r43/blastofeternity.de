@@ -8,8 +8,11 @@
 
 	// The home page opens with a full-bleed photograph; the masthead floats over it.
 	const overlay = $derived(page.url.pathname === '/');
-	// The festival signage at /ps and the song slides at /lied fill a screen on their own.
-	const signage = $derived(['/ps/', '/lied/'].some((p) => page.url.pathname.startsWith(p)));
+	// The festival signage at /ps, the song slides at /lied and the interview
+	// slides at /art fill a screen on their own.
+	const signage = $derived(
+		['/ps/', '/lied/', '/art/'].some((p) => page.url.pathname.startsWith(p))
+	);
 </script>
 
 {#if signage}
