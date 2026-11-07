@@ -289,6 +289,9 @@
 		grid-row: 2;
 		display: grid;
 		grid-template-columns: minmax(0, 1fr) 30em;
+		/* One row exactly as tall as the screen allows: a long rail must not
+		   grow it and push the band name off the bottom edge. */
+		grid-template-rows: minmax(0, 1fr);
 		gap: 4em;
 		align-items: end;
 		padding: 0 3.2em 3.2em;
@@ -423,6 +426,19 @@
 		display: flex;
 		flex-direction: column;
 		gap: 1em;
+		max-height: 100%;
+		min-height: 0;
+	}
+
+	.rail > :not(.order) {
+		flex-shrink: 0;
+	}
+
+	/* Whatever doesn't fit fades out instead of running off the screen. */
+	.rail .order {
+		min-height: 0;
+		overflow: hidden;
+		mask-image: linear-gradient(180deg, #000 calc(100% - 4em), transparent);
 	}
 
 	.rail h2 {
