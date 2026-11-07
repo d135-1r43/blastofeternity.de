@@ -6,6 +6,7 @@
 	import ArtistSlide from '$lib/components/signage/ArtistSlide.svelte';
 	import AnnouncementSlide from '$lib/components/signage/AnnouncementSlide.svelte';
 	import ConcertSlide from '$lib/components/signage/ConcertSlide.svelte';
+	import MerchSlide from '$lib/components/signage/MerchSlide.svelte';
 	import LuxSlide, { prepareLux } from '$lib/components/signage/LuxSlide.svelte';
 	import PartnersSlide from '$lib/components/signage/PartnersSlide.svelte';
 	import Programme from '$lib/components/signage/Programme.svelte';
@@ -104,6 +105,7 @@
 		partners?: boolean;
 		lux?: boolean;
 		artist?: boolean;
+		merch?: boolean;
 	};
 
 	/**
@@ -137,6 +139,7 @@
 					announcement
 				})),
 			{ id: 'artwork', label: 'Artwork', seconds: PROMO_SECONDS, artist: true },
+			{ id: 'merch', label: 'Merch', seconds: PROMO_SECONDS, merch: true },
 			...(partners.length
 				? [{ id: 'partner', label: 'Partner', seconds: PROMO_SECONDS, partners: true }]
 				: []),
@@ -279,6 +282,8 @@
 					<AnnouncementSlide announcement={slide.announcement} />
 				{:else if slide.artist && now}
 					<ArtistSlide year={festival.year} {days} {now} qr={artist.qr} />
+				{:else if slide.merch}
+					<MerchSlide year={festival.year} />
 				{:else if slide.partners}
 					<PartnersSlide {partners} />
 				{:else if slide.lux}
