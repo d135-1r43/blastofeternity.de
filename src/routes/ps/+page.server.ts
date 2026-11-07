@@ -45,12 +45,19 @@ export async function load() {
 		});
 	const [luxQr, artistQr] = await Promise.all([qr(LUX_URL), qr(ARTIST_URL)]);
 
+	// This year's festival photos get a slide of their own, as a look back at the
+	// night before, and stay out of the random Lux in Tenebris pool.
+	const isRecap = (p: (typeof luxPhotos)[number]) =>
+		p.festival.startsWith(`Blast of Eternity ${festival.year}`);
+	const recap = luxPhotos.filter(isRecap);
+
 	return {
 		festival,
+		recap,
 		promos,
 		announcements,
 		partners,
-		lux: { photos: luxPhotos, qr: luxQr },
+		lux: { photos: luxPhotos.filter((p) => !isRecap(p)), qr: luxQr },
 		artist: { qr: artistQr }
 	};
 }

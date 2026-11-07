@@ -8,6 +8,7 @@
 	import ConcertSlide from '$lib/components/signage/ConcertSlide.svelte';
 	import MerchSlide from '$lib/components/signage/MerchSlide.svelte';
 	import LuxSlide, { prepareLux } from '$lib/components/signage/LuxSlide.svelte';
+	import RecapSlide, { prepareRecap } from '$lib/components/signage/RecapSlide.svelte';
 	import PartnersSlide from '$lib/components/signage/PartnersSlide.svelte';
 	import Programme from '$lib/components/signage/Programme.svelte';
 	import { buildDays, clock, momentAt, presets } from '$lib/signage';
@@ -23,7 +24,7 @@
 	 */
 
 	let { data } = $props();
-	const { festival, site, promos, announcements, partners, lux, artist } = $derived(data);
+	const { festival, site, promos, announcements, partners, lux, artist, recap } = $derived(data);
 	const days = $derived(buildDays(festival));
 
 	/* ----------------------------------------------------------- the clock */
@@ -75,6 +76,7 @@
 			}
 			held = params.get('slide');
 			prepareLux(lux.photos);
+			prepareRecap(recap);
 			now = read();
 			const tick = setInterval(() => {
 				now = read();
@@ -106,6 +108,7 @@
 		lux?: boolean;
 		artist?: boolean;
 		merch?: boolean;
+		recap?: boolean;
 	};
 
 	/**
@@ -121,7 +124,13 @@
 			seconds: PROGRAMME_SECONDS
 		};
 		const ahead = (date: string) => !!now && new Date(`${date}T23:59`) > now;
+		// the look back at the night before, from the festival's second day on
+		const lookingBack =
+			!!now && now > new Date(`${festival.date_start}T23:59`) && ahead(festival.date_end);
 		const others: Slide[] = [
+			...(recap.length && lookingBack
+				? [{ id: 'recap', label: 'Rückblick', seconds: PROMO_SECONDS, recap: true }]
+				: []),
 			...promos
 				.filter((p) => ahead(p.concert.date))
 				.map((promo) => ({
@@ -286,6 +295,8 @@
 					<MerchSlide year={festival.year} />
 				{:else if slide.partners}
 					<PartnersSlide {partners} />
+				{:else if slide.recap}
+					<RecapSlide photos={recap} />
 				{:else if slide.lux}
 					<LuxSlide photos={lux.photos} qr={lux.qr} />
 				{:else}
