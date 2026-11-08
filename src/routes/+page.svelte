@@ -5,72 +5,114 @@
 	import Hero from '$lib/components/Hero.svelte';
 	import Lineup from '$lib/components/Lineup.svelte';
 	import Ornament from '$lib/components/Ornament.svelte';
+	import SaveTheDate from '$lib/components/SaveTheDate.svelte';
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte';
 	import { reveal } from '$lib/reveal';
 
 	let { data } = $props();
 
-	const { festival, concert, podcast, pages, heroPhotos, plates } = $derived(data);
+	const { festival, announcement, concert, podcast, pages, heroPhotos, plates } = $derived(data);
 	const [plateHands, plateDive] = $derived(plates);
 </script>
 
 <Seo
 	site={data.site}
 	title={data.site.title}
-	description="Blast of Eternity {festival.year}: {festival.date_label} in der {festival.venue
-		.name}. Dazu Clubkonzerte über das ganze Jahr. Veranstaltet vom CVJM Jugendkultur & Musik e. V."
+	description={festival
+		? `Blast of Eternity ${festival.year}: ${festival.date_label} in der ${festival.venue.name}. Dazu Clubkonzerte über das ganze Jahr. Veranstaltet vom CVJM Jugendkultur & Musik e. V.`
+		: announcement
+			? `Save the Date: Blast of Eternity ${announcement.year} am ${announcement.date_label}. Dazu Clubkonzerte über das ganze Jahr. Veranstaltet vom CVJM Jugendkultur & Musik e. V.`
+			: data.site.description}
 	image="/og/home.jpg"
 />
 
-<EventSchema {festival} site={data.site} />
+{#if festival}
+	<EventSchema {festival} site={data.site} />
 
-<Hero {festival} photos={heroPhotos} />
+	<Hero photos={heroPhotos}>
+		<p class="when">
+			<span class="date">{festival.date_label}</span>
+			<span class="where">{festival.venue.name}</span>
+		</p>
+
+		<div class="actions">
+			<a class="action" href="/boe">Line-up &amp; Infos</a>
+			{#if festival.tickets.url}
+				<a class="action action--ticket" href={festival.tickets.url} rel="noopener" target="_blank">
+					Tickets ab {festival.tickets.prices[0].amount}&thinsp;€
+				</a>
+			{/if}
+		</div>
+	</Hero>
+{:else}
+	<Hero
+		photos={heroPhotos}
+		next={announcement
+			? { href: '#save-the-date', label: 'Weiter zum nächsten Festival' }
+			: { href: '#clubkonzerte', label: 'Weiter' }}
+	>
+		<div class="thanks">
+			<p class="thanks-head">{pages.home.thanks.heading}</p>
+			<p class="thanks-text">{pages.home.thanks.text}</p>
+		</div>
+
+		<div class="actions">
+			<a class="action" href="/boe#archiv">Rückblick &amp; Archiv</a>
+		</div>
+	</Hero>
+
+	{#if announcement}
+		<SaveTheDate {announcement} id="save-the-date" />
+	{/if}
+{/if}
 
 <!-- ============================================================ line-up -->
-<section class="section" id="festival">
-	<div class="page">
-		<header class="poster-head" use:reveal>
-			<p class="eyebrow">Das Festival · {festival.date_short}</p>
-			<Ornament width="9rem" />
-		</header>
+{#if festival}
+	<section class="section" id="festival">
+		<div class="page">
+			<header class="poster-head" use:reveal>
+				<p class="eyebrow">Das Festival · {festival.date_short}</p>
+				<Ornament width="9rem" />
+			</header>
 
-		<Lineup bands={festival.lineup} linkTo={(band) => `/boe#${band.id}`} />
+			<Lineup bands={festival.lineup} linkTo={(band) => `/boe#${band.id}`} />
 
-		<div class="poster-foot" use:reveal>
-			<Ornament width="9rem" />
-			<dl class="prices">
-				{#each festival.tickets.prices as price (price.label)}
-					<div>
-						<dt>{price.label}</dt>
-						<dd class="numeral">
-							{price.amount}&thinsp;€
-						</dd>
-					</div>
-				{/each}
-			</dl>
-			<p class="fine dim">{festival.tickets.note}</p>
-			<div class="actions center">
-				{#if festival.tickets.url}
-					<a
-						class="action action--ticket"
-						href={festival.tickets.url}
-						rel="noopener"
-						target="_blank"
-					>
-						Tickets sichern
-					</a>
-				{/if}
-				<a class="action" href="/boe">Bands, FAQ &amp; Anfahrt</a>
+			<div class="poster-foot" use:reveal>
+				<Ornament width="9rem" />
+				<dl class="prices">
+					{#each festival.tickets.prices as price (price.label)}
+						<div>
+							<dt>{price.label}</dt>
+							<dd class="numeral">
+								{price.amount}&thinsp;€
+							</dd>
+						</div>
+					{/each}
+				</dl>
+				<p class="fine dim">{festival.tickets.note}</p>
+				<div class="actions center">
+					{#if festival.tickets.url}
+						<a
+							class="action action--ticket"
+							href={festival.tickets.url}
+							rel="noopener"
+							target="_blank"
+						>
+							Tickets sichern
+						</a>
+					{/if}
+					<a class="action" href="/boe">Bands, FAQ &amp; Anfahrt</a>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+{/if}
 
 <Figure photo={plateHands} variant="bleed" sizes="100vw" dim={0.15} />
 
 <!-- ============================================================ clubshows -->
 {#if concert}
-	<section class="section">
+	<section class="section" id="clubkonzerte">
 		<div class="page split">
 			<div class="split-text" use:reveal>
 				<p class="eyebrow">Clubkonzerte</p>

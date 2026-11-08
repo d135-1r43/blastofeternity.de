@@ -5,18 +5,19 @@
 	import Lineup from '$lib/components/Lineup.svelte';
 	import Ornament from '$lib/components/Ornament.svelte';
 	import PageHead from '$lib/components/PageHead.svelte';
+	import SaveTheDate from '$lib/components/SaveTheDate.svelte';
 	import SectionHead from '$lib/components/SectionHead.svelte';
 	import VideoEmbed from '$lib/components/VideoEmbed.svelte';
 	import { reveal } from '$lib/reveal';
 	import type { RunningOrderSlot, SideProgrammeItem } from '$lib/types';
 
 	let { data } = $props();
-	const { festival, archive, photos } = $derived(data);
+	const { festival, announcement, archive, photos } = $derived(data);
 	const [plateStage, plateGuitar] = $derived(photos);
 
 	const runningDays = $derived.by(() => {
 		const days = new Map<string, RunningOrderSlot[]>();
-		for (const slot of festival.running_order) {
+		for (const slot of festival?.running_order ?? []) {
 			days.set(slot.day, [...(days.get(slot.day) ?? []), slot]);
 		}
 		return [...days];
@@ -24,7 +25,7 @@
 
 	const sideDays = $derived.by(() => {
 		const days = new Map<string, SideProgrammeItem[]>();
-		for (const item of festival.side_programme ?? []) {
+		for (const item of festival?.side_programme ?? []) {
 			days.set(item.day, [...(days.get(item.day) ?? []), item]);
 		}
 		return [...days];
@@ -32,247 +33,269 @@
 
 	/** Where the side programme happens, when it is all in one place. */
 	const sidePlace = $derived.by(() => {
-		const places = new Set((festival.side_programme ?? []).map((item) => item.place));
+		const places = new Set((festival?.side_programme ?? []).map((item) => item.place));
 		return places.size === 1 ? [...places][0] : null;
 	});
 </script>
 
-<Seo
-	site={data.site}
-	title="Blast of Eternity Festival {festival.year}"
-	description="{festival.date_label} in der {festival.venue
-		.name}. Line-up, Tickets, Running Order, FAQ und Anfahrt."
-	image="/og/festival.jpg"
-/>
+{#if festival}
+	<Seo
+		site={data.site}
+		title="Blast of Eternity Festival {festival.year}"
+		description="{festival.date_label} in der {festival.venue
+			.name}. Line-up, Tickets, Running Order, FAQ und Anfahrt."
+		image="/og/festival.jpg"
+	/>
 
-<EventSchema {festival} site={data.site} />
+	<EventSchema {festival} site={data.site} />
 
-<PageHead eyebrow="Festival" title="Blast of Eternity {festival.year}" photo={plateStage}>
-	{#snippet meta()}
-		<p class="dates">{festival.date_label}</p>
-		<p class="place eyebrow eyebrow--tight">
-			{festival.venue.name} · {festival.venue.street}
-		</p>
-	{/snippet}
-</PageHead>
+	<PageHead eyebrow="Festival" title="Blast of Eternity {festival.year}" photo={plateStage}>
+		{#snippet meta()}
+			<p class="dates">{festival.date_label}</p>
+			<p class="place eyebrow eyebrow--tight">
+				{festival.venue.name} · {festival.venue.street}
+			</p>
+		{/snippet}
+	</PageHead>
 
-<!-- ============================================================ tickets -->
-<section class="section section--tight">
-	<div class="page tickets" use:reveal>
-		<dl class="prices">
-			{#each festival.tickets.prices as price (price.label)}
-				<div>
-					<dt>{price.label}</dt>
-					<dd class="numeral">
-						{price.amount}&thinsp;€
-					</dd>
-				</div>
-			{/each}
-		</dl>
-		<div class="ticket-side">
-			<p class="fine dim">{festival.tickets.note}</p>
-			{#if festival.tickets.url}
-				<a class="action action--ticket" href={festival.tickets.url} rel="noopener" target="_blank">
-					Tickets bei {festival.tickets.provider}
-				</a>
-			{/if}
-		</div>
-	</div>
-</section>
-
-<!-- ============================================================ line-up -->
-<section class="section poster">
-	<div class="page">
-		<header class="poster-head" use:reveal>
-			<p class="eyebrow">Line-up</p>
-			<Ornament width="9rem" />
-		</header>
-		<Lineup bands={festival.lineup} linkTo={(band) => `#${band.id}`} />
-		<div class="poster-foot" use:reveal><Ornament width="9rem" /></div>
-	</div>
-</section>
-
-<!-- ====================================================== running order -->
-<section class="section section--tight">
-	<div class="page">
-		<SectionHead eyebrow="Ablauf" title="Running Order" id="running-order" />
-		{#if festival.running_order.length}
-			<div class="order">
-				{#each runningDays as [day, slots] (day)}
-					<div class="order-day" use:reveal>
-						<h3 class="eyebrow">{day}</h3>
-						<ol>
-							{#each slots as slot (slot.time + slot.band)}
-								<li class:doors={slot.doors}>
-									<span class="numeral time">{slot.time}</span>
-									<span class="act">{slot.band}</span>
-								</li>
-							{/each}
-						</ol>
+	<!-- ============================================================ tickets -->
+	<section class="section section--tight">
+		<div class="page tickets" use:reveal>
+			<dl class="prices">
+				{#each festival.tickets.prices as price (price.label)}
+					<div>
+						<dt>{price.label}</dt>
+						<dd class="numeral">
+							{price.amount}&thinsp;€
+						</dd>
 					</div>
 				{/each}
+			</dl>
+			<div class="ticket-side">
+				<p class="fine dim">{festival.tickets.note}</p>
+				{#if festival.tickets.url}
+					<a
+						class="action action--ticket"
+						href={festival.tickets.url}
+						rel="noopener"
+						target="_blank"
+					>
+						Tickets bei {festival.tickets.provider}
+					</a>
+				{/if}
 			</div>
-		{:else}
-			<p class="tba" use:reveal>
-				<span class="tba-mark">t.&thinsp;b.&thinsp;a.</span>
-				<span class="dim">{festival.running_order_note}</span>
-			</p>
-		{/if}
-	</div>
-</section>
+		</div>
+	</section>
 
-<!-- ==================================================== side programme -->
-{#if sideDays.length}
+	<!-- ============================================================ line-up -->
+	<section class="section poster">
+		<div class="page">
+			<header class="poster-head" use:reveal>
+				<p class="eyebrow">Line-up</p>
+				<Ornament width="9rem" />
+			</header>
+			<Lineup bands={festival.lineup} linkTo={(band) => `#${band.id}`} />
+			<div class="poster-foot" use:reveal><Ornament width="9rem" /></div>
+		</div>
+	</section>
+
+	<!-- ====================================================== running order -->
 	<section class="section section--tight">
 		<div class="page">
-			<SectionHead eyebrow="Neben der Bühne" title="Rahmenprogramm" id="rahmenprogramm">
-				{#if sidePlace}<p class="dim">Im {sidePlace} der {festival.venue.name}.</p>{/if}
-			</SectionHead>
-			<div class="order">
-				{#each sideDays as [day, items] (day)}
-					<div class="order-day" use:reveal>
-						<h3 class="eyebrow">{day}</h3>
-						<ol>
-							{#each items as item (item.time + item.title)}
-								<li>
-									<span class="numeral time">{item.time}</span>
-									<span class="act"
-										>{item.title}{#if !sidePlace}<span class="place dim">
-												· {item.place}</span
-											>{/if}</span
-									>
-								</li>
-							{/each}
-						</ol>
-					</div>
+			<SectionHead eyebrow="Ablauf" title="Running Order" id="running-order" />
+			{#if festival.running_order.length}
+				<div class="order">
+					{#each runningDays as [day, slots] (day)}
+						<div class="order-day" use:reveal>
+							<h3 class="eyebrow">{day}</h3>
+							<ol>
+								{#each slots as slot (slot.time + slot.band)}
+									<li class:doors={slot.doors}>
+										<span class="numeral time">{slot.time}</span>
+										<span class="act">{slot.band}</span>
+									</li>
+								{/each}
+							</ol>
+						</div>
+					{/each}
+				</div>
+			{:else}
+				<p class="tba" use:reveal>
+					<span class="tba-mark">t.&thinsp;b.&thinsp;a.</span>
+					<span class="dim">{festival.running_order_note}</span>
+				</p>
+			{/if}
+		</div>
+	</section>
+
+	<!-- ==================================================== side programme -->
+	{#if sideDays.length}
+		<section class="section section--tight">
+			<div class="page">
+				<SectionHead eyebrow="Neben der Bühne" title="Rahmenprogramm" id="rahmenprogramm">
+					{#if sidePlace}<p class="dim">Im {sidePlace} der {festival.venue.name}.</p>{/if}
+				</SectionHead>
+				<div class="order">
+					{#each sideDays as [day, items] (day)}
+						<div class="order-day" use:reveal>
+							<h3 class="eyebrow">{day}</h3>
+							<ol>
+								{#each items as item (item.time + item.title)}
+									<li>
+										<span class="numeral time">{item.time}</span>
+										<span class="act"
+											>{item.title}{#if !sidePlace}<span class="place dim">
+													· {item.place}</span
+												>{/if}</span
+										>
+									</li>
+								{/each}
+							</ol>
+						</div>
+					{/each}
+				</div>
+			</div>
+		</section>
+	{/if}
+
+	<Figure photo={plateGuitar} variant="bleed" sizes="100vw" dim={0.2} />
+
+	<!-- ============================================================== bands -->
+	<section class="section" id="bands">
+		<div class="page">
+			<SectionHead eyebrow="Wer spielt" title="Die Bands" />
+
+			<div class="bands">
+				{#each festival.lineup as band, i (band.id)}
+					<article class="band" id={band.id} use:reveal>
+						<div class="band-media">
+							{#if band.video}
+								<VideoEmbed
+									video={band.video}
+									title={band.name}
+									poster={band.image}
+									posterAlt="Bandfoto {band.name}"
+								/>
+							{:else if band.image}
+								<img src={band.image} alt="Bandfoto {band.name}" loading="lazy" />
+							{/if}
+						</div>
+						<div class="band-text">
+							<p class="eyebrow numeral">{String(i + 1).padStart(2, '0')}</p>
+							<h3>{band.name}</h3>
+							<p class="band-meta">
+								{#if band.origin}<span class="origin">{band.origin}</span>{/if}
+								<span class="genre">{band.genre}</span>
+							</p>
+						</div>
+					</article>
 				{/each}
 			</div>
 		</div>
 	</section>
-{/if}
 
-<Figure photo={plateGuitar} variant="bleed" sizes="100vw" dim={0.2} />
-
-<!-- ============================================================== bands -->
-<section class="section" id="bands">
-	<div class="page">
-		<SectionHead eyebrow="Wer spielt" title="Die Bands" />
-
-		<div class="bands">
-			{#each festival.lineup as band, i (band.id)}
-				<article class="band" id={band.id} use:reveal>
-					<div class="band-media">
-						{#if band.video}
-							<VideoEmbed
-								video={band.video}
-								title={band.name}
-								poster={band.image}
-								posterAlt="Bandfoto {band.name}"
-							/>
-						{:else if band.image}
-							<img src={band.image} alt="Bandfoto {band.name}" loading="lazy" />
-						{/if}
-					</div>
-					<div class="band-text">
-						<p class="eyebrow numeral">{String(i + 1).padStart(2, '0')}</p>
-						<h3>{band.name}</h3>
-						<p class="band-meta">
-							{#if band.origin}<span class="origin">{band.origin}</span>{/if}
-							<span class="genre">{band.genre}</span>
-						</p>
-					</div>
-				</article>
-			{/each}
-		</div>
-	</div>
-</section>
-
-<!-- ================================================================ faq -->
-<section class="section" id="faq">
-	<div class="page">
-		<SectionHead eyebrow="Gut zu wissen" title="Häufige Fragen" />
-		<div class="faq">
-			{#each festival.faq as item (item.id)}
-				<details use:reveal>
-					<summary>
-						<span>{item.question}</span>
-						<span class="marker" aria-hidden="true"></span>
-					</summary>
-					<div class="answer">
-						{#each item.answer as paragraph}
-							<p>{paragraph}</p>
-						{/each}
-						{#if item.bank}
-							<dl class="bank">
-								<div>
-									<dt>Kontoinhaber</dt>
-									<dd>{data.site.bank.holder}</dd>
-								</div>
-								<div>
-									<dt>Bank</dt>
-									<dd>{data.site.bank.bank}</dd>
-								</div>
-								<div>
-									<dt>IBAN</dt>
-									<dd class="numeral">{data.site.bank.iban}</dd>
-								</div>
-								<div>
-									<dt>BIC</dt>
-									<dd class="numeral">{data.site.bank.bic}</dd>
-								</div>
-							</dl>
-						{/if}
-						{#if item.link}
-							<p>
-								<a
-									class="link"
-									href={item.link.url}
-									rel={item.link.url.startsWith('http') ? 'noopener' : undefined}
-									target={item.link.url.startsWith('http') ? '_blank' : undefined}
-								>
-									{item.link.label}
-								</a>
-							</p>
-						{/if}
-					</div>
-				</details>
-			{/each}
-		</div>
-	</div>
-</section>
-
-<!-- ============================================================ anfahrt -->
-<section class="section" id="anfahrt">
-	<div class="page">
-		<SectionHead eyebrow="Hinkommen" title="Anfahrt" />
-		<div class="travel">
-			<div class="travel-text prose" use:reveal>
-				{#each festival.travel.body as paragraph}
-					<p>{paragraph}</p>
+	<!-- ================================================================ faq -->
+	<section class="section" id="faq">
+		<div class="page">
+			<SectionHead eyebrow="Gut zu wissen" title="Häufige Fragen" />
+			<div class="faq">
+				{#each festival.faq as item (item.id)}
+					<details use:reveal>
+						<summary>
+							<span>{item.question}</span>
+							<span class="marker" aria-hidden="true"></span>
+						</summary>
+						<div class="answer">
+							{#each item.answer as paragraph}
+								<p>{paragraph}</p>
+							{/each}
+							{#if item.bank}
+								<dl class="bank">
+									<div>
+										<dt>Kontoinhaber</dt>
+										<dd>{data.site.bank.holder}</dd>
+									</div>
+									<div>
+										<dt>Bank</dt>
+										<dd>{data.site.bank.bank}</dd>
+									</div>
+									<div>
+										<dt>IBAN</dt>
+										<dd class="numeral">{data.site.bank.iban}</dd>
+									</div>
+									<div>
+										<dt>BIC</dt>
+										<dd class="numeral">{data.site.bank.bic}</dd>
+									</div>
+								</dl>
+							{/if}
+							{#if item.link}
+								<p>
+									<a
+										class="link"
+										href={item.link.url}
+										rel={item.link.url.startsWith('http') ? 'noopener' : undefined}
+										target={item.link.url.startsWith('http') ? '_blank' : undefined}
+									>
+										{item.link.label}
+									</a>
+								</p>
+							{/if}
+						</div>
+					</details>
 				{/each}
-				<p>
-					<a class="link" href={festival.travel.link.url} rel="noopener" target="_blank">
-						{festival.travel.link.label}
-					</a>
-				</p>
 			</div>
-			<aside class="travel-address" use:reveal={120}>
-				<h3 class="eyebrow">Adresse</h3>
-				<address>
-					{festival.venue.legal_name ?? festival.venue.name}<br />
-					{festival.venue.street}<br />
-					{festival.venue.postal_code}
-					{festival.venue.city}
-				</address>
-				<p>
-					<a class="link" href={festival.travel.map_url} rel="noopener" target="_blank">
-						Auf der Karte ansehen
-					</a>
-				</p>
-			</aside>
 		</div>
-	</div>
-</section>
+	</section>
+
+	<!-- ============================================================ anfahrt -->
+	<section class="section" id="anfahrt">
+		<div class="page">
+			<SectionHead eyebrow="Hinkommen" title="Anfahrt" />
+			<div class="travel">
+				<div class="travel-text prose" use:reveal>
+					{#each festival.travel.body as paragraph}
+						<p>{paragraph}</p>
+					{/each}
+					<p>
+						<a class="link" href={festival.travel.link.url} rel="noopener" target="_blank">
+							{festival.travel.link.label}
+						</a>
+					</p>
+				</div>
+				<aside class="travel-address" use:reveal={120}>
+					<h3 class="eyebrow">Adresse</h3>
+					<address>
+						{festival.venue.legal_name ?? festival.venue.name}<br />
+						{festival.venue.street}<br />
+						{festival.venue.postal_code}
+						{festival.venue.city}
+					</address>
+					<p>
+						<a class="link" href={festival.travel.map_url} rel="noopener" target="_blank">
+							Auf der Karte ansehen
+						</a>
+					</p>
+				</aside>
+			</div>
+		</div>
+	</section>
+{:else}
+	<Seo
+		site={data.site}
+		title="Blast of Eternity Festival"
+		description={announcement
+			? `Save the Date: Blast of Eternity ${announcement.year} am ${announcement.date_label}. Dazu das Archiv aller Festivals seit 2011.`
+			: 'Das Archiv aller Blast of Eternity Festivals seit 2011.'}
+		image="/og/festival.jpg"
+	/>
+
+	<PageHead eyebrow="Festival" title="Blast of Eternity" photo={plateStage} />
+
+	{#if announcement}
+		<SaveTheDate {announcement} id="save-the-date" />
+	{/if}
+{/if}
 
 <!-- ============================================================= archiv -->
 <section class="section archive" id="archiv">

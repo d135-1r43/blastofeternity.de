@@ -6,6 +6,16 @@
 			"video": "uXCiGO9o3Pw",
 			"caption": "Zwei Tage Blast of Eternity 2025 in dreieinhalb Minuten."
 		},
+		"thanks": {
+			"heading": "Danke!",
+			"text": "Danke an unseren Herrn, alle Besucher, Helfer und Unterstützer des Blast of Eternity 2026.",
+			"image": {
+				"url": "https://directus.herhoffer.net/assets/8563481a-2fe5-4a10-9249-46f0538d15eb",
+				"width": 2048,
+				"height": 1488,
+				"position": "center 45%"
+			}
+		},
 		"intro": [
 			"Seit 2011 veranstalten wir Konzerte von Rock- und Metalbands mit christlichem Hintergrund sowie von lokalen Bands aus Heilbronn und Umgebung.",
 			"Zwei Tage Festival im November. Über das Jahr verteilt Clubkonzerte. Alles ehrenamtlich, ohne Gewinnabsicht."

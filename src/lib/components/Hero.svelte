@@ -1,13 +1,21 @@
 <script lang="ts">
+	import type { Snippet } from 'svelte';
 	import Ornament from './Ornament.svelte';
-	import type { Festival, Photo } from '$lib/types';
+	import type { HeroSlide } from '$lib/types';
 
 	type Props = {
-		festival: Festival;
 		/** Cross-faded behind the wordmark. The first one loads with the page. */
-		photos: Photo[];
+		photos: HeroSlide[];
+		/** What sits under the ornament: dates and tickets, or a word of thanks. */
+		children: Snippet;
+		/** Where the cue at the bottom scrolls to. */
+		next?: { href: string; label: string };
 	};
-	let { festival, photos }: Props = $props();
+	let {
+		photos,
+		children,
+		next = { href: '#festival', label: 'Weiter zum Line-up' }
+	}: Props = $props();
 
 	const SLIDE_MS = 14000;
 
@@ -27,8 +35,6 @@
 	let reduced = $state(false);
 
 	const visible = $derived(photos.slice(0, mounted));
-	const srcsetFor = (p: Photo) => p.widths.map((w) => `${p.src}-${w}.jpg ${w}w`).join(', ');
-	const largest = (p: Photo) => `${p.src}-${p.widths[p.widths.length - 1]}.jpg`;
 
 	$effect(() => {
 		reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -57,8 +63,9 @@
 				class:active={i === index}
 				class:holding={i === previous}
 				style:z-index={i === index ? 2 : i === previous ? 1 : 0}
-				src={largest(slide)}
-				srcset={srcsetFor(slide)}
+				src={slide.src}
+				srcset={slide.srcset}
+				style:object-position={slide.position}
 				sizes="100vw"
 				width={slide.width}
 				height={slide.height}
@@ -85,22 +92,10 @@
 
 		<Ornament width="13rem" />
 
-		<p class="when">
-			<span class="date">{festival.date_label}</span>
-			<span class="where">{festival.venue.name}</span>
-		</p>
-
-		<div class="actions">
-			<a class="action" href="/boe">Line-up &amp; Infos</a>
-			{#if festival.tickets.url}
-				<a class="action action--ticket" href={festival.tickets.url} rel="noopener" target="_blank">
-					Tickets ab {festival.tickets.prices[0].amount}&thinsp;€
-				</a>
-			{/if}
-		</div>
+		{@render children()}
 	</div>
 
-	<a class="cue" href="#festival" aria-label="Weiter zum Line-up">
+	<a class="cue" href={next.href} aria-label={next.label}>
 		<span class="cue-line"></span>
 	</a>
 </section>
@@ -265,7 +260,7 @@
 		pointer-events: none;
 	}
 
-	.when {
+	.content :global(.when) {
 		margin: clamp(1.75rem, 4vw, 2.5rem) 0 clamp(2.25rem, 5vw, 3.25rem);
 		display: flex;
 		flex-direction: column;
@@ -276,26 +271,51 @@
 		animation: rise 1.2s var(--ease) 0.35s both;
 	}
 
-	.date {
+	.content :global(.date) {
 		font-size: var(--step-1);
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		color: var(--silver);
 	}
 
-	.where {
+	.content :global(.where) {
 		font-size: var(--step--1);
 		letter-spacing: 0.16em;
 		text-transform: uppercase;
 		color: var(--silver);
 	}
 
-	.actions {
+	.content :global(.actions) {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
 		justify-content: center;
 		animation: rise 1.2s var(--ease) 0.5s both;
+	}
+
+	.content :global(.thanks) {
+		max-width: 36rem;
+		margin: clamp(1.75rem, 4vw, 2.5rem) auto clamp(2.25rem, 5vw, 3.25rem);
+		text-shadow: 0 1px 14px rgb(8 8 10 / 85%);
+		animation: rise 1.2s var(--ease) 0.35s both;
+	}
+
+	.content :global(.thanks-head) {
+		margin: 0 0 1rem;
+		font-family: var(--font-display);
+		font-weight: 600;
+		font-size: var(--step-2);
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--silver);
+	}
+
+	.content :global(.thanks-text) {
+		margin: 0;
+		font-style: italic;
+		font-size: var(--step-1);
+		line-height: 1.5;
+		color: var(--silver);
 	}
 
 	.cue {
@@ -367,8 +387,9 @@
 	@media (prefers-reduced-motion: reduce) {
 		.presenter,
 		.mark,
-		.when,
-		.actions,
+		.content :global(.when),
+		.content :global(.thanks),
+		.content :global(.actions),
 		.cue {
 			animation: none;
 		}

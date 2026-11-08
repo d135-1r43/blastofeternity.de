@@ -18,6 +18,17 @@ export type Image = {
 	alt: string;
 };
 
+/** One picture behind the home hero, ready to render. */
+export type HeroSlide = {
+	id: string;
+	src: string;
+	srcset: string;
+	width: number;
+	height: number;
+	/** CSS `object-position`; the hero's default framing when absent. */
+	position?: string;
+};
+
 export type Link = {
 	label: string;
 	url: string;
@@ -268,6 +279,13 @@ export type Pages = {
 	home: {
 		id: 'home';
 		aftermovie: { title: string; video: string; caption: string };
+		/** The hero between two editions, when no festival is on sale. */
+		thanks: {
+			heading: string;
+			text: string;
+			/** A Directus asset URL; takes `?width=…` transforms. */
+			image: { url: string; width: number; height: number; position?: string };
+		};
 		intro: string[];
 	};
 	about: {

@@ -1,8 +1,32 @@
 [
 	{
-		"id": "boe-2025",
+		"id": "boe-2026",
 		"status": "published",
 		"sort": 1,
+		"year": 2026,
+		"date_label": "6. & 7. November 2026",
+		"title": "Blast of Eternity Festival",
+		"city": "Heilbronn",
+		"venue": "Maschinenfabrik Heilbronn",
+		"poster": "/images/archive/boe-2026.jpg",
+		"lineup": [
+			"Wytch Hazel (GB)",
+			"Signum Regis (SK)",
+			"Fellowship (GB)",
+			"Thy Bleeding Skies",
+			"Triuwint",
+			"Cantus Levitas",
+			"Hell Patröl",
+			"Dawn of Revenge",
+			"The Advent of a Miracle",
+			"Steikon"
+		],
+		"note": "Artwork von Anna Jäger-Hauer (Linestyle Artwork)."
+	},
+	{
+		"id": "boe-2025",
+		"status": "published",
+		"sort": 2,
 		"year": 2025,
 		"date_label": "7. & 8. November 2025",
 		"title": "Blast of Eternity Festival",
@@ -25,7 +49,7 @@
 	{
 		"id": "boe-2024",
 		"status": "published",
-		"sort": 2,
+		"sort": 3,
 		"year": 2024,
 		"date_label": "8. & 9. November 2024",
 		"title": "Blast of Eternity Festival",
@@ -49,7 +73,7 @@
 	{
 		"id": "boe-2023",
 		"status": "published",
-		"sort": 3,
+		"sort": 4,
 		"year": 2023,
 		"date_label": "3. & 4. November 2023",
 		"title": "Blast of Eternity Festival",
@@ -72,7 +96,7 @@
 	{
 		"id": "boe-2022",
 		"status": "published",
-		"sort": 4,
+		"sort": 5,
 		"year": 2022,
 		"date_label": "11. & 12. November 2022",
 		"title": "Blast of Eternity Festival",
@@ -94,7 +118,7 @@
 	{
 		"id": "boe-2021",
 		"status": "published",
-		"sort": 5,
+		"sort": 6,
 		"year": 2021,
 		"date_label": "28. August 2021",
 		"title": "Blast of Eternity Open Air",
@@ -113,7 +137,7 @@
 	{
 		"id": "boe-2020",
 		"status": "published",
-		"sort": 6,
+		"sort": 7,
 		"year": 2020,
 		"date_label": "Kein Festival",
 		"title": "Blast of Eternity Festival",
@@ -126,7 +150,7 @@
 	{
 		"id": "boe-2019",
 		"status": "published",
-		"sort": 7,
+		"sort": 8,
 		"year": 2019,
 		"date_label": "8. & 9. November 2019",
 		"title": "Blast of Eternity Festival",
@@ -151,7 +175,7 @@
 	{
 		"id": "boe-2018",
 		"status": "published",
-		"sort": 8,
+		"sort": 9,
 		"year": 2018,
 		"date_label": "2. & 3. November 2018",
 		"title": "Blast of Eternity Festival",
@@ -176,7 +200,7 @@
 	{
 		"id": "boe-2017",
 		"status": "published",
-		"sort": 9,
+		"sort": 10,
 		"year": 2017,
 		"date_label": "3. & 4. November 2017",
 		"title": "Blast of Eternity Festival",

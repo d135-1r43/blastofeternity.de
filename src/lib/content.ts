@@ -61,9 +61,20 @@ export async function getSite(): Promise<Site> {
 	return site;
 }
 
-/** The festival currently being sold. There is exactly one at a time. */
-export async function getFestival(): Promise<Festival> {
-	return festivals.filter((f) => f.state === 'upcoming').sort(bySort)[0];
+/**
+ * The festival currently being sold, or `null` between editions — after one
+ * has gone into the archive and before the next one goes on sale.
+ */
+export async function getFestival(): Promise<Festival | null> {
+	return festivals.filter((f) => f.state === 'upcoming').sort(bySort)[0] ?? null;
+}
+
+/**
+ * The most recent edition, sold or already over. The signage and the slides
+ * for the festival weekend keep working with it after it has been archived.
+ */
+export async function getLatestFestival(): Promise<Festival> {
+	return [...festivals].sort((a, b) => b.year - a.year)[0];
 }
 
 /** Editions that have a date but are not on sale yet. */

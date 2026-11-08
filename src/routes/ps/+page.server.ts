@@ -1,6 +1,6 @@
 import QRCode from 'qrcode';
 import {
-	getFestival,
+	getLatestFestival,
 	getFestivalAnnouncements,
 	getLuxPhotos,
 	getPartners,
@@ -13,7 +13,7 @@ const ARTIST_URL = 'https://linestyle-artwork.de/';
 
 export async function load() {
 	const [festival, concerts, announcements, partners, luxPhotos] = await Promise.all([
-		getFestival(),
+		getLatestFestival(),
 		getUpcomingConcerts(),
 		getFestivalAnnouncements(),
 		getPartners(),
