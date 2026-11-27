@@ -138,9 +138,9 @@
 				<ol class="order">
 					{#each withSide(moment.acts, moment.day, now) as act (act.time + act.name)}
 						<li class:side={act.side}>
-							<span class="numeral time">{act.time}</span><span class="act"
-								>{act.name}{#if act.place}<span class="place">{act.place}</span>{/if}</span
-							>
+							<span class="numeral time">{act.time}</span><span class="act">
+								{act.name}{#if act.place}<span class="place">{act.place}</span>{/if}
+							</span>
 						</li>
 					{/each}
 				</ol>
@@ -179,9 +179,9 @@
 					<ol class="order">
 						{#each following as act (act.time + act.name)}
 							<li class:side={act.side}>
-								<span class="numeral time">{act.time}</span><span class="act"
-									>{act.name}{#if act.place}<span class="place">{act.place}</span>{/if}</span
-								>
+								<span class="numeral time">{act.time}</span><span class="act">
+									{act.name}{#if act.place}<span class="place">{act.place}</span>{/if}
+								</span>
 							</li>
 						{/each}
 					</ol>
@@ -193,16 +193,16 @@
 						<ol class="order">
 							{#if tomorrow.doors}
 								<li class="doors">
-									<span class="numeral time">{tomorrow.doors.time}</span><span class="act"
-										>Einlass</span
-									>
+									<span class="numeral time">{tomorrow.doors.time}</span><span class="act">
+										Einlass
+									</span>
 								</li>
 							{/if}
 							{#each withSide(tomorrow.acts, tomorrow, now) as act (act.time + act.name)}
 								<li class:side={act.side}>
-									<span class="numeral time">{act.time}</span><span class="act"
-										>{act.name}{#if act.place}<span class="place">{act.place}</span>{/if}</span
-									>
+									<span class="numeral time">{act.time}</span><span class="act">
+										{act.name}{#if act.place}<span class="place">{act.place}</span>{/if}
+									</span>
 								</li>
 							{/each}
 						</ol>

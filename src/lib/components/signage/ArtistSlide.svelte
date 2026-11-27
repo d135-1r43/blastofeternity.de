@@ -69,10 +69,11 @@
 								stroke-linecap="round"
 								stroke-linejoin="round"
 								aria-label="Instagram"
-								><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path
-									d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-								/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg
 							>
+								<rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path
+									d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+								/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+							</svg>
 							@linestyle_artwork
 						</li>
 						<li>
@@ -84,10 +85,11 @@
 								stroke-linecap="round"
 								stroke-linejoin="round"
 								aria-label="Web"
-								><circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path
-									d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-								/></svg
 							>
+								<circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path
+									d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+								/>
+							</svg>
 							linestyle-artwork.de
 						</li>
 					</ul>

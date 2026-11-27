@@ -143,11 +143,11 @@
 								{#each items as item (item.time + item.title)}
 									<li>
 										<span class="numeral time">{item.time}</span>
-										<span class="act"
-											>{item.title}{#if !sidePlace}<span class="place dim">
-													· {item.place}</span
-												>{/if}</span
-										>
+										<span class="act">
+											{item.title}{#if !sidePlace}<span class="place dim">
+													· {item.place}
+												</span>{/if}
+										</span>
 									</li>
 								{/each}
 							</ol>
