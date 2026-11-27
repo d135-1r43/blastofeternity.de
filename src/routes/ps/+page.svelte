@@ -334,9 +334,9 @@
 				})}
 			</span>
 			<span class="dim">{base === null ? 'Echtzeit' : `simuliert · ${speed}×`}</span>
-			<button type="button" onclick={() => (panelOpen = !panelOpen)}
-				>{panelOpen ? 'Einklappen' : 'Aufklappen'}</button
-			>
+			<button type="button" onclick={() => (panelOpen = !panelOpen)}>
+				{panelOpen ? 'Einklappen' : 'Aufklappen'}
+			</button>
 		</div>
 		{#if panelOpen}
 			<div class="debug-controls">

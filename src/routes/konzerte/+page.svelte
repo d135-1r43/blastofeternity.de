@@ -66,8 +66,10 @@
 									class="action action--ticket"
 									href={concert.tickets_url}
 									rel="noopener"
-									target="_blank">Tickets</a
+									target="_blank"
 								>
+									Tickets
+								</a>
 							</div>
 						{/if}
 					</div>
@@ -100,8 +102,9 @@
 					<div class="show-body">
 						{#if show.lineup.length}
 							<p class="lineup">
-								{#each show.lineup as name, i}<span class="act">{name}</span
-									>{#if i < show.lineup.length - 1}<span class="dot">·</span>{/if}{/each}
+								{#each show.lineup as name, i}<span class="act">
+										{name}
+									</span>{#if i < show.lineup.length - 1}<span class="dot">·</span>{/if}{/each}
 							</p>
 						{/if}
 						{#each show.description as paragraph}

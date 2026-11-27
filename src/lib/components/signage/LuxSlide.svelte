@@ -114,20 +114,21 @@
 						stroke-linecap="round"
 						stroke-linejoin="round"
 						aria-label="Instagram"
-						><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path
-							d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-						/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /></svg
 					>
+						<rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path
+							d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+						/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+					</svg>
 					@lux.in.tenebris.fotografie
 				</li>
 				<li>
-					<svg viewBox="0 0 75 75" aria-label="Pixelfed"
-						><g transform="translate(12.5,12.5)" fill="currentColor" fill-rule="evenodd"
-							><path
+					<svg viewBox="0 0 75 75" aria-label="Pixelfed">
+						<g transform="translate(12.5,12.5)" fill="currentColor" fill-rule="evenodd">
+							<path
 								d="M 25,50 C 11.192881,50 0,38.807119 0,25 0,11.192881 11.192881,0 25,0 38.807119,0 50,11.192881 50,25 50,38.807119 38.807119,50 25,50 Z M 23.015316,30.458015 h 4.586148 c 4.320335,0 7.822658,-3.409518 7.822658,-7.615371 0,-4.205853 -3.502323,-7.615371 -7.822658,-7.615371 h -6.619172 c -2.492501,0 -4.513072,1.967029 -4.513072,4.393483 v 17.100022 z"
-							/></g
-						></svg
-					>
+							/>
+						</g>
+					</svg>
 					pixelfed.de/luxintenebris
 				</li>
 				<li>
@@ -139,10 +140,11 @@
 						stroke-linecap="round"
 						stroke-linejoin="round"
 						aria-label="Web"
-						><circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path
-							d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-						/></svg
 					>
+						<circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path
+							d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+						/>
+					</svg>
 					lux-in-tenebris.de
 				</li>
 			</ul>

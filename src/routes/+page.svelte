@@ -128,8 +128,10 @@
 							class="action action--ticket"
 							href={concert.tickets_url}
 							rel="noopener"
-							target="_blank">Tickets</a
+							target="_blank"
 						>
+							Tickets
+						</a>
 					{/if}
 				</div>
 			</div>
